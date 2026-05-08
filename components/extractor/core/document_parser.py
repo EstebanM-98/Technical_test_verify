@@ -48,10 +48,10 @@ class DocumentParser:
         if not selected_format:
             return {"error": "El formato de este documento aún no ha sido configurado. Por favor agregue el archivo JSON de configuración en la carpeta configs/."}
 
-        # 2. Extract Header (from first page)
+        # 2. Extract Header (from entire document text to find totals on last page)
         extracted_data = {
             "format": selected_format.format_name,
-            "header": selected_format.extract_header_fields(first_page),
+            "header": selected_format.extract_header_fields(text),
             "pages": [],
             "all_line_items": []
         }

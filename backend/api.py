@@ -15,6 +15,7 @@ app = FastAPI(title="Orchestration Backend Service")
 import os
 OCR_URL = os.getenv("OCR_URL", "http://localhost:8001/process")
 EXTRACTOR_URL = os.getenv("EXTRACTOR_URL", "http://localhost:8002/extract")
+VALIDATOR_URL = os.getenv("VALIDATOR_URL", "http://localhost:8003/validate")
 
 # Schemas
 class UserCreate(BaseModel):
@@ -65,6 +66,34 @@ def get_project(project_id: int, db: Session = Depends(get_db)):
     data = json.loads(project.extracted_data) if project.extracted_data else None
     return {"id": project.id, "name": project.name, "pdf_filename": project.pdf_filename, "extracted_data": data}
 
+class ProjectUpdate(BaseModel):
+    name: str
+
+@app.put("/projects/{project_id}")
+def update_project(project_id: int, project_update: ProjectUpdate, db: Session = Depends(get_db)):
+    project = db.query(models.Project).filter(models.Project.id == project_id).first()
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+    
+    project.name = project_update.name
+    db.commit()
+    db.refresh(project)
+    return project
+
+@app.delete("/projects/{project_id}")
+def delete_project(project_id: int, db: Session = Depends(get_db)):
+    project = db.query(models.Project).filter(models.Project.id == project_id).first()
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+    
+    pdf_path = f"backend/uploads/project_{project_id}.pdf"
+    if os.path.exists(pdf_path):
+        os.remove(pdf_path)
+
+    db.delete(project)
+    db.commit()
+    return {"message": "Project deleted successfully"}
+
 from fastapi.responses import FileResponse
 
 @app.post("/projects/{project_id}/process")
@@ -104,6 +133,17 @@ async def process_project(project_id: int, file: UploadFile = File(...), db: Ses
             raise HTTPException(status_code=500, detail=f"Extractor Service failed: {ext_response.text}")
         
         extracted_json = ext_response.json()
+        
+        # 3. Call Validator Service
+        val_response = await client.post(
+            VALIDATOR_URL,
+            json={"extracted_data": extracted_json}
+        )
+        
+        if val_response.status_code == 200:
+            extracted_json["validation"] = val_response.json()
+        else:
+            extracted_json["validation"] = {"is_valid": False, "message": f"Validator failed: {val_response.text}", "errors": []}
 
     # Save to database
     project.extracted_data = json.dumps(extracted_json)

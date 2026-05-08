@@ -17,6 +17,13 @@ services:
     ports:
       - "8002:8002"
 
+  validator:
+    build:
+      context: .
+      dockerfile: components/validator/Dockerfile
+    ports:
+      - "8003:8003"
+
   backend:
     build:
       context: .
@@ -26,9 +33,11 @@ services:
     environment:
       - OCR_URL=http://ocr:8001/process
       - EXTRACTOR_URL=http://extractor:8002/extract
+      - VALIDATOR_URL=http://validator:8003/validate
     depends_on:
       - ocr
       - extractor
+      - validator
 
   frontend:
     build:

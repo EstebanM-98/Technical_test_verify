@@ -1,0 +1,19 @@
+{
+    "format_name": "Switch Invoice",
+    "rules": [
+        {
+            "type": "row_math",
+            "description": "Quantity * Rate = Amount",
+            "expression": "quantity * rate",
+            "equals": "amount",
+            "tolerance": 0.1
+        },
+        {
+            "type": "document_sum",
+            "description": "Sum of all amounts equals total_amount",
+            "sum_column": "amount",
+            "equals_header": "total_amount",
+            "tolerance": 0.1
+        }
+    ]
+}

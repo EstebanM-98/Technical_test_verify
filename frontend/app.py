@@ -164,29 +164,64 @@ def dashboard_view():
     if res.status_code == 200:
         projects = res.json()
         for p in projects:
-            col1, col2 = st.columns([4, 1])
-            with col1:
-                st.subheader(p["name"])
-            with col2:
-                if st.button("Open", key=f"btn_{p['id']}"):
-                    st.session_state.current_project = p['id']
-                    # Load project details
-                    p_res = httpx.get(f"{BACKEND_URL}/projects/{p['id']}")
-                    if p_res.status_code == 200:
-                        st.session_state.extracted_data = p_res.json().get("extracted_data")
-                    
-                    # Fetch PDF if available
-                    try:
-                        pdf_res = httpx.get(f"{BACKEND_URL}/projects/{p['id']}/pdf")
-                        if pdf_res.status_code == 200:
-                            st.session_state.pdf_bytes = pdf_res.content
-                        else:
-                            st.session_state.pdf_bytes = None
-                    except Exception:
-                        st.session_state.pdf_bytes = None
+            p_id = p['id']
+            # Inline Editing State
+            is_editing = st.session_state.get(f"editing_{p_id}", False)
+            
+            if is_editing:
+                col1, col2, col3 = st.columns([4, 1, 1])
+                with col1:
+                    new_name = st.text_input("Edit Name", value=p["name"], key=f"inp_{p_id}", label_visibility="collapsed")
+                with col2:
+                    if st.button("Save", key=f"save_{p_id}", type="primary"):
+                        try:
+                            httpx.put(f"{BACKEND_URL}/projects/{p_id}", json={"name": new_name})
+                            st.session_state[f"editing_{p_id}"] = False
+                            st.rerun()
+                        except:
+                            pass
+                with col3:
+                    if st.button("Cancel", key=f"cancel_{p_id}"):
+                        st.session_state[f"editing_{p_id}"] = False
+                        st.rerun()
+            else:
+                col1, col2, col3, col4 = st.columns([5, 1, 1, 1])
+                with col1:
+                    st.subheader(p["name"])
+                with col2:
+                    if st.button("Open", key=f"btn_{p_id}"):
+                        st.session_state.current_project = p_id
+                        # Load project details
+                        try:
+                            p_res = httpx.get(f"{BACKEND_URL}/projects/{p_id}")
+                            if p_res.status_code == 200:
+                                st.session_state.extracted_data = p_res.json().get("extracted_data")
+                        except:
+                            st.session_state.extracted_data = None
                         
-                    st.session_state.pdf_page = 0
-                    st.rerun()
+                        # Fetch PDF if available
+                        try:
+                            pdf_res = httpx.get(f"{BACKEND_URL}/projects/{p_id}/pdf")
+                            if pdf_res.status_code == 200:
+                                st.session_state.pdf_bytes = pdf_res.content
+                            else:
+                                st.session_state.pdf_bytes = None
+                        except Exception:
+                            st.session_state.pdf_bytes = None
+                            
+                        st.session_state.pdf_page = 0
+                        st.rerun()
+                with col3:
+                    if st.button("Edit", key=f"edit_{p_id}"):
+                        st.session_state[f"editing_{p_id}"] = True
+                        st.rerun()
+                with col4:
+                    if st.button("Delete", key=f"del_{p_id}"):
+                        try:
+                            httpx.delete(f"{BACKEND_URL}/projects/{p_id}")
+                            st.rerun()
+                        except:
+                            pass
 
 def project_view():
     display_logo(sidebar=True)
@@ -223,17 +258,30 @@ def project_view():
         data = st.session_state.extracted_data
         st.header("Extracted Information")
         
+        # Display Validation Status
+        if "validation" in data:
+            val_data = data["validation"]
+            if val_data.get("is_valid"):
+                st.success(f"**{val_data.get('message', 'Validated ✅')}**")
+            else:
+                st.error(f"**{val_data.get('message', 'Validation Failed')}**")
+                with st.expander("View Validation Errors"):
+                    for err in val_data.get("errors", []):
+                        st.write(f"- {err}")
+        
         # Display Header Information
         st.subheader("Main Details")
-        h_col1, h_col2, h_col3 = st.columns(3)
+        h_col1, h_col2, h_col3, h_col4 = st.columns(4)
         h_col1.metric("Vendor", data["header"].get("vendor_name", "N/A"))
         h_col2.metric("Invoice Number", data["header"].get("invoice_number", "N/A"))
         h_col3.metric("Invoice Date", data["header"].get("invoice_date", "N/A"))
+        h_col4.metric("Due Date", data["header"].get("due_date", "N/A"))
         
-        h2_col1, h2_col2, h2_col3 = st.columns(3)
-        h2_col1.metric("Due Date", data["header"].get("due_date", "N/A"))
-        h2_col2.metric("Bill To Name", data["header"].get("bill_to_name", "N/A"))
-        h2_col3.metric("Vendor Address", data["header"].get("vendor_address", "N/A"))
+        h2_col1, h2_col2, h2_col3, h2_col4 = st.columns(4)
+        h2_col1.metric("Bill To Name", data["header"].get("bill_to_name", "N/A"))
+        h2_col2.metric("Vendor Address", data["header"].get("vendor_address", "N/A"))
+        h2_col3.metric("Currency", data["header"].get("currency", "N/A"))
+        h2_col4.metric("Total Amount", data["header"].get("total_amount", "N/A"))
         
         # We explicitly set type="primary" to make sure it picks up the bright gradient
         st.download_button("Download JSON", data=json.dumps(data, indent=4), file_name="extract.json", mime="application/json", type="primary")

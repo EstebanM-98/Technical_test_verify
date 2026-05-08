@@ -29,6 +29,15 @@
             "type": "regex",
             "pattern": "\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}/\\d{2}/\\d{2}\\s+\\d+\\s*\\n+([^\\n]+)\\n+(?:[^\\n]+\\n+)*?Account No\\.",
             "group": 1
+        },
+        "total_amount": {
+            "type": "regex",
+            "pattern": "Total USD\\s*\\$\\s*([\\d,]+\\.\\d{2})",
+            "group": 1
+        },
+        "currency": {
+            "type": "static",
+            "value": "USD"
         }
     },
     "line_items": {
