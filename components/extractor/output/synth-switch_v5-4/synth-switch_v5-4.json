@@ -1,0 +1,105 @@
+{
+    "format": "Switch Invoice",
+    "header": {
+        "vendor_name": "Switch, Ltd.",
+        "vendor_address": "Dallas, TX 75267-4592\nPO Box 674592",
+        "invoice_date": "09/22/23",
+        "due_date": "08/27/24",
+        "invoice_number": "1556267",
+        "bill_to_name": "Toni Hackel"
+    },
+    "pages": [
+        {
+            "page_number": 1,
+            "line_items_count": 7,
+            "line_items": [
+                {
+                    "description": "Transport | Switch Fiber Pair (Intra-campus) | Pairs (4419693704) (04/2023|10 Gbps Fiber to HOEpyb (YSPG4VFH) (04/2023)",
+                    "quantity": 2912.98,
+                    "rate": 934.09,
+                    "amount": 2720985.49
+                },
+                {
+                    "description": "Carrier Taxes for Transport | 230 Gbps Wavelength Diverse between Sparks, OR 56789 and Plano, NV 98765 (SNpTfT) (NJYM5MQP) (07/2023 Taxes) (07/2023)",
+                    "quantity": 3500.87,
+                    "rate": 6229.33,
+                    "amount": 21808074.52
+                },
+                {
+                    "description": "Special Partnership Discount (03/2023)",
+                    "quantity": 8.0,
+                    "rate": -561.0,
+                    "amount": -4488.0
+                },
+                {
+                    "description": "Item Discount: Special Partnership Discount (11/2023)",
+                    "quantity": 8.0,
+                    "rate": -296.0,
+                    "amount": -2368.0
+                },
+                {
+                    "description": "Transport | 82 Gbps Fiber to YDDTJOrnuW (L0KSKNCB) (01/2024)",
+                    "quantity": 5607.34,
+                    "rate": 656.07,
+                    "amount": 3678807.55
+                },
+                {
+                    "description": "Carrier Taxes for Transport | 45 Gbps Wavelength Diverse between Hillsboro, NV 98765 and Portland, TX 56789 (a488ZH) (8D3PKG77) (05/2023 Taxes) (05/2023)",
+                    "quantity": 3949.46,
+                    "rate": 7128.95,
+                    "amount": 28155502.87
+                },
+                {
+                    "description": "Transport | 97 Gbps Fiber to 3XMOyFdB (5EE7PIWY) (02/2024)",
+                    "quantity": 942.71,
+                    "rate": 1918.01,
+                    "amount": 1808127.21
+                }
+            ]
+        }
+    ],
+    "all_line_items": [
+        {
+            "description": "Transport | Switch Fiber Pair (Intra-campus) | Pairs (4419693704) (04/2023|10 Gbps Fiber to HOEpyb (YSPG4VFH) (04/2023)",
+            "quantity": 2912.98,
+            "rate": 934.09,
+            "amount": 2720985.49
+        },
+        {
+            "description": "Carrier Taxes for Transport | 230 Gbps Wavelength Diverse between Sparks, OR 56789 and Plano, NV 98765 (SNpTfT) (NJYM5MQP) (07/2023 Taxes) (07/2023)",
+            "quantity": 3500.87,
+            "rate": 6229.33,
+            "amount": 21808074.52
+        },
+        {
+            "description": "Special Partnership Discount (03/2023)",
+            "quantity": 8.0,
+            "rate": -561.0,
+            "amount": -4488.0
+        },
+        {
+            "description": "Item Discount: Special Partnership Discount (11/2023)",
+            "quantity": 8.0,
+            "rate": -296.0,
+            "amount": -2368.0
+        },
+        {
+            "description": "Transport | 82 Gbps Fiber to YDDTJOrnuW (L0KSKNCB) (01/2024)",
+            "quantity": 5607.34,
+            "rate": 656.07,
+            "amount": 3678807.55
+        },
+        {
+            "description": "Carrier Taxes for Transport | 45 Gbps Wavelength Diverse between Hillsboro, NV 98765 and Portland, TX 56789 (a488ZH) (8D3PKG77) (05/2023 Taxes) (05/2023)",
+            "quantity": 3949.46,
+            "rate": 7128.95,
+            "amount": 28155502.87
+        },
+        {
+            "description": "Transport | 97 Gbps Fiber to 3XMOyFdB (5EE7PIWY) (02/2024)",
+            "quantity": 942.71,
+            "rate": 1918.01,
+            "amount": 1808127.21
+        }
+    ]
+}

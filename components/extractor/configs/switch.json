@@ -1,0 +1,40 @@
+{
+    "format_name": "Switch Invoice",
+    "signature_regex": "(?i)switch\\s+Dallas,\\s+TX",
+    "header_fields": {
+        "vendor_name": {
+            "type": "static",
+            "value": "Switch, Ltd."
+        },
+        "vendor_address": {
+            "type": "static",
+            "value": "Dallas, TX 75267-4592\nPO Box 674592"
+        },
+        "invoice_date": {
+            "type": "regex",
+            "pattern": "(\\d{2}/\\d{2}/\\d{2})\\s+\\d{2}/\\d{2}/\\d{2}\\s+\\d+",
+            "group": 1
+        },
+        "due_date": {
+            "type": "regex",
+            "pattern": "\\d{2}/\\d{2}/\\d{2}\\s+(\\d{2}/\\d{2}/\\d{2})\\s+\\d+",
+            "group": 1
+        },
+        "invoice_number": {
+            "type": "regex",
+            "pattern": "\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}/\\d{2}/\\d{2}\\s+(\\d+)",
+            "group": 1
+        },
+        "bill_to_name": {
+            "type": "regex",
+            "pattern": "\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}/\\d{2}/\\d{2}\\s+\\d+\\s*\\n+([^\\n]+)\\n+(?:[^\\n]+\\n+)*?Account No\\.",
+            "group": 1
+        }
+    },
+    "line_items": {
+        "start_anchor": "Description\\s+Quantity\\s+Rate\\s+Amount",
+        "stop_anchor": "^Total USD|Please update your system",
+        "row_pattern": "^(.*?)\\s+((?:-)?[\\d,]+\\.\\d+)\\s+((?:-)?[\\d,]+\\.\\d+)\\s+((?:-)?[\\d,]+\\.\\d+)$",
+        "columns": ["description", "quantity", "rate", "amount"]
+    }
+}
