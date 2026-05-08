@@ -10,7 +10,6 @@ import base64
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 # --- Custom CSS for Modern Glassmorphism Design ---
-# We removed hacky inputs CSS because we now use native Streamlit Dark Theme via config.toml
 st.markdown("""
 <style>
     .stApp {
@@ -70,28 +69,31 @@ def display_logo(sidebar=False):
         if sidebar:
             st.sidebar.image(logo_path, use_container_width=True)
         else:
-            # Center the logo on the main page
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:
                 st.image(logo_path, use_container_width=True)
 
 def display_pdf(pdf_bytes, page_number):
-    """Render a SINGLE PAGE of the PDF as a high-resolution image to avoid browser iframe blocks and state resets"""
+    """
+    Render a single PDF page as a high-resolution PNG image.
+    No iframes, no browser security blocks, no Chrome restrictions.
+    """
     try:
         import fitz
         doc = fitz.open(stream=pdf_bytes, filetype="pdf")
         if page_number >= len(doc):
             st.error("Page out of bounds")
+            doc.close()
             return
-            
+
         page = doc.load_page(page_number)
-        # Render high-resolution image (3x zoom)
-        pix = page.get_pixmap(matrix=fitz.Matrix(3, 3))
+        # 2.5x gives ~180 DPI — sharp and readable without being oversized
+        pix = page.get_pixmap(matrix=fitz.Matrix(2.5, 2.5), alpha=False)
         img_bytes = pix.tobytes("png")
-        
-        # Displaying as an image perfectly preserves the layout, works in all browsers, 
-        # and doesn't lose zoom/pan state when Streamlit reruns!
+        doc.close()
+
         st.image(img_bytes, use_container_width=True)
+
     except Exception as e:
         st.error(f"Error rendering PDF: {e}")
 
@@ -138,9 +140,8 @@ def dashboard_view():
         st.session_state.current_project = None
         st.rerun()
         
-    st.title("Your Projects")
+    st.title("Projects Dashboard")
     
-    # Instructions
     st.info("""
     **How to use this application:**
     1. **Create a Project** by typing a name and clicking "Create".
@@ -150,78 +151,80 @@ def dashboard_view():
     5. **Review** the extracted data, navigate pages, and **Download JSON**.
     """)
     
-    # Create Project
-    with st.expander("Create New Project"):
-        proj_name = st.text_input("Project Name")
-        if st.button("Create", type="primary"):
-            res = httpx.post(f"{BACKEND_URL}/projects", params={"user_id": st.session_state.user['user_id']}, json={"name": proj_name})
-            if res.status_code == 200:
-                st.success("Project created")
-                st.rerun()
+    tab_projects, tab_create = st.tabs(["My Projects", "Create New Project"])
+    
+    with tab_create:
+        st.subheader("Create a New Project")
+        with st.form("create_project_form", clear_on_submit=True):
+            proj_name = st.text_input("Project Name")
+            submitted = st.form_submit_button("Create Project", type="primary")
+            if submitted and proj_name:
+                res = httpx.post(f"{BACKEND_URL}/projects", params={"user_id": st.session_state.user['user_id']}, json={"name": proj_name})
+                if res.status_code == 200:
+                    st.success("Project created! Go to the 'My Projects' tab.")
+                    
+    with tab_projects:
+        res = httpx.get(f"{BACKEND_URL}/projects", params={"user_id": st.session_state.user['user_id']})
+        if res.status_code == 200:
+            projects = res.json()
+            if not projects:
+                st.info("No projects found. Create one in the next tab!")
+            for p in projects:
+                p_id = p['id']
+                is_editing = st.session_state.get(f"editing_{p_id}", False)
                 
-    # List Projects
-    res = httpx.get(f"{BACKEND_URL}/projects", params={"user_id": st.session_state.user['user_id']})
-    if res.status_code == 200:
-        projects = res.json()
-        for p in projects:
-            p_id = p['id']
-            # Inline Editing State
-            is_editing = st.session_state.get(f"editing_{p_id}", False)
-            
-            if is_editing:
-                col1, col2, col3 = st.columns([4, 1, 1])
-                with col1:
-                    new_name = st.text_input("Edit Name", value=p["name"], key=f"inp_{p_id}", label_visibility="collapsed")
-                with col2:
-                    if st.button("Save", key=f"save_{p_id}", type="primary"):
-                        try:
-                            httpx.put(f"{BACKEND_URL}/projects/{p_id}", json={"name": new_name})
+                if is_editing:
+                    col1, col2, col3 = st.columns([4, 1, 1])
+                    with col1:
+                        new_name = st.text_input("Edit Name", value=p["name"], key=f"inp_{p_id}", label_visibility="collapsed")
+                    with col2:
+                        if st.button("Save", key=f"save_{p_id}", type="primary"):
+                            try:
+                                httpx.put(f"{BACKEND_URL}/projects/{p_id}", json={"name": new_name})
+                                st.session_state[f"editing_{p_id}"] = False
+                                st.rerun()
+                            except:
+                                pass
+                    with col3:
+                        if st.button("Cancel", key=f"cancel_{p_id}"):
                             st.session_state[f"editing_{p_id}"] = False
                             st.rerun()
-                        except:
-                            pass
-                with col3:
-                    if st.button("Cancel", key=f"cancel_{p_id}"):
-                        st.session_state[f"editing_{p_id}"] = False
-                        st.rerun()
-            else:
-                col1, col2, col3, col4 = st.columns([5, 1, 1, 1])
-                with col1:
-                    st.subheader(p["name"])
-                with col2:
-                    if st.button("Open", key=f"btn_{p_id}"):
-                        st.session_state.current_project = p_id
-                        # Load project details
-                        try:
-                            p_res = httpx.get(f"{BACKEND_URL}/projects/{p_id}")
-                            if p_res.status_code == 200:
-                                st.session_state.extracted_data = p_res.json().get("extracted_data")
-                        except:
-                            st.session_state.extracted_data = None
-                        
-                        # Fetch PDF if available
-                        try:
-                            pdf_res = httpx.get(f"{BACKEND_URL}/projects/{p_id}/pdf")
-                            if pdf_res.status_code == 200:
-                                st.session_state.pdf_bytes = pdf_res.content
-                            else:
-                                st.session_state.pdf_bytes = None
-                        except Exception:
-                            st.session_state.pdf_bytes = None
+                else:
+                    col1, col2, col3, col4 = st.columns([5, 1, 1, 1])
+                    with col1:
+                        st.subheader(p["name"])
+                    with col2:
+                        if st.button("Open", key=f"btn_{p_id}"):
+                            st.session_state.current_project = p_id
+                            try:
+                                p_res = httpx.get(f"{BACKEND_URL}/projects/{p_id}")
+                                if p_res.status_code == 200:
+                                    st.session_state.extracted_data = p_res.json().get("extracted_data")
+                            except:
+                                st.session_state.extracted_data = None
                             
-                        st.session_state.pdf_page = 0
-                        st.rerun()
-                with col3:
-                    if st.button("Edit", key=f"edit_{p_id}"):
-                        st.session_state[f"editing_{p_id}"] = True
-                        st.rerun()
-                with col4:
-                    if st.button("Delete", key=f"del_{p_id}"):
-                        try:
-                            httpx.delete(f"{BACKEND_URL}/projects/{p_id}")
+                            try:
+                                pdf_res = httpx.get(f"{BACKEND_URL}/projects/{p_id}/pdf")
+                                if pdf_res.status_code == 200:
+                                    st.session_state.pdf_bytes = pdf_res.content
+                                else:
+                                    st.session_state.pdf_bytes = None
+                            except Exception:
+                                st.session_state.pdf_bytes = None
+                                
+                            st.session_state.pdf_page = 0
                             st.rerun()
-                        except:
-                            pass
+                    with col3:
+                        if st.button("Edit", key=f"edit_{p_id}"):
+                            st.session_state[f"editing_{p_id}"] = True
+                            st.rerun()
+                    with col4:
+                        if st.button("Delete", key=f"del_{p_id}"):
+                            try:
+                                httpx.delete(f"{BACKEND_URL}/projects/{p_id}")
+                                st.rerun()
+                            except:
+                                pass
 
 def project_view():
     display_logo(sidebar=True)
@@ -261,13 +264,24 @@ def project_view():
         # Display Validation Status
         if "validation" in data:
             val_data = data["validation"]
-            if val_data.get("is_valid"):
-                st.success(f"**{val_data.get('message', 'Validated ✅')}**")
-            else:
-                st.error(f"**{val_data.get('message', 'Validation Failed')}**")
-                with st.expander("View Validation Errors"):
-                    for err in val_data.get("errors", []):
-                        st.write(f"- {err}")
+            
+            v_col1, v_col2 = st.columns([3, 1])
+            with v_col1:
+                if val_data.get("is_valid"):
+                    st.success(f"**{val_data.get('message', 'Validated ✅')}**")
+                else:
+                    st.error(f"**{val_data.get('message', 'Validation Failed')}**")
+                    with st.expander("View Validation Errors"):
+                        for err in val_data.get("errors", []):
+                            st.write(f"- {err}")
+            with v_col2:
+                # Generate a nicely formatted log string
+                log_lines = ["--- VALIDATION LOG ---"]
+                for det in val_data.get("details", []):
+                    status_icon = "TRUE ✅" if det["status"] else "FALSE ❌"
+                    log_lines.append(f"[{status_icon}] {det['check']}: {det['message']}")
+                log_text = "\n".join(log_lines)
+                st.download_button("Download Validation Log", data=log_text, file_name="validation_log.txt", mime="text/plain", type="secondary")
         
         # Display Header Information
         st.subheader("Main Details")
@@ -283,7 +297,6 @@ def project_view():
         h2_col3.metric("Currency", data["header"].get("currency", "N/A"))
         h2_col4.metric("Total Amount", data["header"].get("total_amount", "N/A"))
         
-        # We explicitly set type="primary" to make sure it picks up the bright gradient
         st.download_button("Download JSON", data=json.dumps(data, indent=4), file_name="extract.json", mime="application/json", type="primary")
         
         st.markdown("---")
@@ -297,26 +310,33 @@ def project_view():
         pages_data = data.get("pages", [])
         max_pages = len(pages_data)
         
+        # --- Re-fetch PDF if bytes were lost (e.g. after a page rerun) ---
+        if not st.session_state.pdf_bytes:
+            try:
+                pdf_res = httpx.get(f"{BACKEND_URL}/projects/{project['id']}/pdf", timeout=30.0)
+                if pdf_res.status_code == 200:
+                    st.session_state.pdf_bytes = pdf_res.content
+            except Exception:
+                pass
+
         if st.session_state.pdf_bytes:
             # Paginator controls
             p_col1, p_col2, p_col3 = st.columns([1, 2, 1])
             with p_col1:
-                # Disable button if we are on the first page
-                if st.button("Previous Page", disabled=(st.session_state.pdf_page <= 0)):
+                if st.button("⬅ Previous Page", disabled=(st.session_state.pdf_page <= 0)):
                     st.session_state.pdf_page -= 1
                     st.rerun()
             with p_col2:
-                st.write(f"**Page {st.session_state.pdf_page + 1} of {max_pages}**")
+                st.markdown(f"<h4 style='text-align:center; margin:0;'>Page {st.session_state.pdf_page + 1} of {max_pages}</h4>", unsafe_allow_html=True)
             with p_col3:
-                # Disable button if we are on the last page
-                if st.button("Next Page", disabled=(st.session_state.pdf_page >= max_pages - 1)):
+                if st.button("Next Page ➡", disabled=(st.session_state.pdf_page >= max_pages - 1)):
                     st.session_state.pdf_page += 1
                     st.rerun()
 
             with col_pdf:
                 display_pdf(st.session_state.pdf_bytes, st.session_state.pdf_page)
         else:
-            col_pdf.info("PDF preview not available.")
+            col_pdf.warning("⚠️ PDF preview not available. The file may not have been uploaded yet.")
             
         with col_data:
             current_page_idx = None
@@ -328,16 +348,23 @@ def project_view():
             if current_page_idx is not None and pages_data[current_page_idx].get("line_items"):
                 df = pd.DataFrame(pages_data[current_page_idx]["line_items"])
                 
+                # Manual Add Row Button
+                if st.button("Add Row", key=f"add_row_{st.session_state.pdf_page}", type="secondary"):
+                    new_row = {col: "" for col in df.columns}
+                    df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+                    st.session_state.extracted_data["pages"][current_page_idx]["line_items"] = df.to_dict("records")
+                    st.rerun()
+                    
                 # Interactive Data Editor
                 edited_df = st.data_editor(
                     df, 
                     use_container_width=True, 
                     hide_index=True,
-                    num_rows="dynamic", # Allow adding/deleting rows!
+                    num_rows="fixed", # Disables automatic row adding on scroll
                     key=f"editor_{st.session_state.pdf_page}" # vital so each page has its own editor state
                 )
                 
-                # Sync back to session state so "Download JSON" gets the user's edits!
+                # Sync back to session state so "Download JSON" gets the user's edits
                 st.session_state.extracted_data["pages"][current_page_idx]["line_items"] = edited_df.fillna("").to_dict("records")
             else:
                 st.warning("No line items detected on this page.")

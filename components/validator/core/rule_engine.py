@@ -27,6 +27,7 @@ class ValidatorEngine:
         config = self.configs[fmt_name]
         rules = config.get("rules", [])
         errors = []
+        details = []
         
         # We need to validate across all line items from all pages
         all_items = []
@@ -44,9 +45,15 @@ class ValidatorEngine:
                         a = float(str(row.get("amount", 0)).replace(',', ''))
                         expected = q * r
                         if abs(expected - a) > rule.get("tolerance", 0.1):
-                            errors.append(f"Row {idx+1} Math Error: Quantity ({q}) * Rate ({r}) != Amount ({a})")
+                            msg = f"Row {idx+1} Math Error: Quantity ({q}) * Rate ({r}) != Amount ({a})"
+                            errors.append(msg)
+                            details.append({"check": f"Row {idx+1} Math", "status": False, "message": msg})
+                        else:
+                            details.append({"check": f"Row {idx+1} Math", "status": True, "message": f"Row {idx+1} valid: {q} * {r} == {a}"})
                     except Exception as e:
-                        errors.append(f"Row {idx+1} Math Evaluation Error: {e}")
+                        msg = f"Row {idx+1} Math Evaluation Error: {e}"
+                        errors.append(msg)
+                        details.append({"check": f"Row {idx+1} Math", "status": False, "message": msg})
                         
             elif rule["type"] == "document_sum":
                 sum_col = rule["sum_column"]
@@ -57,19 +64,28 @@ class ValidatorEngine:
                     
                     target_val_str = header.get(target_header)
                     if not target_val_str:
-                        errors.append(f"Header field '{target_header}' not found for sum check.")
+                        msg = f"Header field '{target_header}' not found for sum check."
+                        errors.append(msg)
+                        details.append({"check": "Document Sum", "status": False, "message": msg})
                         continue
                         
                     target_val = float(str(target_val_str).replace(',', ''))
                     
                     if abs(total_calculated - target_val) > rule.get("tolerance", 0.1):
-                        errors.append(f"Sum Error: Calculated sum of {sum_col} ({total_calculated}) != Header {target_header} ({target_val})")
+                        msg = f"Sum Error: Calculated sum of {sum_col} ({total_calculated}) != Header {target_header} ({target_val})"
+                        errors.append(msg)
+                        details.append({"check": "Document Sum", "status": False, "message": msg})
+                    else:
+                        details.append({"check": "Document Sum", "status": True, "message": f"Sum valid: {total_calculated} == {target_val}"})
                 except Exception as e:
-                    errors.append(f"Sum Evaluation Error: {e}")
+                    msg = f"Sum Evaluation Error: {e}"
+                    errors.append(msg)
+                    details.append({"check": "Document Sum", "status": False, "message": msg})
                     
         is_valid = len(errors) == 0
         return {
             "is_valid": is_valid,
             "message": "Validated ✅" if is_valid else "Validation Failed",
-            "errors": errors
+            "errors": errors,
+            "details": details
         }

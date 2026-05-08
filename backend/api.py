@@ -17,6 +17,10 @@ OCR_URL = os.getenv("OCR_URL", "http://localhost:8001/process")
 EXTRACTOR_URL = os.getenv("EXTRACTOR_URL", "http://localhost:8002/extract")
 VALIDATOR_URL = os.getenv("VALIDATOR_URL", "http://localhost:8003/validate")
 
+# Passwords and Security
+from passlib.context import CryptContext
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
 # Schemas
 class UserCreate(BaseModel):
     username: str
@@ -31,8 +35,9 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
     db_user = db.query(models.User).filter(models.User.username == user.username).first()
     if db_user:
         raise HTTPException(status_code=400, detail="Username already registered")
-    # For simplicity, not using bcrypt here, but should be used in production
-    new_user = models.User(username=user.username, hashed_password=user.password)
+    
+    hashed_pw = pwd_context.hash(user.password)
+    new_user = models.User(username=user.username, hashed_password=hashed_pw)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
@@ -41,8 +46,20 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
 @app.post("/auth/login")
 def login(user: UserCreate, db: Session = Depends(get_db)):
     db_user = db.query(models.User).filter(models.User.username == user.username).first()
-    if not db_user or db_user.hashed_password != user.password:
+    
+    # We add backward compatibility to allow old plaintext passwords to still login
+    if not db_user:
         raise HTTPException(status_code=400, detail="Invalid credentials")
+        
+    try:
+        is_valid = pwd_context.verify(user.password, db_user.hashed_password)
+    except ValueError:
+        # If it's plaintext
+        is_valid = (db_user.hashed_password == user.password)
+        
+    if not is_valid:
+        raise HTTPException(status_code=400, detail="Invalid credentials")
+        
     return {"user_id": db_user.id, "username": db_user.username}
 
 @app.post("/projects")
