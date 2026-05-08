@@ -1,9 +1,9 @@
 import argparse
 import os
 
-from config import load_configuration
-from ocr import VeryfiOCR
-from file_utils import check_if_processed, save_ocr_result
+from components.ocr.config import load_configuration
+from components.ocr.ocr import VeryfiOCR
+from components.ocr.file_utils import check_if_processed, save_ocr_result
 
 def process_single_file(file_path, ocr_service):
     if not os.path.exists(file_path):
@@ -16,7 +16,7 @@ def process_single_file(file_path, ocr_service):
     existing_output = check_if_processed(file_path)
     if existing_output:
         print(f"Document already processed. Output exists at: {existing_output}")
-        return
+        return existing_output
         
     try:
         # Call API
@@ -25,11 +25,14 @@ def process_single_file(file_path, ocr_service):
         if ocr_text:
             output_path = save_ocr_result(ocr_text, file_path)
             print(f"OCR text successfully extracted and saved to: {output_path}")
+            return output_path
         else:
             print(f"No OCR text found in the response for {file_path}.")
+            return None
             
     except Exception as e:
         print(f"Error processing document {file_path}: {e}")
+        return None
 
 def main():
     parser = argparse.ArgumentParser(description="Process a document using Veryfi OCR")

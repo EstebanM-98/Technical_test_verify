@@ -1,8 +1,8 @@
 import os
 import json
 from pathlib import Path
-from core.document_parser import DocumentParser
-from utils.file_handler import read_text, write_json
+from components.extractor.core.document_parser import DocumentParser
+from components.extractor.utils.file_handler import read_text, write_json
 
 def extract_information(input_source: str, output_dir: str = None) -> dict:
     """

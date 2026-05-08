@@ -2,7 +2,7 @@ import re
 import json
 from pathlib import Path
 from typing import Dict, Any
-from formats.dynamic_format import DynamicFormat
+from components.extractor.formats.dynamic_format import DynamicFormat
 
 class DocumentParser:
     def __init__(self):
