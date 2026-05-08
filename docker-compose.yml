@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ocr_service:
+    build: .
+    # Mount volumes to allow hot-reloading and to sync outputs back to the host
+    volumes:
+      - ./.env:/app/.env
+      - ./documents:/app/documents
+      - ./components/ocr/output:/app/components/ocr/output
+    # Example usage:
+    # docker-compose run ocr_service documents/example_receipt.jpg
+    # By default, without arguments, the entrypoint will say "No file provided".
