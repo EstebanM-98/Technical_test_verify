@@ -487,3 +487,7 @@ ValueError: could not convert string to float: 'abc'
 2026-05-09 17:18:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
 2026-05-09 17:18:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
 2026-05-09 17:18:26 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 17:28:03 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 17:28:03 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 17:28:03 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 17:28:03 | INFO     | components.validator.main | <module> | ValidatorEngine ready.

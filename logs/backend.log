@@ -822,3 +822,6 @@ RuntimeError: boom
 2026-05-09 17:18:27 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
 2026-05-09 17:18:27 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
 2026-05-09 17:18:27 | INFO     | backend.api | <module> | Database tables verified/created on startup.
+2026-05-09 17:28:03 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 17:28:03 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 17:28:04 | INFO     | backend.api | <module> | Database tables verified/created on startup.

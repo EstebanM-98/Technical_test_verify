@@ -818,3 +818,8 @@ json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes:
 2026-05-09 17:18:26 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
 2026-05-09 17:18:26 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
 2026-05-09 17:18:26 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 17:28:03 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 17:28:03 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 17:28:03 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 17:28:03 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 17:28:03 | INFO     | components.extractor.api | <module> | DocumentParser ready.

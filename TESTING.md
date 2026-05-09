@@ -5,9 +5,10 @@ This repository includes a deterministic unit/API test suite based on the curren
 ## Install dependencies
 
 ```bash
-python -m pip install -r requirements.txt
-python -m pip install -r requirements-dev.txt
+python -m pip install -r tests/requirements.txt
 ```
+
+Note: `tests/requirements.txt` includes `-r ../requirements.txt`, so root base dependencies are included automatically.
 
 ## Run tests
 
@@ -29,17 +30,51 @@ Run only API-layer tests:
 pytest tests/api -v
 ```
 
+Run inside Docker (recommended for consistency with the repository service structure):
+
+```bash
+docker compose --profile test run --rm tests
+```
+
+## Coverage report
+
+Generate a terminal coverage summary:
+
+```bash
+pytest -v --cov=. --cov-report=term-missing
+```
+
+Docker equivalent:
+
+```bash
+docker compose --profile test run --rm tests python -m pytest tests/unit -v --cov=. --cov-report=term-missing --cov-report=xml:tests/reports/coverage-unit.xml --cov-report=html:tests/reports/htmlcov-unit
+```
+
+Generate XML coverage output (useful for CI quality gates):
+
+```bash
+pytest -v --cov=. --cov-report=xml:tests/reports/coverage.xml
+```
+
+Generate an HTML coverage report:
+
+```bash
+pytest -v --cov=. --cov-report=html:tests/reports/htmlcov
+```
+
+Open `tests/reports/htmlcov/index.html` in a browser to review per-file coverage details.
+
 ## How a reviewer should validate this suite
 
 1. Create and activate a clean virtual environment.
-2. Install dependencies from requirements.txt and requirements-dev.txt.
+2. Install dependencies from tests/requirements.txt.
 3. Run the full suite with `pytest -v`.
 4. Confirm the final summary shows all tests passing.
 
 Expected quick checks:
 
 - Collected tests should be deterministic across runs.
-- No Docker services are required.
+- Docker is optional for tests; `docker compose --profile test run --rm tests` is supported.
 - No external Veryfi/API credentials are required.
 - No real `.env` values are required for test execution.
 
@@ -53,6 +88,12 @@ Recommended artifact outputs for formal validation:
 
 ```bash
 pytest -v --junitxml=tests/reports/junit.xml
+```
+
+Coverage artifact output (optional):
+
+```bash
+pytest -v --cov=. --cov-report=xml:tests/reports/coverage.xml
 ```
 
 PowerShell run log capture (optional):

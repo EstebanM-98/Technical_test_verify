@@ -659,3 +659,5 @@ Traceback (most recent call last):
   File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
     raise effect
 RuntimeError: boom
+2026-05-09 17:29:34 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 17:29:34 | DEBUG    | __main__ | <module> | No active session — rendering login view.

@@ -164,10 +164,9 @@ Technical_test_verify-master/
 | `.streamlit/config.toml` | Defines the Streamlit theme and enables static serving. |
 | `Dockerfile` | Root-level Dockerfile that installs root dependencies and runs the OCR CLI entrypoint by default. The multi-service application uses the service-specific Dockerfiles through `docker-compose.yml`. |
 | `docker-compose.yml` | Starts OCR, extractor, validator, backend, and frontend services. |
-| `requirements.txt` | Minimal root dependency file containing `veryfi` and `python-dotenv`. For the full application, each service has its own requirements file. |
-| `requirements-dev.txt` | Development/testing dependencies used by the pytest suite. |
+| `requirements.txt` | Minimal root dependency file containing base shared dependencies (`veryfi` and `python-dotenv`). For the full application, each service has its own requirements file. |
 | `TESTING.md` | Detailed guide for test execution, scope, and validation artifacts. |
-| `tests/` | Automated test suite organized by layer (`unit` and `api`), shared fixtures, and optional execution artifacts. |
+| `tests/` | Automated test suite organized by layer (`unit` and `api`), shared fixtures, and dockerized test tooling. |
 | `documents/` | Placeholder folder for local documents. The `.gitignore` keeps the folder but ignores document contents. |
 
 ### Tests Directory
@@ -177,6 +176,8 @@ The `tests/` directory is structured to keep test execution deterministic, isola
 | Path | Purpose |
 |---|---|
 | `tests/conftest.py` | Global pytest fixtures and setup helpers (temporary paths, fixture loaders, import-path setup). |
+| `tests/requirements.txt` | Test dependency layer used by local test setup and `tests/Dockerfile`. |
+| `tests/Dockerfile` | Dedicated image for running pytest in an isolated container. |
 | `tests/fixtures/` | Static OCR/extraction payloads used as deterministic test inputs and expected structures. |
 | `tests/unit/` | Unit tests for isolated logic (parsing, validation rules, frontend utilities, service helpers). |
 | `tests/api/` | API-level tests for FastAPI routes and orchestration behavior with mocked dependencies. |
@@ -365,8 +366,7 @@ The project includes a deterministic pytest suite for unit and API layers. These
 Install test dependencies:
 
 ```bash
-python -m pip install -r requirements.txt
-python -m pip install -r requirements-dev.txt
+python -m pip install -r tests/requirements.txt
 ```
 
 Run all tests:
@@ -387,6 +387,18 @@ Run only API tests:
 pytest tests/api -v
 ```
 
+Run tests in Docker (same service-oriented structure as the rest of the repository):
+
+```bash
+docker compose --profile test run --rm tests
+```
+
+Run coverage report in Docker:
+
+```bash
+docker compose --profile test run --rm tests python -m pytest tests/unit -v --cov=. --cov-report=term-missing --cov-report=xml:tests/reports/coverage-unit.xml --cov-report=html:tests/reports/htmlcov-unit
+```
+
 Optional validation artifacts:
 
 ```bash
@@ -396,6 +408,22 @@ pytest -v --junitxml=tests/reports/junit.xml
 ```powershell
 pytest -v | Tee-Object -FilePath tests/reports/pytest-run.log
 ```
+
+Coverage report examples:
+
+```bash
+pytest -v --cov=. --cov-report=term-missing
+```
+
+```bash
+pytest -v --cov=. --cov-report=xml:tests/reports/coverage.xml
+```
+
+```bash
+pytest -v --cov=. --cov-report=html:tests/reports/htmlcov
+```
+
+Then open `tests/reports/htmlcov/index.html` in your browser for per-file coverage details.
 
 Notes:
 

@@ -62,6 +62,19 @@ services:
     volumes:
       - ./logs:/app/logs
 
+  tests:
+    build:
+      context: .
+      dockerfile: tests/Dockerfile
+    profiles:
+      - test
+    environment:
+      - LOG_DIR=/tmp/test-logs
+    volumes:
+      - ./tests/reports:/app/tests/reports
+      - ./logs:/app/logs
+    command: ["python", "-m", "pytest", "-v"]
+
 volumes:
   backend_data:
   ocr_cache:
