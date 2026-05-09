@@ -167,6 +167,11 @@ def _result_view(project: dict, backend_url: str):
         if current_idx is not None and pages_data[current_idx].get("line_items"):
             df = pd.DataFrame(pages_data[current_idx]["line_items"])
 
+            # ── Always show SKU as the first column when present ─────────────
+            if "sku" in df.columns:
+                cols = ["sku"] + [c for c in df.columns if c != "sku"]
+                df = df[cols]
+
             if st.button("Add Row", key=f"add_row_{st.session_state.pdf_page}"):
                 logger.debug(
                     "Row added on page %s for project_id=%s.",

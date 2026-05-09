@@ -44,6 +44,11 @@
         "start_anchor": "Description\\s+Quantity\\s+Rate\\s+Amount",
         "stop_anchor": "^Total USD|Please update your system",
         "row_pattern": "^(.*?)\\s+((?:-)?[\\d,]+\\.\\d+)\\s+((?:-)?[\\d,]+\\.\\d+)\\s+((?:-)?[\\d,]+\\.\\d+)$",
-        "columns": ["description", "quantity", "rate", "amount"]
+        "columns": ["description", "quantity", "rate", "amount"],
+        "sku": {
+            "source_field": "description",
+            "pattern": "(?i)^Transport\\s*\\|\\s*Switch Fiber Pair\\b.*?\\bPairs\\s*\\(\\s*(\\d+)\\s*\\)",
+            "group": 1
+        }
     }
 }

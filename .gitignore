@@ -13,13 +13,13 @@ env.bak/
 venv.bak/
 
 # Veryfi / local documents
-documents/*
-!documents/.gitkeep
+# documents/*
+# !documents/.gitkeep
 
 # Output files
-components/ocr/output/*
-!components/ocr/output/.gitkeep
+# components/ocr/output/*
+# !components/ocr/output/.gitkeep
 
 # Log files (runtime artifacts — not committed)
-logs/*
-!logs/.gitkeep
+# logs/*
+# !logs/.gitkeep

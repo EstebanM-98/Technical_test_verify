@@ -20,7 +20,13 @@ class DynamicFormat(BaseFormat):
         self.signature_regex = config.get("signature_regex", "")
         self.header_rules = config.get("header_fields", {})
         self.line_item_rules = config.get("line_items", {})
-        logger.debug("DynamicFormat '%s' created.", self._format_name)
+        # SKU config lives inside line_items for per-format parametric control
+        self.sku_config: Dict[str, Any] | None = self.line_item_rules.get("sku")
+        logger.debug(
+            "DynamicFormat '%s' created. SKU extraction: %s.",
+            self._format_name,
+            "enabled" if self.sku_config else "disabled",
+        )
 
     @property
     def format_name(self) -> str:
@@ -102,23 +108,70 @@ class DynamicFormat(BaseFormat):
                     if current_item:
                         line_items.append(current_item)
 
-                    current_item = {}
+                    # Build item with SKU as the FIRST key so DataFrame
+                    # preserves insertion order and shows it in column 1.
+                    current_item = {"sku": None}  # placeholder; filled below
                     for i, col in enumerate(columns, start=1):
                         val = match.group(i).strip()
                         if col in ("quantity", "rate", "amount"):
                             val = float(val.replace(",", "")) if val else 0.0
                         current_item[col] = val
+
+                    # Resolve SKU from the configured source field
+                    current_item["sku"] = self._extract_sku(current_item)
                 elif current_item:
                     # Overflow line — append to first column (description)
                     first_col = columns[0]
                     current_item[first_col] += " " + line
+                    # Re-evaluate SKU after description is fully assembled
+                    current_item["sku"] = self._extract_sku(current_item)
 
         # Append last item
         if current_item:
             line_items.append(current_item)
 
+        sku_hits = sum(1 for item in line_items if item.get("sku") is not None)
         logger.debug(
-            "Line item extraction complete for format '%s': %d item(s) found.",
-            self._format_name, len(line_items),
+            "Line item extraction complete for format '%s': %d item(s) found, "
+            "%d with SKU resolved.",
+            self._format_name, len(line_items), sku_hits,
         )
         return line_items
+
+    # ─── Private helpers ──────────────────────────────────────────────────────
+
+    def _extract_sku(self, item: Dict[str, Any]) -> str | None:
+        """
+        Extracts the SKU value from a line item using the per-format SKU config.
+
+        Config structure (inside line_items.sku in the JSON config):
+            {
+                "source_field": "description",   # which item field to search
+                "pattern": "<regex>",             # pattern with one capture group
+                "group": 1                        # capture group index (default 1)
+            }
+
+        Returns the matched string, or None when no match or no config.
+        """
+        if not self.sku_config:
+            return None
+
+        source_field = self.sku_config.get("source_field", "description")
+        pattern = self.sku_config.get("pattern", "")
+        group = self.sku_config.get("group", 1)
+
+        source_value = item.get(source_field, "")
+        if not source_value or not pattern:
+            return None
+
+        match = re.search(pattern, str(source_value))
+        if match:
+            sku = match.group(group).strip()
+            logger.debug("SKU resolved: '%s' from field '%s'.", sku, source_field)
+            return sku
+
+        logger.debug(
+            "SKU not matched for item (source_field='%s', value='%.60s...').",
+            source_field, str(source_value),
+        )
+        return None
