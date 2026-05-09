@@ -13,8 +13,13 @@ from utils.styles import inject_css
 from views.login import login_view
 from views.dashboard import dashboard_view
 from views.project import project_view
+from logger import get_logger
+
+logger = get_logger(__name__, "frontend.log")
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+
+logger.info("Frontend started. Backend URL: %s", BACKEND_URL)
 
 inject_css()
 
@@ -31,8 +36,15 @@ for _key, _default in [
 
 # ─── Router ──────────────────────────────────────────────────────────────────
 if not st.session_state.user:
+    logger.debug("No active session — rendering login view.")
     login_view(BACKEND_URL)
 elif not st.session_state.current_project:
+    logger.debug("User='%s' logged in — rendering dashboard.", st.session_state.user.get("username"))
     dashboard_view(BACKEND_URL)
 else:
+    logger.debug(
+        "User='%s' opened project_id=%s — rendering project view.",
+        st.session_state.user.get("username"),
+        st.session_state.current_project,
+    )
     project_view(BACKEND_URL)

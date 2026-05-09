@@ -9,6 +9,8 @@ services:
       - "8001:8001"
     env_file:
       - .env
+    volumes:
+      - ./logs:/app/logs
 
   extractor:
     build:
@@ -16,6 +18,8 @@ services:
       dockerfile: components/extractor/Dockerfile
     ports:
       - "8002:8002"
+    volumes:
+      - ./logs:/app/logs
 
   validator:
     build:
@@ -23,6 +27,8 @@ services:
       dockerfile: components/validator/Dockerfile
     ports:
       - "8003:8003"
+    volumes:
+      - ./logs:/app/logs
 
   backend:
     build:
@@ -40,6 +46,7 @@ services:
       - validator
     volumes:
       - backend_data:/app/data
+      - ./logs:/app/logs
 
   frontend:
     build:
@@ -51,6 +58,8 @@ services:
       - BACKEND_URL=http://backend:8000
     depends_on:
       - backend
+    volumes:
+      - ./logs:/app/logs
 
 volumes:
   backend_data:

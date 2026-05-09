@@ -19,3 +19,7 @@ documents/*
 # Output files
 components/ocr/output/*
 !components/ocr/output/.gitkeep
+
+# Log files (runtime artifacts — not committed)
+logs/*
+!logs/.gitkeep

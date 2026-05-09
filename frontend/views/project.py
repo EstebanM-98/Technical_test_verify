@@ -5,21 +5,33 @@ import pandas as pd
 
 from utils.styles import display_logo
 from utils.pdf_renderer import display_pdf
+from logger import get_logger
+
+logger = get_logger(__name__, "frontend.log")
 
 
 def project_view(backend_url: str):
     display_logo(sidebar=True)
     if st.sidebar.button("Back to Dashboard"):
+        logger.info(
+            "User '%s' returned to dashboard from project_id=%s.",
+            st.session_state.user.get("username"),
+            st.session_state.current_project,
+        )
         st.session_state.current_project = None
         st.session_state.pdf_bytes = None
         st.session_state.extracted_data = None
         st.rerun()
 
+    project_id = st.session_state.current_project
+    logger.debug("Rendering project view for project_id=%s.", project_id)
+
     try:
-        p_res = httpx.get(f"{backend_url}/projects/{st.session_state.current_project}")
+        p_res = httpx.get(f"{backend_url}/projects/{project_id}")
         project = p_res.json()
-    except Exception as e:
-        st.error(f"Cannot load project: {e}")
+    except Exception:
+        logger.exception("Cannot load project_id=%s.", project_id)
+        st.error("Cannot load project.")
         return
 
     st.title(f"Project: {project['name']}")
@@ -38,22 +50,42 @@ def _upload_view(project: dict, backend_url: str):
     if uploaded_file:
         st.session_state.pdf_bytes = uploaded_file.getvalue()
         if st.button("Run (OCR + Extractor)", type="primary"):
+            logger.info(
+                "Pipeline triggered for project_id=%s, file='%s' (%d bytes).",
+                project["id"], uploaded_file.name, len(st.session_state.pdf_bytes),
+            )
             with st.spinner("Processing document…"):
                 try:
                     res = httpx.post(
                         f"{backend_url}/projects/{project['id']}/process",
-                        files={"file": (uploaded_file.name, st.session_state.pdf_bytes, "application/pdf")},
+                        files={
+                            "file": (
+                                uploaded_file.name,
+                                st.session_state.pdf_bytes,
+                                "application/pdf",
+                            )
+                        },
                         timeout=120.0,
                     )
                     if res.status_code == 200:
                         st.session_state.extracted_data = res.json()["data"]
                         st.session_state.pdf_page = 0
+                        logger.info(
+                            "Pipeline successful for project_id=%s.", project["id"]
+                        )
                         st.success("Processing successful!")
                         st.rerun()
                     else:
+                        logger.error(
+                            "Pipeline error for project_id=%s: HTTP %s — %s",
+                            project["id"], res.status_code, res.text,
+                        )
                         st.error(f"Processing error: {res.text}")
-                except Exception as e:
-                    st.error(f"Cannot reach backend: {e}")
+                except Exception:
+                    logger.exception(
+                        "Cannot reach backend during pipeline for project_id=%s.", project["id"]
+                    )
+                    st.error("Cannot reach backend.")
 
 
 # ─── Result View ─────────────────────────────────────────────────────────────
@@ -81,14 +113,24 @@ def _result_view(project: dict, backend_url: str):
 
     # Auto re-fetch PDF bytes if lost (e.g. after browser refresh within session)
     if not st.session_state.pdf_bytes:
+        logger.debug("PDF bytes missing in session — re-fetching for project_id=%s.", project["id"])
         try:
             pdf_res = httpx.get(f"{backend_url}/projects/{project['id']}/pdf", timeout=30.0)
             if pdf_res.status_code == 200:
                 st.session_state.pdf_bytes = pdf_res.content
+                logger.debug(
+                    "PDF re-fetched: %d bytes for project_id=%s.",
+                    len(pdf_res.content), project["id"],
+                )
             else:
+                logger.warning(
+                    "Could not re-fetch PDF for project_id=%s: HTTP %s.",
+                    project["id"], pdf_res.status_code,
+                )
                 st.warning(f"Could not retrieve PDF from backend (HTTP {pdf_res.status_code})")
-        except Exception as e:
-            st.warning(f"Could not load PDF: {e}")
+        except Exception:
+            logger.exception("Error re-fetching PDF for project_id=%s.", project["id"])
+            st.warning("Could not load PDF.")
 
     col_pdf, col_data = st.columns([1, 1])
 
@@ -115,16 +157,26 @@ def _result_view(project: dict, backend_url: str):
 
     with col_data:
         current_idx = next(
-            (i for i, p in enumerate(pages_data) if p["page_number"] == st.session_state.pdf_page + 1),
+            (
+                i
+                for i, p in enumerate(pages_data)
+                if p["page_number"] == st.session_state.pdf_page + 1
+            ),
             None,
         )
         if current_idx is not None and pages_data[current_idx].get("line_items"):
             df = pd.DataFrame(pages_data[current_idx]["line_items"])
 
             if st.button("Add Row", key=f"add_row_{st.session_state.pdf_page}"):
+                logger.debug(
+                    "Row added on page %s for project_id=%s.",
+                    st.session_state.pdf_page + 1, project["id"],
+                )
                 new_row = {col: "" for col in df.columns}
                 df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-                st.session_state.extracted_data["pages"][current_idx]["line_items"] = df.to_dict("records")
+                st.session_state.extracted_data["pages"][current_idx]["line_items"] = (
+                    df.to_dict("records")
+                )
                 st.rerun()
 
             edited_df = st.data_editor(
