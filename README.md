@@ -165,7 +165,7 @@ Technical_test_verify-master/
 | `requirements.txt` | Minimal root dependency file containing base shared dependencies (`veryfi` and `python-dotenv`). For the full application, each service has its own requirements file. |
 | `TESTING.md` | Detailed guide for test execution, scope, and validation artifacts. |
 | `tests/` | Automated test suite organized by layer (`unit` and `api`), shared fixtures, and dockerized test tooling. |
-| `documents/` | Placeholder folder for local documents. The `.gitignore` keeps the folder but ignores document contents. |
+| `documents/` | End-user documentation folder. It stores the user manual and the architecture diagram for the project. 
 
 ### Tests Directory
 
@@ -180,6 +180,15 @@ The `tests/` directory is structured to keep test execution deterministic, isola
 | `tests/unit/` | Unit tests for isolated logic (parsing, validation rules, frontend utilities, service helpers). |
 | `tests/api/` | API-level tests for FastAPI routes and orchestration behavior with mocked dependencies. |
 | `tests/reports/` | Optional generated artifacts such as `junit.xml` and execution logs when explicitly requested. |
+
+### Documents Directory
+
+The `documents/` folder is meant for user-facing documentation assets, not application data.
+
+| Path | Purpose |
+|---|---|
+| `documents/documentation_technical_proof.pdf` | User manual and documentation for the project. |
+| `documents/smart_invoice_extractor_overview.svg` | Diagram that summarizes the system structure and flow. |
 
 ### Backend Directory
 
