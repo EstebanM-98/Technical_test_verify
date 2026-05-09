@@ -29,6 +29,40 @@ Run only API-layer tests:
 pytest tests/api -v
 ```
 
+## How a reviewer should validate this suite
+
+1. Create and activate a clean virtual environment.
+2. Install dependencies from requirements.txt and requirements-dev.txt.
+3. Run the full suite with `pytest -v`.
+4. Confirm the final summary shows all tests passing.
+
+Expected quick checks:
+
+- Collected tests should be deterministic across runs.
+- No Docker services are required.
+- No external Veryfi/API credentials are required.
+- No real `.env` values are required for test execution.
+
+## Where to see test results
+
+Primary source of truth:
+
+- Pytest terminal summary (passed/failed/skipped/errors).
+
+Recommended artifact outputs for formal validation:
+
+```bash
+pytest -v --junitxml=tests/reports/junit.xml
+```
+
+PowerShell run log capture (optional):
+
+```bash
+pytest -v | Tee-Object -FilePath tests/reports/pytest-run.log
+```
+
+These files can be shared as evidence in CI/CD or manual QA reviews.
+
 ## Components covered
 
 - Shared logger: logger.py
