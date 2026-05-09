@@ -265,3 +265,228 @@ fastapi.exceptions.HTTPException
 2026-05-09 01:55:43 | DEBUG    | backend.api | get_project | Fetching project_id=2
 2026-05-09 01:55:43 | DEBUG    | backend.api | get_project | Project fetched: project_id=2, has_data=True
 2026-05-09 01:55:43 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:07 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:07 | INFO     | backend.api | get_projects | Returning 2 project(s) for user_id=1
+2026-05-09 01:58:07 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:11 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:11 | INFO     | backend.api | get_projects | Returning 2 project(s) for user_id=1
+2026-05-09 01:58:11 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:11 | INFO     | backend.api | delete_project | Delete requested for project_id=2
+2026-05-09 01:58:11 | DEBUG    | backend.api | delete_project | Deleted PDF file: /app/data/uploads/project_2.pdf
+2026-05-09 01:58:11 | INFO     | backend.api | delete_project | Project deleted: project_id=2
+2026-05-09 01:58:11 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:11 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:11 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 01:58:11 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:13 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:13 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 01:58:13 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:13 | DEBUG    | backend.api | get_project | Fetching project_id=1
+2026-05-09 01:58:13 | DEBUG    | backend.api | get_project | Project fetched: project_id=1, has_data=True
+2026-05-09 01:58:13 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:13 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=1, path=/app/data/uploads/project_1.pdf
+2026-05-09 01:58:13 | DEBUG    | backend.api | get_project_pdf | Serving PDF for project_id=1
+2026-05-09 01:58:13 | DEBUG    | backend.api | get_project | Fetching project_id=1
+2026-05-09 01:58:13 | DEBUG    | backend.api | get_project | Project fetched: project_id=1, has_data=True
+2026-05-09 01:58:13 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:24 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:24 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 01:58:24 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:26 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:26 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 01:58:26 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:27 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:27 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 01:58:27 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:31 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:31 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 01:58:31 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:31 | INFO     | backend.api | update_project | Updating project_id=1 with new name='project1'
+2026-05-09 01:58:31 | INFO     | backend.api | update_project | Project updated successfully: project_id=1
+2026-05-09 01:58:31 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:32 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:32 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 01:58:32 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:36 | INFO     | backend.api | create_project | Creating project name='project2' for user_id=1
+2026-05-09 01:58:36 | INFO     | backend.api | create_project | Project created: id=2, name='project2', owner_id=1
+2026-05-09 01:58:36 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:36 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:36 | INFO     | backend.api | get_projects | Returning 2 project(s) for user_id=1
+2026-05-09 01:58:36 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:41 | INFO     | backend.api | create_project | Creating project name='project3' for user_id=1
+2026-05-09 01:58:41 | INFO     | backend.api | create_project | Project created: id=3, name='project3', owner_id=1
+2026-05-09 01:58:41 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:41 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:41 | INFO     | backend.api | get_projects | Returning 3 project(s) for user_id=1
+2026-05-09 01:58:41 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:45 | INFO     | backend.api | create_project | Creating project name='project4' for user_id=1
+2026-05-09 01:58:45 | INFO     | backend.api | create_project | Project created: id=4, name='project4', owner_id=1
+2026-05-09 01:58:45 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:45 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:45 | INFO     | backend.api | get_projects | Returning 4 project(s) for user_id=1
+2026-05-09 01:58:45 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:48 | INFO     | backend.api | create_project | Creating project name='project5' for user_id=1
+2026-05-09 01:58:48 | INFO     | backend.api | create_project | Project created: id=5, name='project5', owner_id=1
+2026-05-09 01:58:48 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:48 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:48 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 01:58:48 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:50 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:58:50 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 01:58:50 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:50 | DEBUG    | backend.api | get_project | Fetching project_id=2
+2026-05-09 01:58:50 | DEBUG    | backend.api | get_project | Project fetched: project_id=2, has_data=False
+2026-05-09 01:58:50 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:50 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=2, path=/app/data/uploads/project_2.pdf
+2026-05-09 01:58:50 | WARNING  | backend.api | get_project_pdf | PDF not found for project_id=2 at path=/app/data/uploads/project_2.pdf
+2026-05-09 01:58:51 | DEBUG    | backend.api | get_project | Fetching project_id=2
+2026-05-09 01:58:51 | DEBUG    | backend.api | get_project | Project fetched: project_id=2, has_data=False
+2026-05-09 01:58:51 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:55 | DEBUG    | backend.api | get_project | Fetching project_id=2
+2026-05-09 01:58:55 | DEBUG    | backend.api | get_project | Project fetched: project_id=2, has_data=False
+2026-05-09 01:58:55 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:56 | DEBUG    | backend.api | get_project | Fetching project_id=2
+2026-05-09 01:58:56 | DEBUG    | backend.api | get_project | Project fetched: project_id=2, has_data=False
+2026-05-09 01:58:56 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:58:56 | INFO     | backend.api | process_project | Processing started: project_id=2, filename='synth-switch_v5-7.pdf', content_type='application/pdf'
+2026-05-09 01:58:56 | DEBUG    | backend.api | process_project | File read into memory: 270693 bytes
+2026-05-09 01:58:56 | DEBUG    | backend.api | process_project | PDF saved to disk: /app/data/uploads/project_2.pdf
+2026-05-09 01:58:56 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr:8001/process | Extractor: http://extractor:8002/extract | Validator: http://validator:8003/validate
+2026-05-09 01:58:56 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='synth-switch_v5-7.pdf' (270693 bytes)
+2026-05-09 01:59:00 | INFO     | backend.services | run_pipeline | OCR completed in 3.69s — extracted 1919 characters.
+2026-05-09 01:59:00 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 01:59:00 | INFO     | backend.services | run_pipeline | Extractor completed in 0.08s — format='Switch Invoice'.
+2026-05-09 01:59:00 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 01:59:00 | INFO     | backend.services | run_pipeline | Validator completed in 0.04s — is_valid=True.
+2026-05-09 01:59:00 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='synth-switch_v5-7.pdf'.
+2026-05-09 01:59:00 | INFO     | backend.api | process_project | Pipeline completed for project_id=2 in 3.83s
+2026-05-09 01:59:00 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:00 | DEBUG    | backend.api | get_project | Fetching project_id=2
+2026-05-09 01:59:00 | DEBUG    | backend.api | get_project | Project fetched: project_id=2, has_data=True
+2026-05-09 01:59:00 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:17 | DEBUG    | backend.api | get_project | Fetching project_id=2
+2026-05-09 01:59:17 | DEBUG    | backend.api | get_project | Project fetched: project_id=2, has_data=True
+2026-05-09 01:59:17 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:32 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:59:32 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 01:59:32 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:34 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 01:59:34 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 01:59:34 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:34 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-09 01:59:34 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=False
+2026-05-09 01:59:34 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:34 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=3, path=/app/data/uploads/project_3.pdf
+2026-05-09 01:59:34 | WARNING  | backend.api | get_project_pdf | PDF not found for project_id=3 at path=/app/data/uploads/project_3.pdf
+2026-05-09 01:59:35 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-09 01:59:35 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=False
+2026-05-09 01:59:35 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:40 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-09 01:59:40 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=False
+2026-05-09 01:59:40 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:41 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-09 01:59:41 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=False
+2026-05-09 01:59:41 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:41 | INFO     | backend.api | process_project | Processing started: project_id=3, filename='synth-switch_v5-14.pdf', content_type='application/pdf'
+2026-05-09 01:59:41 | DEBUG    | backend.api | process_project | File read into memory: 291238 bytes
+2026-05-09 01:59:41 | DEBUG    | backend.api | process_project | PDF saved to disk: /app/data/uploads/project_3.pdf
+2026-05-09 01:59:41 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr:8001/process | Extractor: http://extractor:8002/extract | Validator: http://validator:8003/validate
+2026-05-09 01:59:41 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='synth-switch_v5-14.pdf' (291238 bytes)
+2026-05-09 01:59:45 | INFO     | backend.services | run_pipeline | OCR completed in 3.69s — extracted 4653 characters.
+2026-05-09 01:59:45 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 01:59:45 | INFO     | backend.services | run_pipeline | Extractor completed in 0.07s — format='Switch Invoice'.
+2026-05-09 01:59:45 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 01:59:45 | INFO     | backend.services | run_pipeline | Validator completed in 0.01s — is_valid=True.
+2026-05-09 01:59:45 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='synth-switch_v5-14.pdf'.
+2026-05-09 01:59:45 | INFO     | backend.api | process_project | Pipeline completed for project_id=3 in 3.81s
+2026-05-09 01:59:45 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:45 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-09 01:59:45 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=True
+2026-05-09 01:59:45 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:55 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-09 01:59:55 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=True
+2026-05-09 01:59:55 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 01:59:56 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-09 01:59:56 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=True
+2026-05-09 01:59:56 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:03 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 02:00:03 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 02:00:03 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:06 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 02:00:07 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 02:00:07 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:07 | DEBUG    | backend.api | get_project | Fetching project_id=4
+2026-05-09 02:00:07 | DEBUG    | backend.api | get_project | Project fetched: project_id=4, has_data=False
+2026-05-09 02:00:07 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:07 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=4, path=/app/data/uploads/project_4.pdf
+2026-05-09 02:00:07 | WARNING  | backend.api | get_project_pdf | PDF not found for project_id=4 at path=/app/data/uploads/project_4.pdf
+2026-05-09 02:00:07 | DEBUG    | backend.api | get_project | Fetching project_id=4
+2026-05-09 02:00:07 | DEBUG    | backend.api | get_project | Project fetched: project_id=4, has_data=False
+2026-05-09 02:00:07 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:11 | DEBUG    | backend.api | get_project | Fetching project_id=4
+2026-05-09 02:00:11 | DEBUG    | backend.api | get_project | Project fetched: project_id=4, has_data=False
+2026-05-09 02:00:11 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:13 | DEBUG    | backend.api | get_project | Fetching project_id=4
+2026-05-09 02:00:13 | DEBUG    | backend.api | get_project | Project fetched: project_id=4, has_data=False
+2026-05-09 02:00:13 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:13 | INFO     | backend.api | process_project | Processing started: project_id=4, filename='synth-switch_v5-68.pdf', content_type='application/pdf'
+2026-05-09 02:00:13 | DEBUG    | backend.api | process_project | File read into memory: 289774 bytes
+2026-05-09 02:00:13 | DEBUG    | backend.api | process_project | PDF saved to disk: /app/data/uploads/project_4.pdf
+2026-05-09 02:00:13 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr:8001/process | Extractor: http://extractor:8002/extract | Validator: http://validator:8003/validate
+2026-05-09 02:00:13 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='synth-switch_v5-68.pdf' (289774 bytes)
+2026-05-09 02:00:18 | INFO     | backend.services | run_pipeline | OCR completed in 4.62s — extracted 4657 characters.
+2026-05-09 02:00:18 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 02:00:18 | INFO     | backend.services | run_pipeline | Extractor completed in 0.08s — format='Switch Invoice'.
+2026-05-09 02:00:18 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 02:00:18 | INFO     | backend.services | run_pipeline | Validator completed in 0.01s — is_valid=True.
+2026-05-09 02:00:18 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='synth-switch_v5-68.pdf'.
+2026-05-09 02:00:18 | INFO     | backend.api | process_project | Pipeline completed for project_id=4 in 4.74s
+2026-05-09 02:00:18 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:18 | DEBUG    | backend.api | get_project | Fetching project_id=4
+2026-05-09 02:00:18 | DEBUG    | backend.api | get_project | Project fetched: project_id=4, has_data=True
+2026-05-09 02:00:18 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:24 | DEBUG    | backend.api | get_project | Fetching project_id=4
+2026-05-09 02:00:24 | DEBUG    | backend.api | get_project | Project fetched: project_id=4, has_data=True
+2026-05-09 02:00:24 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:25 | DEBUG    | backend.api | get_project | Fetching project_id=4
+2026-05-09 02:00:25 | DEBUG    | backend.api | get_project | Project fetched: project_id=4, has_data=True
+2026-05-09 02:00:25 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:34 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 02:00:34 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 02:00:34 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:37 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 02:00:37 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 02:00:37 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:37 | DEBUG    | backend.api | get_project | Fetching project_id=5
+2026-05-09 02:00:37 | DEBUG    | backend.api | get_project | Project fetched: project_id=5, has_data=False
+2026-05-09 02:00:37 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:37 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=5, path=/app/data/uploads/project_5.pdf
+2026-05-09 02:00:37 | WARNING  | backend.api | get_project_pdf | PDF not found for project_id=5 at path=/app/data/uploads/project_5.pdf
+2026-05-09 02:00:37 | DEBUG    | backend.api | get_project | Fetching project_id=5
+2026-05-09 02:00:37 | DEBUG    | backend.api | get_project | Project fetched: project_id=5, has_data=False
+2026-05-09 02:00:37 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:40 | DEBUG    | backend.api | get_project | Fetching project_id=5
+2026-05-09 02:00:40 | DEBUG    | backend.api | get_project | Project fetched: project_id=5, has_data=False
+2026-05-09 02:00:40 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:42 | DEBUG    | backend.api | get_project | Fetching project_id=5
+2026-05-09 02:00:42 | DEBUG    | backend.api | get_project | Project fetched: project_id=5, has_data=False
+2026-05-09 02:00:42 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:42 | INFO     | backend.api | process_project | Processing started: project_id=5, filename='synth-switch_v5-79.pdf', content_type='application/pdf'
+2026-05-09 02:00:42 | DEBUG    | backend.api | process_project | File read into memory: 311083 bytes
+2026-05-09 02:00:42 | DEBUG    | backend.api | process_project | PDF saved to disk: /app/data/uploads/project_5.pdf
+2026-05-09 02:00:42 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr:8001/process | Extractor: http://extractor:8002/extract | Validator: http://validator:8003/validate
+2026-05-09 02:00:42 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='synth-switch_v5-79.pdf' (311083 bytes)
+2026-05-09 02:00:46 | INFO     | backend.services | run_pipeline | OCR completed in 4.77s — extracted 7582 characters.
+2026-05-09 02:00:46 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 02:00:47 | INFO     | backend.services | run_pipeline | Extractor completed in 0.10s — format='Switch Invoice'.
+2026-05-09 02:00:47 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 02:00:47 | INFO     | backend.services | run_pipeline | Validator completed in 0.01s — is_valid=True.
+2026-05-09 02:00:47 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='synth-switch_v5-79.pdf'.
+2026-05-09 02:00:47 | INFO     | backend.api | process_project | Pipeline completed for project_id=5 in 4.91s
+2026-05-09 02:00:47 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:00:47 | DEBUG    | backend.api | get_project | Fetching project_id=5
+2026-05-09 02:00:47 | DEBUG    | backend.api | get_project | Project fetched: project_id=5, has_data=True
+2026-05-09 02:00:47 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 02:01:14 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 02:01:14 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 02:01:14 | DEBUG    | backend.database | get_db | Database session closed.

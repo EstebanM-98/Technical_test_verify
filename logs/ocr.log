@@ -57,3 +57,51 @@
 2026-05-09 01:55:42 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'synth-switch_v5-4.pdf': 6c462a4a48fe...
 2026-05-09 01:55:42 | INFO     | components.ocr.file_utils | check_cache_by_hash | Cache HIT for hash '6c462a4a48fe...' (original file: 'synth-switch_v5-4.pdf', processed: 2026-05-09T01:54:47.485989+00:00).
 2026-05-09 01:55:42 | INFO     | components.ocr.api | process_pdf | Cache HIT — skipping Veryfi API call for 'synth-switch_v5-4.pdf'. Returning cached text (1828 chars).
+2026-05-09 01:58:56 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='synth-switch_v5-7.pdf', content_type='application/pdf'
+2026-05-09 01:58:56 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 270693 bytes
+2026-05-09 01:58:56 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'synth-switch_v5-7.pdf': 8d0e28afe6e9...
+2026-05-09 01:58:56 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash '8d0e28afe6e9...'.
+2026-05-09 01:58:56 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: /tmp/tmpytnsjbas.pdf
+2026-05-09 01:58:56 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: '/tmp/tmpytnsjbas.pdf'
+2026-05-09 01:58:56 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/tmpytnsjbas.pdf'
+2026-05-09 01:59:00 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['account_number', 'bill_to', 'cashback', 'category', 'country_code', 'created_date', 'currency_code', 'date', 'delivery_date', 'discount', 'document_reference_number', 'document_title', 'document_type', 'due_date', 'duplicate_of', 'external_id', 'id', 'img_file_name', 'img_thumbnail_url', 'img_url', 'insurance', 'invoice_number', 'is_duplicate', 'is_money_in', 'line_items', 'meta', 'notes', 'ocr_text', 'order_date', 'payment', 'pdf_url', 'purchase_order_number', 'reference_number', 'rounding', 'service_end_date', 'service_start_date', 'ship_date', 'ship_to', 'shipping', 'store_number', 'subtotal', 'tags', 'tax', 'tax_lines', 'tip', 'total', 'total_weight', 'tracking_number', 'updated_date', 'vendor']
+2026-05-09 01:59:00 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from '/tmp/tmpytnsjbas.pdf': 1919 characters.
+2026-05-09 01:59:00 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='8d0e28afe6e9...', file='synth-switch_v5-7.pdf', chars=1919.
+2026-05-09 01:59:00 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'synth-switch_v5-7.pdf': 1919 characters extracted.
+2026-05-09 01:59:00 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmpytnsjbas.pdf
+2026-05-09 01:59:41 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='synth-switch_v5-14.pdf', content_type='application/pdf'
+2026-05-09 01:59:41 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 291238 bytes
+2026-05-09 01:59:41 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'synth-switch_v5-14.pdf': e47528e904e8...
+2026-05-09 01:59:41 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'e47528e904e8...'.
+2026-05-09 01:59:41 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: /tmp/tmpij_l4ic1.pdf
+2026-05-09 01:59:41 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: '/tmp/tmpij_l4ic1.pdf'
+2026-05-09 01:59:41 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/tmpij_l4ic1.pdf'
+2026-05-09 01:59:45 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['account_number', 'bill_to', 'cashback', 'category', 'country_code', 'created_date', 'currency_code', 'date', 'delivery_date', 'discount', 'document_reference_number', 'document_title', 'document_type', 'due_date', 'duplicate_of', 'external_id', 'id', 'img_file_name', 'img_thumbnail_url', 'img_url', 'insurance', 'invoice_number', 'is_duplicate', 'is_money_in', 'line_items', 'meta', 'notes', 'ocr_text', 'order_date', 'payment', 'pdf_url', 'purchase_order_number', 'reference_number', 'rounding', 'service_end_date', 'service_start_date', 'ship_date', 'ship_to', 'shipping', 'store_number', 'subtotal', 'tags', 'tax', 'tax_lines', 'tip', 'total', 'total_weight', 'tracking_number', 'updated_date', 'vendor']
+2026-05-09 01:59:45 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from '/tmp/tmpij_l4ic1.pdf': 4653 characters.
+2026-05-09 01:59:45 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='e47528e904e8...', file='synth-switch_v5-14.pdf', chars=4653.
+2026-05-09 01:59:45 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'synth-switch_v5-14.pdf': 4653 characters extracted.
+2026-05-09 01:59:45 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmpij_l4ic1.pdf
+2026-05-09 02:00:13 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='synth-switch_v5-68.pdf', content_type='application/pdf'
+2026-05-09 02:00:13 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 289774 bytes
+2026-05-09 02:00:13 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'synth-switch_v5-68.pdf': dbc331624093...
+2026-05-09 02:00:13 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'dbc331624093...'.
+2026-05-09 02:00:13 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: /tmp/tmp4awdat16.pdf
+2026-05-09 02:00:13 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: '/tmp/tmp4awdat16.pdf'
+2026-05-09 02:00:13 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/tmp4awdat16.pdf'
+2026-05-09 02:00:18 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['account_number', 'bill_to', 'cashback', 'category', 'country_code', 'created_date', 'currency_code', 'date', 'delivery_date', 'discount', 'document_reference_number', 'document_title', 'document_type', 'due_date', 'duplicate_of', 'external_id', 'id', 'img_file_name', 'img_thumbnail_url', 'img_url', 'insurance', 'invoice_number', 'is_duplicate', 'is_money_in', 'line_items', 'meta', 'notes', 'ocr_text', 'order_date', 'payment', 'pdf_url', 'purchase_order_number', 'reference_number', 'rounding', 'service_end_date', 'service_start_date', 'ship_date', 'ship_to', 'shipping', 'store_number', 'subtotal', 'tags', 'tax', 'tax_lines', 'tip', 'total', 'total_weight', 'tracking_number', 'updated_date', 'vendor']
+2026-05-09 02:00:18 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from '/tmp/tmp4awdat16.pdf': 4657 characters.
+2026-05-09 02:00:18 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='dbc331624093...', file='synth-switch_v5-68.pdf', chars=4657.
+2026-05-09 02:00:18 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'synth-switch_v5-68.pdf': 4657 characters extracted.
+2026-05-09 02:00:18 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmp4awdat16.pdf
+2026-05-09 02:00:42 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='synth-switch_v5-79.pdf', content_type='application/pdf'
+2026-05-09 02:00:42 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 311083 bytes
+2026-05-09 02:00:42 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'synth-switch_v5-79.pdf': 0cc3693f4b62...
+2026-05-09 02:00:42 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash '0cc3693f4b62...'.
+2026-05-09 02:00:42 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: /tmp/tmpc2nsuzeu.pdf
+2026-05-09 02:00:42 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: '/tmp/tmpc2nsuzeu.pdf'
+2026-05-09 02:00:42 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/tmpc2nsuzeu.pdf'
+2026-05-09 02:00:46 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['account_number', 'bill_to', 'cashback', 'category', 'country_code', 'created_date', 'currency_code', 'date', 'delivery_date', 'discount', 'document_reference_number', 'document_title', 'document_type', 'due_date', 'duplicate_of', 'external_id', 'id', 'img_file_name', 'img_thumbnail_url', 'img_url', 'insurance', 'invoice_number', 'is_duplicate', 'is_money_in', 'line_items', 'meta', 'notes', 'ocr_text', 'order_date', 'payment', 'pdf_url', 'purchase_order_number', 'reference_number', 'rounding', 'service_end_date', 'service_start_date', 'ship_date', 'ship_to', 'shipping', 'store_number', 'subtotal', 'tags', 'tax', 'tax_lines', 'tip', 'total', 'total_weight', 'tracking_number', 'updated_date', 'vendor']
+2026-05-09 02:00:46 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from '/tmp/tmpc2nsuzeu.pdf': 7582 characters.
+2026-05-09 02:00:46 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='0cc3693f4b62...', file='synth-switch_v5-79.pdf', chars=7582.
+2026-05-09 02:00:46 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'synth-switch_v5-79.pdf': 7582 characters extracted.
+2026-05-09 02:00:46 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmpc2nsuzeu.pdf

@@ -250,3 +250,239 @@
 2026-05-09 01:55:43 | DEBUG    | views.project | project_view | Rendering project view for project_id=2.
 2026-05-09 01:55:43 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (271239 bytes).
 2026-05-09 01:55:43 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 240583 bytes PNG.
+2026-05-09 01:58:05 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:05 | DEBUG    | __main__ | <module> | User='admin' opened project_id=2 — rendering project view.
+2026-05-09 01:58:06 | INFO     | views.project | project_view | User 'admin' returned to dashboard from project_id=2.
+2026-05-09 01:58:06 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:06 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:07 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:07 | INFO     | views.dashboard | dashboard_view | Loaded 2 project(s) for user 'admin'.
+2026-05-09 01:58:10 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:10 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:11 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:11 | INFO     | views.dashboard | dashboard_view | Loaded 2 project(s) for user 'admin'.
+2026-05-09 01:58:11 | WARNING  | views.dashboard | dashboard_view | User 'admin' deleting project_id=2 (name='fwe').
+2026-05-09 01:58:11 | INFO     | views.dashboard | dashboard_view | Project_id=2 deleted.
+2026-05-09 01:58:11 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:11 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:11 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:11 | INFO     | views.dashboard | dashboard_view | Loaded 1 project(s) for user 'admin'.
+2026-05-09 01:58:12 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:12 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:13 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:13 | INFO     | views.dashboard | dashboard_view | Loaded 1 project(s) for user 'admin'.
+2026-05-09 01:58:13 | INFO     | views.dashboard | dashboard_view | User 'admin' opening project_id=1.
+2026-05-09 01:58:13 | DEBUG    | views.dashboard | _open_project | Loading project data for project_id=1.
+2026-05-09 01:58:13 | DEBUG    | views.dashboard | _open_project | Project data loaded for project_id=1: has_extracted_data=True.
+2026-05-09 01:58:13 | DEBUG    | views.dashboard | _open_project | Loading PDF bytes for project_id=1.
+2026-05-09 01:58:13 | DEBUG    | views.dashboard | _open_project | PDF loaded for project_id=1: 271239 bytes.
+2026-05-09 01:58:13 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:13 | DEBUG    | __main__ | <module> | User='admin' opened project_id=1 — rendering project view.
+2026-05-09 01:58:13 | DEBUG    | views.project | project_view | Rendering project view for project_id=1.
+2026-05-09 01:58:13 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (271239 bytes).
+2026-05-09 01:58:13 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 240583 bytes PNG.
+2026-05-09 01:58:23 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:23 | DEBUG    | __main__ | <module> | User='admin' opened project_id=1 — rendering project view.
+2026-05-09 01:58:24 | INFO     | views.project | project_view | User 'admin' returned to dashboard from project_id=1.
+2026-05-09 01:58:24 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:24 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:24 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:24 | INFO     | views.dashboard | dashboard_view | Loaded 1 project(s) for user 'admin'.
+2026-05-09 01:58:26 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:26 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:26 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:26 | INFO     | views.dashboard | dashboard_view | Loaded 1 project(s) for user 'admin'.
+2026-05-09 01:58:26 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:26 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:27 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:27 | INFO     | views.dashboard | dashboard_view | Loaded 1 project(s) for user 'admin'.
+2026-05-09 01:58:31 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:31 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:31 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:31 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:31 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:31 | INFO     | views.dashboard | dashboard_view | Loaded 1 project(s) for user 'admin'.
+2026-05-09 01:58:31 | INFO     | views.dashboard | dashboard_view | User 'admin' renaming project_id=1 to 'project1'.
+2026-05-09 01:58:31 | INFO     | views.dashboard | dashboard_view | Project_id=1 renamed to 'project1'.
+2026-05-09 01:58:31 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:31 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:32 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:32 | INFO     | views.dashboard | dashboard_view | Loaded 1 project(s) for user 'admin'.
+2026-05-09 01:58:36 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:36 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:36 | INFO     | views.dashboard | dashboard_view | User 'admin' creating project name='project2'.
+2026-05-09 01:58:36 | INFO     | views.dashboard | dashboard_view | Project 'project2' created for user 'admin'.
+2026-05-09 01:58:36 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:36 | INFO     | views.dashboard | dashboard_view | Loaded 2 project(s) for user 'admin'.
+2026-05-09 01:58:41 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:41 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:41 | INFO     | views.dashboard | dashboard_view | User 'admin' creating project name='project3'.
+2026-05-09 01:58:41 | INFO     | views.dashboard | dashboard_view | Project 'project3' created for user 'admin'.
+2026-05-09 01:58:41 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:41 | INFO     | views.dashboard | dashboard_view | Loaded 3 project(s) for user 'admin'.
+2026-05-09 01:58:44 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:44 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:45 | INFO     | views.dashboard | dashboard_view | User 'admin' creating project name='project4'.
+2026-05-09 01:58:45 | INFO     | views.dashboard | dashboard_view | Project 'project4' created for user 'admin'.
+2026-05-09 01:58:45 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:45 | INFO     | views.dashboard | dashboard_view | Loaded 4 project(s) for user 'admin'.
+2026-05-09 01:58:47 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:47 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:48 | INFO     | views.dashboard | dashboard_view | User 'admin' creating project name='project5'.
+2026-05-09 01:58:48 | INFO     | views.dashboard | dashboard_view | Project 'project5' created for user 'admin'.
+2026-05-09 01:58:48 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:48 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 01:58:49 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:49 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:58:50 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:58:50 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 01:58:50 | INFO     | views.dashboard | dashboard_view | User 'admin' opening project_id=2.
+2026-05-09 01:58:50 | DEBUG    | views.dashboard | _open_project | Loading project data for project_id=2.
+2026-05-09 01:58:50 | DEBUG    | views.dashboard | _open_project | Project data loaded for project_id=2: has_extracted_data=False.
+2026-05-09 01:58:50 | DEBUG    | views.dashboard | _open_project | Loading PDF bytes for project_id=2.
+2026-05-09 01:58:50 | DEBUG    | views.dashboard | _open_project | PDF loaded for project_id=2: 0 bytes.
+2026-05-09 01:58:50 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:50 | DEBUG    | __main__ | <module> | User='admin' opened project_id=2 — rendering project view.
+2026-05-09 01:58:51 | DEBUG    | views.project | project_view | Rendering project view for project_id=2.
+2026-05-09 01:58:54 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:54 | DEBUG    | __main__ | <module> | User='admin' opened project_id=2 — rendering project view.
+2026-05-09 01:58:55 | DEBUG    | views.project | project_view | Rendering project view for project_id=2.
+2026-05-09 01:58:56 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:58:56 | DEBUG    | __main__ | <module> | User='admin' opened project_id=2 — rendering project view.
+2026-05-09 01:58:56 | DEBUG    | views.project | project_view | Rendering project view for project_id=2.
+2026-05-09 01:58:56 | INFO     | views.project | _upload_view | Pipeline triggered for project_id=2, file='synth-switch_v5-7.pdf' (270693 bytes).
+2026-05-09 01:59:00 | INFO     | views.project | _upload_view | Pipeline successful for project_id=2.
+2026-05-09 01:59:00 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:00 | DEBUG    | __main__ | <module> | User='admin' opened project_id=2 — rendering project view.
+2026-05-09 01:59:00 | DEBUG    | views.project | project_view | Rendering project view for project_id=2.
+2026-05-09 01:59:00 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (270693 bytes).
+2026-05-09 01:59:01 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 246467 bytes PNG.
+2026-05-09 01:59:16 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:16 | DEBUG    | __main__ | <module> | User='admin' opened project_id=2 — rendering project view.
+2026-05-09 01:59:17 | DEBUG    | views.project | project_view | Rendering project view for project_id=2.
+2026-05-09 01:59:17 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (270693 bytes).
+2026-05-09 01:59:17 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 246467 bytes PNG.
+2026-05-09 01:59:31 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:31 | DEBUG    | __main__ | <module> | User='admin' opened project_id=2 — rendering project view.
+2026-05-09 01:59:31 | INFO     | views.project | project_view | User 'admin' returned to dashboard from project_id=2.
+2026-05-09 01:59:31 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:31 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:59:32 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:59:32 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 01:59:34 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:34 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 01:59:34 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 01:59:34 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 01:59:34 | INFO     | views.dashboard | dashboard_view | User 'admin' opening project_id=3.
+2026-05-09 01:59:34 | DEBUG    | views.dashboard | _open_project | Loading project data for project_id=3.
+2026-05-09 01:59:34 | DEBUG    | views.dashboard | _open_project | Project data loaded for project_id=3: has_extracted_data=False.
+2026-05-09 01:59:34 | DEBUG    | views.dashboard | _open_project | Loading PDF bytes for project_id=3.
+2026-05-09 01:59:34 | DEBUG    | views.dashboard | _open_project | PDF loaded for project_id=3: 0 bytes.
+2026-05-09 01:59:34 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:34 | DEBUG    | __main__ | <module> | User='admin' opened project_id=3 — rendering project view.
+2026-05-09 01:59:35 | DEBUG    | views.project | project_view | Rendering project view for project_id=3.
+2026-05-09 01:59:39 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:39 | DEBUG    | __main__ | <module> | User='admin' opened project_id=3 — rendering project view.
+2026-05-09 01:59:40 | DEBUG    | views.project | project_view | Rendering project view for project_id=3.
+2026-05-09 01:59:41 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:41 | DEBUG    | __main__ | <module> | User='admin' opened project_id=3 — rendering project view.
+2026-05-09 01:59:41 | DEBUG    | views.project | project_view | Rendering project view for project_id=3.
+2026-05-09 01:59:41 | INFO     | views.project | _upload_view | Pipeline triggered for project_id=3, file='synth-switch_v5-14.pdf' (291238 bytes).
+2026-05-09 01:59:45 | INFO     | views.project | _upload_view | Pipeline successful for project_id=3.
+2026-05-09 01:59:45 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:45 | DEBUG    | __main__ | <module> | User='admin' opened project_id=3 — rendering project view.
+2026-05-09 01:59:45 | DEBUG    | views.project | project_view | Rendering project view for project_id=3.
+2026-05-09 01:59:45 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (291238 bytes).
+2026-05-09 01:59:45 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 325024 bytes PNG.
+2026-05-09 01:59:55 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:55 | DEBUG    | __main__ | <module> | User='admin' opened project_id=3 — rendering project view.
+2026-05-09 01:59:55 | DEBUG    | views.project | project_view | Rendering project view for project_id=3.
+2026-05-09 01:59:55 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 01:59:55 | DEBUG    | __main__ | <module> | User='admin' opened project_id=3 — rendering project view.
+2026-05-09 01:59:56 | DEBUG    | views.project | project_view | Rendering project view for project_id=3.
+2026-05-09 01:59:56 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 2 (291238 bytes).
+2026-05-09 01:59:56 | DEBUG    | utils.pdf_renderer | display_pdf | Page 2 rendered: 238584 bytes PNG.
+2026-05-09 02:00:02 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:02 | DEBUG    | __main__ | <module> | User='admin' opened project_id=3 — rendering project view.
+2026-05-09 02:00:02 | INFO     | views.project | project_view | User 'admin' returned to dashboard from project_id=3.
+2026-05-09 02:00:02 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:02 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 02:00:03 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 02:00:03 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 02:00:06 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:06 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 02:00:06 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 02:00:07 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 02:00:07 | INFO     | views.dashboard | dashboard_view | User 'admin' opening project_id=4.
+2026-05-09 02:00:07 | DEBUG    | views.dashboard | _open_project | Loading project data for project_id=4.
+2026-05-09 02:00:07 | DEBUG    | views.dashboard | _open_project | Project data loaded for project_id=4: has_extracted_data=False.
+2026-05-09 02:00:07 | DEBUG    | views.dashboard | _open_project | Loading PDF bytes for project_id=4.
+2026-05-09 02:00:07 | DEBUG    | views.dashboard | _open_project | PDF loaded for project_id=4: 0 bytes.
+2026-05-09 02:00:07 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:07 | DEBUG    | __main__ | <module> | User='admin' opened project_id=4 — rendering project view.
+2026-05-09 02:00:07 | DEBUG    | views.project | project_view | Rendering project view for project_id=4.
+2026-05-09 02:00:11 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:11 | DEBUG    | __main__ | <module> | User='admin' opened project_id=4 — rendering project view.
+2026-05-09 02:00:11 | DEBUG    | views.project | project_view | Rendering project view for project_id=4.
+2026-05-09 02:00:12 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:12 | DEBUG    | __main__ | <module> | User='admin' opened project_id=4 — rendering project view.
+2026-05-09 02:00:13 | DEBUG    | views.project | project_view | Rendering project view for project_id=4.
+2026-05-09 02:00:13 | INFO     | views.project | _upload_view | Pipeline triggered for project_id=4, file='synth-switch_v5-68.pdf' (289774 bytes).
+2026-05-09 02:00:18 | INFO     | views.project | _upload_view | Pipeline successful for project_id=4.
+2026-05-09 02:00:18 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:18 | DEBUG    | __main__ | <module> | User='admin' opened project_id=4 — rendering project view.
+2026-05-09 02:00:18 | DEBUG    | views.project | project_view | Rendering project view for project_id=4.
+2026-05-09 02:00:18 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (289774 bytes).
+2026-05-09 02:00:18 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 333591 bytes PNG.
+2026-05-09 02:00:24 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:24 | DEBUG    | __main__ | <module> | User='admin' opened project_id=4 — rendering project view.
+2026-05-09 02:00:24 | DEBUG    | views.project | project_view | Rendering project view for project_id=4.
+2026-05-09 02:00:24 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:24 | DEBUG    | __main__ | <module> | User='admin' opened project_id=4 — rendering project view.
+2026-05-09 02:00:25 | DEBUG    | views.project | project_view | Rendering project view for project_id=4.
+2026-05-09 02:00:25 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 2 (289774 bytes).
+2026-05-09 02:00:25 | DEBUG    | utils.pdf_renderer | display_pdf | Page 2 rendered: 242034 bytes PNG.
+2026-05-09 02:00:33 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:33 | DEBUG    | __main__ | <module> | User='admin' opened project_id=4 — rendering project view.
+2026-05-09 02:00:33 | INFO     | views.project | project_view | User 'admin' returned to dashboard from project_id=4.
+2026-05-09 02:00:33 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:33 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 02:00:34 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 02:00:34 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 02:00:36 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:36 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 02:00:37 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 02:00:37 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 02:00:37 | INFO     | views.dashboard | dashboard_view | User 'admin' opening project_id=5.
+2026-05-09 02:00:37 | DEBUG    | views.dashboard | _open_project | Loading project data for project_id=5.
+2026-05-09 02:00:37 | DEBUG    | views.dashboard | _open_project | Project data loaded for project_id=5: has_extracted_data=False.
+2026-05-09 02:00:37 | DEBUG    | views.dashboard | _open_project | Loading PDF bytes for project_id=5.
+2026-05-09 02:00:37 | DEBUG    | views.dashboard | _open_project | PDF loaded for project_id=5: 0 bytes.
+2026-05-09 02:00:37 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:37 | DEBUG    | __main__ | <module> | User='admin' opened project_id=5 — rendering project view.
+2026-05-09 02:00:37 | DEBUG    | views.project | project_view | Rendering project view for project_id=5.
+2026-05-09 02:00:40 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:40 | DEBUG    | __main__ | <module> | User='admin' opened project_id=5 — rendering project view.
+2026-05-09 02:00:40 | DEBUG    | views.project | project_view | Rendering project view for project_id=5.
+2026-05-09 02:00:41 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:41 | DEBUG    | __main__ | <module> | User='admin' opened project_id=5 — rendering project view.
+2026-05-09 02:00:42 | DEBUG    | views.project | project_view | Rendering project view for project_id=5.
+2026-05-09 02:00:42 | INFO     | views.project | _upload_view | Pipeline triggered for project_id=5, file='synth-switch_v5-79.pdf' (311083 bytes).
+2026-05-09 02:00:47 | INFO     | views.project | _upload_view | Pipeline successful for project_id=5.
+2026-05-09 02:00:47 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:00:47 | DEBUG    | __main__ | <module> | User='admin' opened project_id=5 — rendering project view.
+2026-05-09 02:00:47 | DEBUG    | views.project | project_view | Rendering project view for project_id=5.
+2026-05-09 02:00:47 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (311083 bytes).
+2026-05-09 02:00:47 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 342284 bytes PNG.
+2026-05-09 02:01:13 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:01:13 | DEBUG    | __main__ | <module> | User='admin' opened project_id=5 — rendering project view.
+2026-05-09 02:01:13 | INFO     | views.project | project_view | User 'admin' returned to dashboard from project_id=5.
+2026-05-09 02:01:13 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:01:13 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 02:01:14 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 02:01:14 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 02:01:26 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:01:26 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 02:01:26 | INFO     | views.dashboard | dashboard_view | User 'admin' logged out.
+2026-05-09 02:01:26 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 02:01:26 | DEBUG    | __main__ | <module> | No active session — rendering login view.
