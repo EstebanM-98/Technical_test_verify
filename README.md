@@ -1,6 +1,6 @@
-# Smart Document Extractor
+# Smart Invoice Extractor
 
-Smart Document Extractor is a Python-based document-processing application built around a microservice-style workflow:
+Smart Invoice Extractor is a Python-based document-processing application built around a microservice-style workflow:
 
 1. A user uploads a PDF through a Streamlit interface.
 2. The backend sends the file to an OCR service.
