@@ -819,3 +819,6 @@ RuntimeError: boom
 2026-05-09 13:56:25 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
 2026-05-09 13:57:26 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
 2026-05-09 13:57:26 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 17:18:27 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 17:18:27 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 17:18:27 | INFO     | backend.api | <module> | Database tables verified/created on startup.

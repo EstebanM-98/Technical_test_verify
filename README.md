@@ -20,6 +20,8 @@ Note: Some labels in the frontend refer to “bank statements”, but the curren
 - [Repository Structure](#repository-structure)
 - [Environment Variables](#environment-variables)
 - [Installation and Execution with Docker Compose](#installation-and-execution-with-docker-compose)
+- [Running Tests](#running-tests)
+- [Testing Documentation](#testing-documentation)
 - [Using the Web Interface](#using-the-web-interface)
 - [Running Services Locally](#running-services-locally)
 - [Running Individual Components](#running-individual-components)
@@ -148,7 +150,10 @@ Technical_test_verify-master/
 ├── Dockerfile
 ├── docker-compose.yml
 ├── README.md
-└── requirements.txt
+├── TESTING.md
+├── requirements-dev.txt
+├── requirements.txt
+└── tests/
 ```
 
 ### Root Directory
@@ -160,7 +165,22 @@ Technical_test_verify-master/
 | `Dockerfile` | Root-level Dockerfile that installs root dependencies and runs the OCR CLI entrypoint by default. The multi-service application uses the service-specific Dockerfiles through `docker-compose.yml`. |
 | `docker-compose.yml` | Starts OCR, extractor, validator, backend, and frontend services. |
 | `requirements.txt` | Minimal root dependency file containing `veryfi` and `python-dotenv`. For the full application, each service has its own requirements file. |
+| `requirements-dev.txt` | Development/testing dependencies used by the pytest suite. |
+| `TESTING.md` | Detailed guide for test execution, scope, and validation artifacts. |
+| `tests/` | Automated test suite organized by layer (`unit` and `api`), shared fixtures, and optional execution artifacts. |
 | `documents/` | Placeholder folder for local documents. The `.gitignore` keeps the folder but ignores document contents. |
+
+### Tests Directory
+
+The `tests/` directory is structured to keep test execution deterministic, isolated from external services, and fast for local validation and CI.
+
+| Path | Purpose |
+|---|---|
+| `tests/conftest.py` | Global pytest fixtures and setup helpers (temporary paths, fixture loaders, import-path setup). |
+| `tests/fixtures/` | Static OCR/extraction payloads used as deterministic test inputs and expected structures. |
+| `tests/unit/` | Unit tests for isolated logic (parsing, validation rules, frontend utilities, service helpers). |
+| `tests/api/` | API-level tests for FastAPI routes and orchestration behavior with mocked dependencies. |
+| `tests/reports/` | Optional generated artifacts such as `junit.xml` and execution logs when explicitly requested. |
 
 ### Backend Directory
 
@@ -337,6 +357,55 @@ docker compose down -v
 ```
 
 Use `docker compose down -v` only if you want to delete the SQLite database and uploaded PDFs stored in the Docker volume.
+
+## Running Tests
+
+The project includes a deterministic pytest suite for unit and API layers. These tests are designed to run without Docker Compose and without external network dependencies.
+
+Install test dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
+```
+
+Run all tests:
+
+```bash
+pytest -v
+```
+
+Run only unit tests:
+
+```bash
+pytest tests/unit -v
+```
+
+Run only API tests:
+
+```bash
+pytest tests/api -v
+```
+
+Optional validation artifacts:
+
+```bash
+pytest -v --junitxml=tests/reports/junit.xml
+```
+
+```powershell
+pytest -v | Tee-Object -FilePath tests/reports/pytest-run.log
+```
+
+Notes:
+
+- Test status should be read from pytest output and pytest artifacts, not application runtime logs.
+- Tests isolate filesystem side effects using temporary paths and temporary database files.
+- External APIs (Veryfi) and internal HTTP boundaries are mocked.
+
+## Testing Documentation
+
+For complete testing scope, fixture strategy, and reviewer checklist, see `TESTING.md`.
 
 ## Using the Web Interface
 

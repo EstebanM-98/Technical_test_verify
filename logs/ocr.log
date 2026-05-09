@@ -583,3 +583,9 @@ RuntimeError: boom
 2026-05-09 13:57:26 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
 2026-05-09 13:57:26 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
 2026-05-09 13:57:26 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 17:18:26 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 17:18:26 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: '/app/.env'
+2026-05-09 17:18:26 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 17:18:26 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 17:18:26 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 17:18:26 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
