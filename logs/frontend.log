@@ -661,3 +661,31 @@ Traceback (most recent call last):
 RuntimeError: boom
 2026-05-09 17:29:34 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
 2026-05-09 17:29:34 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 18:11:32 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 18:11:32 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 18:11:51 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 18:11:51 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 18:11:53 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 18:11:53 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 18:11:57 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 18:11:57 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 18:11:57 | INFO     | views.login | login_view | Login attempt for username='admin'.
+2026-05-09 18:11:58 | INFO     | views.login | login_view | Login successful for username='admin'.
+2026-05-09 18:11:58 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 18:11:58 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 18:11:58 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 18:11:58 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 18:12:06 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 18:12:06 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 18:12:07 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 18:12:07 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 18:12:07 | INFO     | views.dashboard | dashboard_view | User 'admin' opening project_id=1.
+2026-05-09 18:12:07 | DEBUG    | views.dashboard | _open_project | Loading project data for project_id=1.
+2026-05-09 18:12:07 | DEBUG    | views.dashboard | _open_project | Project data loaded for project_id=1: has_extracted_data=True.
+2026-05-09 18:12:07 | DEBUG    | views.dashboard | _open_project | Loading PDF bytes for project_id=1.
+2026-05-09 18:12:07 | DEBUG    | views.dashboard | _open_project | PDF loaded for project_id=1: 271239 bytes.
+2026-05-09 18:12:07 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 18:12:07 | DEBUG    | __main__ | <module> | User='admin' opened project_id=1 — rendering project view.
+2026-05-09 18:12:07 | DEBUG    | views.project | project_view | Rendering project view for project_id=1.
+2026-05-09 18:12:07 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (271239 bytes).
+2026-05-09 18:12:08 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 240583 bytes PNG.

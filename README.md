@@ -64,7 +64,6 @@ Backend: FastAPI, port 8000
     |--> Extractor service: FastAPI + regex parser, port 8002
     |--> Validator service: FastAPI + rule engine, port 8003
     |
-    v
 SQLite database and uploaded PDFs stored under /app/data
 ```
 
@@ -151,7 +150,6 @@ Technical_test_verify-master/
 ├── docker-compose.yml
 ├── README.md
 ├── TESTING.md
-├── requirements-dev.txt
 ├── requirements.txt
 └── tests/
 ```
