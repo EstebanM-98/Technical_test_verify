@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="620"
+   viewBox="0 0 1200 620"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg47"
+   sodipodi:docname="smart_invoice_extractor_overview.svg"
+   inkscape:export-filename="smart_invoice_extractor_overview.jpg"
+   inkscape:export-xdpi="1200"
+   inkscape:export-ydpi="1200"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview47"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="1200"
+       height="620"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <title
+     id="title">Smart Invoice Extractor architecture overview</title>
+  <desc
+     id="desc">Compact system diagram showing user upload, Streamlit frontend, FastAPI backend, OCR, extractor, validator, persistence, configuration, logging, and tests.</desc>
+  <defs
+     id="defs2">
+    <marker
+       id="arrow"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8.5"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 9,3 0,6 Z"
+         fill="#333333"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrowDashed"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8.5"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 9,3 0,6 Z"
+         fill="#777777"
+         id="path2" />
+    </marker>
+    <style
+       id="style2">
+      .box {
+        fill: #ffffff;
+        stroke: #4a4a4a;
+        stroke-width: 2;
+      }
+      .service {
+        fill: #ffffff;
+        stroke: #4a4a4a;
+        stroke-width: 2;
+      }
+      .support {
+        fill: #ffffff;
+        stroke: #707070;
+        stroke-width: 1.8;
+        stroke-dasharray: 8 7;
+      }
+      .group {
+        fill: #f5f5f5;
+        stroke: #d0d0d0;
+        stroke-width: 1.5;
+      }
+      .arrow {
+        fill: none;
+        stroke: #333333;
+        stroke-width: 2.1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        marker-end: url(#arrow);
+      }
+      .support-arrow {
+        fill: none;
+        stroke: #777777;
+        stroke-width: 1.8;
+        stroke-dasharray: 7 6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        marker-end: url(#arrowDashed);
+      }
+      text {
+        font-family: Arial, Helvetica, sans-serif;
+        fill: #111111;
+      }
+      .main-text {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .sub-text {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .support-text {
+        font-size: 15px;
+        font-weight: 400;
+      }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect
+     x="0"
+     y="0"
+     width="1200"
+     height="620"
+     fill="#ffffff"
+     id="rect2" />
+  <!-- Processing group background -->
+  <rect
+     class="group"
+     x="290"
+     y="250"
+     width="850"
+     height="145"
+     rx="14"
+     id="rect3" />
+  <!-- Main row boxes -->
+  <rect
+     class="box"
+     x="35"
+     y="65"
+     width="210"
+     height="96"
+     rx="8"
+     id="rect4" />
+  <text
+     class="main-text"
+     x="140"
+     y="93"
+     text-anchor="middle"
+     id="text6"><tspan
+       x="140"
+       dy="0"
+       id="tspan4">User</tspan><tspan
+       class="sub-text"
+       x="140"
+       dy="24"
+       id="tspan5">uploads</tspan><tspan
+       class="sub-text"
+       x="140"
+       dy="24"
+       id="tspan6">invoice PDF</tspan></text>
+  <rect
+     class="box"
+     x="320"
+     y="65"
+     width="210"
+     height="96"
+     rx="8"
+     id="rect6" />
+  <text
+     class="main-text"
+     x="425"
+     y="93"
+     text-anchor="middle"
+     id="text9"><tspan
+       x="425"
+       dy="0"
+       id="tspan7">Streamlit</tspan><tspan
+       class="sub-text"
+       x="425"
+       dy="24"
+       id="tspan8">frontend</tspan><tspan
+       class="sub-text"
+       x="425"
+       dy="24"
+       id="tspan9">user interface</tspan></text>
+  <rect
+     class="box"
+     x="605"
+     y="65"
+     width="210"
+     height="96"
+     rx="8"
+     id="rect9" />
+  <text
+     class="main-text"
+     x="710"
+     y="93"
+     text-anchor="middle"
+     id="text12"><tspan
+       x="710"
+       dy="0"
+       id="tspan10">FastAPI</tspan><tspan
+       class="sub-text"
+       x="710"
+       dy="24"
+       id="tspan11">backend</tspan><tspan
+       class="sub-text"
+       x="710"
+       dy="24"
+       id="tspan12">orchestration</tspan></text>
+  <rect
+     class="box"
+     x="890"
+     y="65"
+     width="230"
+     height="96"
+     rx="8"
+     id="rect12" />
+  <text
+     class="main-text"
+     x="1005"
+     y="90"
+     text-anchor="middle"
+     id="text15"><tspan
+       x="1005"
+       dy="0"
+       id="tspan13">User review</tspan><tspan
+       class="sub-text"
+       x="1005"
+       dy="24"
+       id="tspan14">PDF preview</tspan><tspan
+       class="sub-text"
+       x="1005"
+       dy="24"
+       id="tspan15">table + JSON</tspan></text>
+  <!-- Service row boxes -->
+  <rect
+     class="service"
+     x="320"
+     y="285"
+     width="220"
+     height="105"
+     rx="8"
+     id="rect15" />
+  <text
+     class="main-text"
+     x="430"
+     y="316"
+     text-anchor="middle"
+     id="text18"><tspan
+       x="430"
+       dy="0"
+       id="tspan16">OCR service</tspan><tspan
+       class="sub-text"
+       x="430"
+       dy="24"
+       id="tspan17">Veryfi adapter</tspan><tspan
+       class="sub-text"
+       x="430"
+       dy="24"
+       id="tspan18">PDF to text</tspan></text>
+  <rect
+     class="service"
+     x="605"
+     y="285"
+     width="220"
+     height="105"
+     rx="8"
+     id="rect18" />
+  <text
+     class="main-text"
+     x="715"
+     y="316"
+     text-anchor="middle"
+     id="text21"><tspan
+       x="715"
+       dy="0"
+       id="tspan19">Extractor</tspan><tspan
+       class="sub-text"
+       x="715"
+       dy="24"
+       id="tspan20">regex rules</tspan><tspan
+       class="sub-text"
+       x="715"
+       dy="24"
+       id="tspan21">text to JSON</tspan></text>
+  <rect
+     class="service"
+     x="890"
+     y="285"
+     width="230"
+     height="105"
+     rx="8"
+     id="rect21" />
+  <text
+     class="main-text"
+     x="1005"
+     y="316"
+     text-anchor="middle"
+     id="text24"><tspan
+       x="1005"
+       dy="0"
+       id="tspan22">Validator</tspan><tspan
+       class="sub-text"
+       x="1005"
+       dy="24"
+       id="tspan23">rule engine</tspan><tspan
+       class="sub-text"
+       x="1005"
+       dy="24"
+       id="tspan24">consistency checks</tspan></text>
+  <!-- Support row boxes -->
+  <rect
+     class="support"
+     x="70"
+     y="465"
+     width="260"
+     height="95"
+     rx="8"
+     id="rect24" />
+  <text
+     class="support-text"
+     x="200"
+     y="491"
+     text-anchor="middle"
+     id="text28"><tspan
+       x="200"
+       dy="0"
+       id="tspan25">Persistence</tspan><tspan
+       x="200"
+       dy="22"
+       id="tspan26">SQLite database</tspan><tspan
+       x="200"
+       dy="22"
+       id="tspan27">stored PDFs</tspan><tspan
+       x="200"
+       dy="22"
+       id="tspan28">extracted JSON</tspan></text>
+  <rect
+     class="support"
+     x="560"
+     y="465"
+     width="300"
+     height="95"
+     rx="8"
+     id="rect28" />
+  <text
+     class="support-text"
+     x="710"
+     y="491"
+     text-anchor="middle"
+     id="text32"><tspan
+       x="710"
+       dy="0"
+       id="tspan29">Configurations</tspan><tspan
+       x="710"
+       dy="22"
+       id="tspan30">document signature</tspan><tspan
+       x="710"
+       dy="22"
+       id="tspan31">fields, rows, SKU</tspan><tspan
+       x="710"
+       dy="22"
+       id="tspan32">validation rules</tspan></text>
+  <rect
+     class="support"
+     x="930"
+     y="465"
+     width="260"
+     height="95"
+     rx="8"
+     id="rect32" />
+  <text
+     class="support-text"
+     x="1060"
+     y="491"
+     text-anchor="middle"
+     id="text36"><tspan
+       x="1060"
+       dy="0"
+       id="tspan33">Operational quality</tspan><tspan
+       x="1060"
+       dy="22"
+       id="tspan34">rotating logs</tspan><tspan
+       x="1060"
+       dy="22"
+       id="tspan35">unit/API tests</tspan><tspan
+       x="1060"
+       dy="22"
+       id="tspan36">fixtures and mocks</tspan></text>
+  <!-- Main flow arrows: only between box boundaries -->
+  <path
+     class="arrow"
+     d="m 246.94969,111.05031 h 75"
+     id="path36"
+     sodipodi:nodetypes="cc" />
+  <path
+     class="arrow"
+     d="m 531.94969,111.05031 h 75"
+     id="path37"
+     sodipodi:nodetypes="cc" />
+  <path
+     class="arrow"
+     d="m 816.94969,111.05031 h 75"
+     id="path38"
+     sodipodi:nodetypes="cc" />
+  <!-- Backend to OCR through open corridor -->
+  <path
+     class="arrow"
+     d="m 711.94969,159.05031 v 64 c 0,10 -5,15 -15,15 h -265 v 15 30"
+     id="path39"
+     sodipodi:nodetypes="cssccc" />
+  <!-- OCR to Extractor to Validator -->
+  <path
+     class="arrow"
+     d="m 541.94969,336.05031 h 65"
+     id="path40"
+     sodipodi:nodetypes="cc" />
+  <path
+     class="arrow"
+     d="m 826.94969,336.05031 h 65"
+     id="path41"
+     sodipodi:nodetypes="cc" />
+  <!-- Validator result returns to Backend through right/top outside corridor -->
+  <path
+     class="arrow"
+     d="m 1006.9497,283.05031 v -55 c 0,-10 5,-15 15,-15 h 135 c 10,0 15,-5 15,-15 V 33.050314 c 0,-10 -5,-15 -15,-15 H 711.94969 v 15 30"
+     id="path42"
+     sodipodi:nodetypes="cssssssccc" />
+  <!-- Backend to Persistence through left outside corridor -->
+  <path
+     class="arrow"
+     d="m 641.94969,159.05031 v 59 c 0,10 -5,15 -15,15 H 26.949686 c -10,0 -15,5 -15,15 v 185 c 0,10 14.128129,15.0851 15,15 0,0 132.658864,-57.23789 175.779874,-17.15723 7.85357,7.29984 -0.77987,32.15723 -0.77987,32.15723"
+     id="path43"
+     sodipodi:nodetypes="cssssscsc" />
+  <!-- Configurations to Extractor and Validator -->
+  <path
+     class="support-arrow"
+     d="m 714.98269,463.60177 v -45 c 0,-10 -0.53915,-11.967 2.79418,-11.967 l -0.27572,-18.58445"
+     id="path44"
+     sodipodi:nodetypes="cscc" />
+  <path
+     class="support-arrow"
+     d="m 801.94969,463.05031 v -45 c 0,-10 76.15917,-5.2451 85.96855,-3.30189 l 50.29839,-0.18923 68.73307,-26.50888"
+     id="path45"
+     sodipodi:nodetypes="csscc" />
+  <!-- Operational quality to Validator and Backend -->
+  <path
+     class="support-arrow"
+     d="m 1061.9497,463.05031 v -40 c 0,-10 -5,-15 -15,-15 h -40 v -20"
+     id="path46"
+     sodipodi:nodetypes="csscc" />
+  <path
+     class="support-arrow"
+     d="M 1191.9497,510.05031 V 33.050314 c 0,-10 -5,-15 -15,-15 H 761.94969 c -10,0 -15,5 -15,15 v 30"
+     id="path47"
+     sodipodi:nodetypes="cssssc" />
+</svg>
