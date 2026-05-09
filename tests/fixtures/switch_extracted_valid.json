@@ -1,0 +1,25 @@
+{
+  "format": "Switch Invoice",
+  "header": {
+    "total_amount": "125.00"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "line_items": [
+        {
+          "description": "Transport",
+          "quantity": 2.0,
+          "rate": 50.0,
+          "amount": 100.0
+        },
+        {
+          "description": "Cloud Storage",
+          "quantity": 1.0,
+          "rate": 25.0,
+          "amount": 25.0
+        }
+      ]
+    }
+  ]
+}

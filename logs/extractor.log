@@ -308,3 +308,508 @@
 2026-05-09 02:00:47 | DEBUG    | components.extractor.core.document_parser | parse | Page 3: 6 line item(s) extracted.
 2026-05-09 02:00:47 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Switch Invoice', pages=3, total_line_items=52.
 2026-05-09 02:00:47 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=52.
+2026-05-09 16:32:58 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 16:32:58 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 16:32:58 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 16:32:58 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 16:32:58 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 13:53:38 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 13:53:38 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:53:38 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:53:38 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:53:38 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 13:53:43 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:53:43 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=0.
+2026-05-09 13:53:43 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:53:43 | WARNING  | components.extractor.api | extract_data | Extraction returned an error: unknown format
+2026-05-09 13:53:43 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:53:43 | ERROR    | components.extractor.api | extract_data | Unexpected error during extraction.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\api.py", line 27, in extract_data
+    extracted_data = parser.parse(request.ocr_text)
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\tests\api\test_extractor_api.py", line 35, in parse
+    raise RuntimeError("boom")
+RuntimeError: boom
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:53:43 | ERROR    | components.extractor.core.document_parser | _load_configs | Error loading configuration from 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\core\document_parser.py", line 36, in _load_configs
+    config_data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'ok.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:53:43 | WARNING  | components.extractor.core.document_parser | _load_configs | Configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_load_configs_creates_dir_0\components\extractor\configs'. No formats are loaded.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 0 page(s).
+2026-05-09 13:53:43 | WARNING  | components.extractor.core.document_parser | parse | Document appears to be empty after splitting.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 1 page(s).
+2026-05-09 13:53:43 | WARNING  | components.extractor.core.document_parser | parse | No matching format found for this document. Available formats: []
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Controlled' created. SKU extraction: disabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 2 page(s).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Controlled' match result: True.
+2026-05-09 13:53:43 | INFO     | components.extractor.core.document_parser | parse | Format identified: 'Controlled'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'from_full_text' not matched in document (pattern: Total USD \\$([\\d.]+)).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Controlled': 0/1 fields populated.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | parse | Header extracted: ['from_full_text']
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | parse | Page 1: 0 line item(s) extracted.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.core.document_parser | parse | Page 2: 0 line item(s) extracted.
+2026-05-09 13:53:43 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Controlled', pages=2, total_line_items=0.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: True.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: False.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' has no signature_regex; skipping match.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'invoice_number' not matched in document (pattern: INV-(\\d+)).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'optional' not matched in document (pattern: NO_MATCH:(\\d+)).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Test': 1/3 fields populated.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | No line_item_rules defined for format 'X'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='sku missing...').
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='hello SKU:ZX9 world...').
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '12345' from field 'description'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Cloud Storage...').
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD $125.00'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Switch Invoice': 2 item(s) found, 1 with SKU resolved.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_read_text_reads_utf80\sample.txt'
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_read_text_reads_utf80\sample.txt' (6 characters).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_write_json_pretty_and_uni0\out.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_write_json_pretty_and_uni0\out.json'.
+2026-05-09 13:53:43 | INFO     | components.extractor.main | extract_information | Input source is a file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_reads0\doc.txt'
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_reads0\doc.txt'
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_reads0\doc.txt' (4 characters).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | File 'doc' read: 4 characters.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_reads0\out'
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'doc'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_reads0\out\doc\doc.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:53:43 | INFO     | components.extractor.main | extract_information | Extraction completed for 'doc'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:53:43 | INFO     | components.extractor.main | extract_information | Input source is raw text (7 characters).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_uses_0\out'
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_uses_0\out\extracted_document\extracted_document.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:53:43 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:53:43 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_defau0\components\extractor\output'
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:53:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'
+2026-05-09 13:53:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:53:43 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:53:43 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_extract_information_retur0\out'
+2026-05-09 13:53:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:53:43 | ERROR    | components.extractor.main | extract_information | Extraction failed for 'extracted_document': bad
+2026-05-09 13:54:23 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 13:54:23 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:23 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:23 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:23 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 13:54:25 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:54:25 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=0.
+2026-05-09 13:54:25 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:54:25 | WARNING  | components.extractor.api | extract_data | Extraction returned an error: unknown format
+2026-05-09 13:54:25 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:54:25 | ERROR    | components.extractor.api | extract_data | Unexpected error during extraction.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\api.py", line 27, in extract_data
+    extracted_data = parser.parse(request.ocr_text)
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\tests\api\test_extractor_api.py", line 35, in parse
+    raise RuntimeError("boom")
+RuntimeError: boom
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:25 | ERROR    | components.extractor.core.document_parser | _load_configs | Error loading configuration from 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\core\document_parser.py", line 36, in _load_configs
+    config_data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'ok.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:25 | WARNING  | components.extractor.core.document_parser | _load_configs | Configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_load_configs_creates_dir_0\components\extractor\configs'. No formats are loaded.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 0 page(s).
+2026-05-09 13:54:25 | WARNING  | components.extractor.core.document_parser | parse | Document appears to be empty after splitting.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 1 page(s).
+2026-05-09 13:54:25 | WARNING  | components.extractor.core.document_parser | parse | No matching format found for this document. Available formats: []
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Controlled' created. SKU extraction: disabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 2 page(s).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Controlled' match result: True.
+2026-05-09 13:54:25 | INFO     | components.extractor.core.document_parser | parse | Format identified: 'Controlled'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'from_full_text' not matched in document (pattern: Total USD \\$([\\d.]+)).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Controlled': 0/1 fields populated.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | parse | Header extracted: ['from_full_text']
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | parse | Page 1: 0 line item(s) extracted.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.core.document_parser | parse | Page 2: 0 line item(s) extracted.
+2026-05-09 13:54:25 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Controlled', pages=2, total_line_items=0.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: True.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: False.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' has no signature_regex; skipping match.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'invoice_number' not matched in document (pattern: INV-(\\d+)).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'optional' not matched in document (pattern: NO_MATCH:(\\d+)).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Test': 1/3 fields populated.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | No line_item_rules defined for format 'X'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='sku missing...').
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='hello SKU:ZX9 world...').
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '12345' from field 'description'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Cloud Storage...').
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD $125.00'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Switch Invoice': 2 item(s) found, 1 with SKU resolved.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_read_text_reads_utf80\sample.txt'
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_read_text_reads_utf80\sample.txt' (6 characters).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_write_json_pretty_and_uni0\out.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_write_json_pretty_and_uni0\out.json'.
+2026-05-09 13:54:25 | INFO     | components.extractor.main | extract_information | Input source is a file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_reads0\doc.txt'
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_reads0\doc.txt'
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_reads0\doc.txt' (4 characters).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | File 'doc' read: 4 characters.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_reads0\out'
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'doc'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_reads0\out\doc\doc.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:54:25 | INFO     | components.extractor.main | extract_information | Extraction completed for 'doc'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:54:25 | INFO     | components.extractor.main | extract_information | Input source is raw text (7 characters).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_uses_0\out'
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_uses_0\out\extracted_document\extracted_document.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:54:25 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:54:25 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_defau0\components\extractor\output'
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:54:25 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'
+2026-05-09 13:54:25 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:54:25 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:54:25 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_extract_information_retur0\out'
+2026-05-09 13:54:25 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:54:25 | ERROR    | components.extractor.main | extract_information | Extraction failed for 'extracted_document': bad
+2026-05-09 13:54:40 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 13:54:40 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:40 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:40 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:40 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 13:54:43 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:54:43 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=0.
+2026-05-09 13:54:43 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:54:43 | WARNING  | components.extractor.api | extract_data | Extraction returned an error: unknown format
+2026-05-09 13:54:43 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:54:43 | ERROR    | components.extractor.api | extract_data | Unexpected error during extraction.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\api.py", line 27, in extract_data
+    extracted_data = parser.parse(request.ocr_text)
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\tests\api\test_extractor_api.py", line 35, in parse
+    raise RuntimeError("boom")
+RuntimeError: boom
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:43 | ERROR    | components.extractor.core.document_parser | _load_configs | Error loading configuration from 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\core\document_parser.py", line 36, in _load_configs
+    config_data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'ok.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:43 | WARNING  | components.extractor.core.document_parser | _load_configs | Configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_load_configs_creates_dir_0\components\extractor\configs'. No formats are loaded.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 0 page(s).
+2026-05-09 13:54:43 | WARNING  | components.extractor.core.document_parser | parse | Document appears to be empty after splitting.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 1 page(s).
+2026-05-09 13:54:43 | WARNING  | components.extractor.core.document_parser | parse | No matching format found for this document. Available formats: []
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Controlled' created. SKU extraction: disabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 2 page(s).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Controlled' match result: True.
+2026-05-09 13:54:43 | INFO     | components.extractor.core.document_parser | parse | Format identified: 'Controlled'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'from_full_text' not matched in document (pattern: Total USD \\$([\\d.]+)).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Controlled': 0/1 fields populated.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | parse | Header extracted: ['from_full_text']
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | parse | Page 1: 0 line item(s) extracted.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.core.document_parser | parse | Page 2: 0 line item(s) extracted.
+2026-05-09 13:54:43 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Controlled', pages=2, total_line_items=0.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: True.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: False.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' has no signature_regex; skipping match.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'invoice_number' not matched in document (pattern: INV-(\\d+)).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'optional' not matched in document (pattern: NO_MATCH:(\\d+)).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Test': 1/3 fields populated.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | No line_item_rules defined for format 'X'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 0 item(s) found, 0 with SKU resolved.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='sku missing...').
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='hello SKU:ZX9 world...').
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '12345' from field 'description'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Cloud Storage...').
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD $125.00'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Switch Invoice': 2 item(s) found, 1 with SKU resolved.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_read_text_reads_utf80\sample.txt'
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_read_text_reads_utf80\sample.txt' (6 characters).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_write_json_pretty_and_uni0\out.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_write_json_pretty_and_uni0\out.json'.
+2026-05-09 13:54:43 | INFO     | components.extractor.main | extract_information | Input source is a file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_reads0\doc.txt'
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_reads0\doc.txt'
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_reads0\doc.txt' (4 characters).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | File 'doc' read: 4 characters.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_reads0\out'
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'doc'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_reads0\out\doc\doc.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:54:43 | INFO     | components.extractor.main | extract_information | Extraction completed for 'doc'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:54:43 | INFO     | components.extractor.main | extract_information | Input source is raw text (7 characters).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_uses_0\out'
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_uses_0\out\extracted_document\extracted_document.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:54:43 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:54:43 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_defau0\components\extractor\output'
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:54:43 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'
+2026-05-09 13:54:43 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:54:43 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:54:43 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_extract_information_retur0\out'
+2026-05-09 13:54:43 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:54:43 | ERROR    | components.extractor.main | extract_information | Extraction failed for 'extracted_document': bad
+2026-05-09 13:56:20 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 13:56:20 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:56:20 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:56:20 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:56:20 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 13:56:24 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:56:24 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=0.
+2026-05-09 13:56:24 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:56:24 | WARNING  | components.extractor.api | extract_data | Extraction returned an error: unknown format
+2026-05-09 13:56:24 | INFO     | components.extractor.api | extract_data | Extraction request received: 9 characters of OCR text.
+2026-05-09 13:56:24 | ERROR    | components.extractor.api | extract_data | Unexpected error during extraction.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\api.py", line 27, in extract_data
+    extracted_data = parser.parse(request.ocr_text)
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\tests\api\test_extractor_api.py", line 35, in parse
+    raise RuntimeError("boom")
+RuntimeError: boom
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:56:24 | ERROR    | components.extractor.core.document_parser | _load_configs | Error loading configuration from 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\extractor\core\document_parser.py", line 36, in _load_configs
+    config_data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'ok.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:56:24 | WARNING  | components.extractor.core.document_parser | _load_configs | Configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_load_configs_creates_dir_0\components\extractor\configs'. No formats are loaded.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 0 page(s).
+2026-05-09 13:56:24 | WARNING  | components.extractor.core.document_parser | parse | Document appears to be empty after splitting.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 1 page(s).
+2026-05-09 13:56:24 | WARNING  | components.extractor.core.document_parser | parse | No matching format found for this document. Available formats: []
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Controlled' created. SKU extraction: disabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 2 page(s).
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Controlled' match result: True.
+2026-05-09 13:56:24 | INFO     | components.extractor.core.document_parser | parse | Format identified: 'Controlled'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Controlled': 1/1 fields populated.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | parse | Header extracted: ['from_full_text']
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 1 item(s) found, 0 with SKU resolved.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | parse | Page 1: 1 line item(s) extracted.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD $125.00'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Controlled': 1 item(s) found, 0 with SKU resolved.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.core.document_parser | parse | Page 2: 1 line item(s) extracted.
+2026-05-09 13:56:24 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Controlled', pages=2, total_line_items=2.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: True.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' match result: False.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Test' has no signature_regex; skipping match.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header field 'optional' not matched in document (pattern: NO_MATCH:(\d+)).
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Test': 2/3 fields populated.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'X' created. SKU extraction: disabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | No line_item_rules defined for format 'X'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: 'ABC123' from field 'description'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: 'ABC123' from field 'description'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: 'DEF999' from field 'description'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total 2600.00'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 2 item(s) found, 2 with SKU resolved.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: 'DISC' from field 'description'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Test': 1 item(s) found, 1 with SKU resolved.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='sku missing...').
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: 'ZX9' from field 'description'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: disabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Test' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description Quantity Rate Amount'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '12345' from field 'description'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Cloud Storage...').
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD $125.00'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Switch Invoice': 2 item(s) found, 1 with SKU resolved.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_read_text_reads_utf80\sample.txt'
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_read_text_reads_utf80\sample.txt' (6 characters).
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_write_json_pretty_and_uni0\out.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_write_json_pretty_and_uni0\out.json'.
+2026-05-09 13:56:24 | INFO     | components.extractor.main | extract_information | Input source is a file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_reads0\doc.txt'
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | read_text | Reading text file: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_reads0\doc.txt'
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | read_text | File read: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_reads0\doc.txt' (4 characters).
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | File 'doc' read: 4 characters.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_reads0\out'
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'doc'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_reads0\out\doc\doc.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:56:24 | INFO     | components.extractor.main | extract_information | Extraction completed for 'doc'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_reads0\out\doc\doc.json'.
+2026-05-09 13:56:24 | INFO     | components.extractor.main | extract_information | Input source is raw text (7 characters).
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_uses_0\out'
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_uses_0\out\extracted_document\extracted_document.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:56:24 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_uses_0\out\extracted_document\extracted_document.json'.
+2026-05-09 13:56:24 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_defau0\components\extractor\output'
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:56:24 | DEBUG    | components.extractor.utils.file_handler | write_json | Writing JSON output to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'
+2026-05-09 13:56:24 | INFO     | components.extractor.utils.file_handler | write_json | JSON output written: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:56:24 | INFO     | components.extractor.main | extract_information | Extraction completed for 'extracted_document'. Results saved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_defau0\components\extractor\output\extracted_document\extracted_document.json'.
+2026-05-09 13:56:24 | INFO     | components.extractor.main | extract_information | Input source is raw text (3 characters).
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Output directory resolved to: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_extract_information_retur0\out'
+2026-05-09 13:56:24 | DEBUG    | components.extractor.main | extract_information | Starting document parsing for 'extracted_document'.
+2026-05-09 13:56:24 | ERROR    | components.extractor.main | extract_information | Extraction failed for 'extracted_document': bad
+2026-05-09 13:57:26 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 13:57:26 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 13:57:26 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 13:57:26 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 13:57:26 | INFO     | components.extractor.api | <module> | DocumentParser ready.

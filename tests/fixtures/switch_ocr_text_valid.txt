@@ -1,0 +1,12 @@
+Switch Dallas, TX
+
+01/01/25 01/31/25 123456
+
+Example Customer
+Account No.
+
+Description Quantity Rate Amount
+Transport | Switch Fiber Pair Pairs (12345) 2.00 50.00 100.00
+Cloud Storage 1.00 25.00 25.00
+
+Total USD $125.00

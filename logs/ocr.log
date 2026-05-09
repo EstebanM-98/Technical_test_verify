@@ -105,3 +105,481 @@
 2026-05-09 02:00:46 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='0cc3693f4b62...', file='synth-switch_v5-79.pdf', chars=7582.
 2026-05-09 02:00:46 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'synth-switch_v5-79.pdf': 7582 characters extracted.
 2026-05-09 02:00:46 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmpc2nsuzeu.pdf
+2026-05-09 16:32:58 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 16:32:58 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: '/app/.env'
+2026-05-09 16:32:58 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 16:32:58 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 16:32:58 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 16:32:58 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 13:53:39 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 13:53:39 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'
+2026-05-09 13:53:39 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 13:53:39 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 13:53:39 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:53:39 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h1...
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | Cache HIT — skipping Veryfi API call for 'a.pdf'. Returning cached text (11 chars).
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h2...
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpr94t7m_e.pdf
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 10 characters extracted.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpr94t7m_e.pdf
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:53:43 | ERROR    | components.ocr.api | process_pdf | OCR service is not initialized. Cannot process request.
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h3...
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpn7h4cz64.pdf
+2026-05-09 13:53:43 | WARNING  | components.ocr.api | process_pdf | No text extracted from file='a.pdf'.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpn7h4cz64.pdf
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h4...
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpvrit22sj.pdf
+2026-05-09 13:53:43 | ERROR    | components.ocr.api | process_pdf | Unexpected error during OCR processing for file='a.pdf'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\api.py", line 62, in process_pdf
+    ocr_text = ocr_service.extract_ocr_text(temp_pdf_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpvrit22sj.pdf
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h5...
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmp15_7et9k.pdf
+2026-05-09 13:53:43 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 2 characters extracted.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmp15_7et9k.pdf
+2026-05-09 13:53:43 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:53:43 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'deadbeef...'.
+2026-05-09 13:53:43 | INFO     | components.ocr.file_utils | check_cache_by_hash | Cache HIT for hash 'abc...' (original file: 'None', processed: None).
+2026-05-09 13:53:43 | ERROR    | components.ocr.file_utils | check_cache_by_hash | Failed to read cache file 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_check_cache_by_hash_bad_j0\bad.json'. Treating as cache miss.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\file_utils.py", line 46, in check_cache_by_hash
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:53:43 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'bad...'.
+2026-05-09 13:53:43 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='hash123...', file='invoice.pdf', chars=5.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.file_utils | get_output_dir | Created OCR output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_get_output_dir_creates_di0\module\output'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.file_utils | check_if_processed | No cached output found for 'mydoc'.
+2026-05-09 13:53:43 | INFO     | components.ocr.file_utils | check_if_processed | Cache hit for 'mydoc': output already exists at 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_check_if_processed_hit_an0\output\mydoc\mydoc.txt'.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.file_utils | save_ocr_result | Created document output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_save_ocr_result_creates_e0\output\a_file'
+2026-05-09 13:53:43 | INFO     | components.ocr.file_utils | save_ocr_result | OCR result saved: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_save_ocr_result_creates_e0\output\a_file\a_file.txt' (7 characters written).
+2026-05-09 13:53:43 | ERROR    | components.ocr.main | process_single_file | Document not found: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_missi0\no.pdf'
+2026-05-09 13:53:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_cache0\a.pdf'
+2026-05-09 13:53:43 | INFO     | components.ocr.main | process_single_file | Cache hit — document already processed. Output at: 'cached.txt'
+2026-05-09 13:53:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:53:43 | INFO     | components.ocr.main | process_single_file | OCR completed — 5 characters extracted and saved to: 'saved.txt'
+2026-05-09 13:53:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:53:43 | WARNING  | components.ocr.main | process_single_file | No OCR text found in the Veryfi response for: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:53:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:53:43 | ERROR    | components.ocr.main | process_single_file | Unexpected error while processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_process_single_file_excep0\a.pdf'
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\main.py", line 32, in process_single_file
+    ocr_text = ocr_service.extract_ocr_text(file_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:53:43 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:53:43 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:53:43 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:53:43 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['ocr_text', 'x']
+2026-05-09 13:53:43 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:53:43 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:53:43 | ERROR    | components.ocr.ocr | process_document | Error communicating with Veryfi API for '/tmp/a.pdf': boom
+2026-05-09 13:53:43 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:53:43 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 5 characters.
+2026-05-09 13:53:43 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:53:43 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 0 characters.
+2026-05-09 13:54:23 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 13:54:23 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'
+2026-05-09 13:54:23 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 13:54:23 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 13:54:23 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:23 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h1...
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | Cache HIT — skipping Veryfi API call for 'a.pdf'. Returning cached text (11 chars).
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h2...
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmp585ngwr9.pdf
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 10 characters extracted.
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmp585ngwr9.pdf
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:25 | ERROR    | components.ocr.api | process_pdf | OCR service is not initialized. Cannot process request.
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h3...
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpyud9pbx_.pdf
+2026-05-09 13:54:25 | WARNING  | components.ocr.api | process_pdf | No text extracted from file='a.pdf'.
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpyud9pbx_.pdf
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h4...
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmp4ldxkwpi.pdf
+2026-05-09 13:54:25 | ERROR    | components.ocr.api | process_pdf | Unexpected error during OCR processing for file='a.pdf'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\api.py", line 62, in process_pdf
+    ocr_text = ocr_service.extract_ocr_text(temp_pdf_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmp4ldxkwpi.pdf
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h5...
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpa504ydse.pdf
+2026-05-09 13:54:25 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 2 characters extracted.
+2026-05-09 13:54:25 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpa504ydse.pdf
+2026-05-09 13:54:25 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:54:25 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:54:25 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'deadbeef...'.
+2026-05-09 13:54:25 | INFO     | components.ocr.file_utils | check_cache_by_hash | Cache HIT for hash 'abc...' (original file: 'None', processed: None).
+2026-05-09 13:54:25 | ERROR    | components.ocr.file_utils | check_cache_by_hash | Failed to read cache file 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_check_cache_by_hash_bad_j0\bad.json'. Treating as cache miss.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\file_utils.py", line 46, in check_cache_by_hash
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:54:25 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'bad...'.
+2026-05-09 13:54:25 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='hash123...', file='invoice.pdf', chars=5.
+2026-05-09 13:54:25 | DEBUG    | components.ocr.file_utils | get_output_dir | Created OCR output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_get_output_dir_creates_di0\module\output'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.file_utils | check_if_processed | No cached output found for 'mydoc'.
+2026-05-09 13:54:25 | INFO     | components.ocr.file_utils | check_if_processed | Cache hit for 'mydoc': output already exists at 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_check_if_processed_hit_an0\output\mydoc\mydoc.txt'.
+2026-05-09 13:54:25 | DEBUG    | components.ocr.file_utils | save_ocr_result | Created document output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_save_ocr_result_creates_e0\output\a_file'
+2026-05-09 13:54:25 | INFO     | components.ocr.file_utils | save_ocr_result | OCR result saved: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_save_ocr_result_creates_e0\output\a_file\a_file.txt' (7 characters written).
+2026-05-09 13:54:25 | ERROR    | components.ocr.main | process_single_file | Document not found: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_missi0\no.pdf'
+2026-05-09 13:54:25 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_cache0\a.pdf'
+2026-05-09 13:54:25 | INFO     | components.ocr.main | process_single_file | Cache hit — document already processed. Output at: 'cached.txt'
+2026-05-09 13:54:25 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:54:25 | INFO     | components.ocr.main | process_single_file | OCR completed — 5 characters extracted and saved to: 'saved.txt'
+2026-05-09 13:54:25 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:54:25 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:54:25 | WARNING  | components.ocr.main | process_single_file | No OCR text found in the Veryfi response for: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:54:26 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:54:26 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:54:26 | ERROR    | components.ocr.main | process_single_file | Unexpected error while processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_process_single_file_excep0\a.pdf'
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\main.py", line 32, in process_single_file
+    ocr_text = ocr_service.extract_ocr_text(file_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:54:26 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:54:26 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:26 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:54:26 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:26 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:54:26 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['ocr_text', 'x']
+2026-05-09 13:54:26 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:54:26 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:26 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:54:26 | ERROR    | components.ocr.ocr | process_document | Error communicating with Veryfi API for '/tmp/a.pdf': boom
+2026-05-09 13:54:26 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:54:26 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 5 characters.
+2026-05-09 13:54:26 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:54:26 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 0 characters.
+2026-05-09 13:54:41 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 13:54:41 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'
+2026-05-09 13:54:41 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 13:54:41 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 13:54:41 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:41 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h1...
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | Cache HIT — skipping Veryfi API call for 'a.pdf'. Returning cached text (11 chars).
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h2...
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpo4j9bzfd.pdf
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 10 characters extracted.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpo4j9bzfd.pdf
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:43 | ERROR    | components.ocr.api | process_pdf | OCR service is not initialized. Cannot process request.
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h3...
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpki0qs8k7.pdf
+2026-05-09 13:54:43 | WARNING  | components.ocr.api | process_pdf | No text extracted from file='a.pdf'.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpki0qs8k7.pdf
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h4...
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmp9wpmg14q.pdf
+2026-05-09 13:54:43 | ERROR    | components.ocr.api | process_pdf | Unexpected error during OCR processing for file='a.pdf'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\api.py", line 62, in process_pdf
+    ocr_text = ocr_service.extract_ocr_text(temp_pdf_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmp9wpmg14q.pdf
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h5...
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpc_orcbuy.pdf
+2026-05-09 13:54:43 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 2 characters extracted.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpc_orcbuy.pdf
+2026-05-09 13:54:43 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:54:43 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'deadbeef...'.
+2026-05-09 13:54:43 | INFO     | components.ocr.file_utils | check_cache_by_hash | Cache HIT for hash 'abc...' (original file: 'None', processed: None).
+2026-05-09 13:54:43 | ERROR    | components.ocr.file_utils | check_cache_by_hash | Failed to read cache file 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_check_cache_by_hash_bad_j0\bad.json'. Treating as cache miss.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\file_utils.py", line 46, in check_cache_by_hash
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:54:43 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'bad...'.
+2026-05-09 13:54:43 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='hash123...', file='invoice.pdf', chars=5.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.file_utils | get_output_dir | Created OCR output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_get_output_dir_creates_di0\module\output'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.file_utils | check_if_processed | No cached output found for 'mydoc'.
+2026-05-09 13:54:43 | INFO     | components.ocr.file_utils | check_if_processed | Cache hit for 'mydoc': output already exists at 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_check_if_processed_hit_an0\output\mydoc\mydoc.txt'.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.file_utils | save_ocr_result | Created document output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_save_ocr_result_creates_e0\output\a_file'
+2026-05-09 13:54:43 | INFO     | components.ocr.file_utils | save_ocr_result | OCR result saved: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_save_ocr_result_creates_e0\output\a_file\a_file.txt' (7 characters written).
+2026-05-09 13:54:43 | ERROR    | components.ocr.main | process_single_file | Document not found: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_missi0\no.pdf'
+2026-05-09 13:54:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_cache0\a.pdf'
+2026-05-09 13:54:43 | INFO     | components.ocr.main | process_single_file | Cache hit — document already processed. Output at: 'cached.txt'
+2026-05-09 13:54:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:54:43 | INFO     | components.ocr.main | process_single_file | OCR completed — 5 characters extracted and saved to: 'saved.txt'
+2026-05-09 13:54:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:54:43 | WARNING  | components.ocr.main | process_single_file | No OCR text found in the Veryfi response for: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:54:43 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:54:43 | ERROR    | components.ocr.main | process_single_file | Unexpected error while processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_process_single_file_excep0\a.pdf'
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\main.py", line 32, in process_single_file
+    ocr_text = ocr_service.extract_ocr_text(file_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:54:43 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:43 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:43 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:54:43 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['ocr_text', 'x']
+2026-05-09 13:54:43 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:54:43 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:54:43 | ERROR    | components.ocr.ocr | process_document | Error communicating with Veryfi API for '/tmp/a.pdf': boom
+2026-05-09 13:54:43 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:54:43 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 5 characters.
+2026-05-09 13:54:43 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:54:43 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 0 characters.
+2026-05-09 13:56:20 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 13:56:20 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'
+2026-05-09 13:56:20 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 13:56:20 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 13:56:20 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:56:20 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h1...
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | Cache HIT — skipping Veryfi API call for 'a.pdf'. Returning cached text (11 chars).
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h2...
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmp_c_ieddi.pdf
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 10 characters extracted.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmp_c_ieddi.pdf
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:56:24 | ERROR    | components.ocr.api | process_pdf | OCR service is not initialized. Cannot process request.
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h3...
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpptdakrv7.pdf
+2026-05-09 13:56:24 | WARNING  | components.ocr.api | process_pdf | No text extracted from file='a.pdf'.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpptdakrv7.pdf
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h4...
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmp2lsauvb0.pdf
+2026-05-09 13:56:24 | ERROR    | components.ocr.api | process_pdf | Unexpected error during OCR processing for file='a.pdf'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\api.py", line 62, in process_pdf
+    ocr_text = ocr_service.extract_ocr_text(temp_pdf_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmp2lsauvb0.pdf
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='a.pdf', content_type='application/pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 4 bytes
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'a.pdf': h5...
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: C:\Users\esteb\AppData\Local\Temp\tmpb_irafya.pdf
+2026-05-09 13:56:24 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'a.pdf': 2 characters extracted.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: C:\Users\esteb\AppData\Local\Temp\tmpb_irafya.pdf
+2026-05-09 13:56:24 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:56:24 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 13:56:24 | WARNING  | components.ocr.config | load_configuration | .env file not found at 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'. Falling back to system environment variables.
+2026-05-09 13:56:24 | ERROR    | components.ocr.config | load_configuration | Missing required Veryfi credentials: client_secret, username, api_key. Ensure they are defined in the .env file.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'deadbeef...'.
+2026-05-09 13:56:24 | INFO     | components.ocr.file_utils | check_cache_by_hash | Cache HIT for hash 'abc...' (original file: 'None', processed: None).
+2026-05-09 13:56:24 | ERROR    | components.ocr.file_utils | check_cache_by_hash | Failed to read cache file 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_check_cache_by_hash_bad_j0\bad.json'. Treating as cache miss.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\file_utils.py", line 46, in check_cache_by_hash
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:56:24 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash 'bad...'.
+2026-05-09 13:56:24 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='hash123...', file='invoice.pdf', chars=5.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.file_utils | get_output_dir | Created OCR output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_get_output_dir_creates_di0\module\output'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.file_utils | check_if_processed | No cached output found for 'mydoc'.
+2026-05-09 13:56:24 | INFO     | components.ocr.file_utils | check_if_processed | Cache hit for 'mydoc': output already exists at 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_check_if_processed_hit_an0\output\mydoc\mydoc.txt'.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.file_utils | save_ocr_result | Created document output directory: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_save_ocr_result_creates_e0\output\a_file'
+2026-05-09 13:56:24 | INFO     | components.ocr.file_utils | save_ocr_result | OCR result saved: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_save_ocr_result_creates_e0\output\a_file\a_file.txt' (7 characters written).
+2026-05-09 13:56:24 | ERROR    | components.ocr.main | process_single_file | Document not found: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_missi0\no.pdf'
+2026-05-09 13:56:24 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_cache0\a.pdf'
+2026-05-09 13:56:24 | INFO     | components.ocr.main | process_single_file | Cache hit — document already processed. Output at: 'cached.txt'
+2026-05-09 13:56:24 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_succe0\a.pdf'
+2026-05-09 13:56:24 | INFO     | components.ocr.main | process_single_file | OCR completed — 5 characters extracted and saved to: 'saved.txt'
+2026-05-09 13:56:24 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:56:24 | WARNING  | components.ocr.main | process_single_file | No OCR text found in the Veryfi response for: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_empty0\a.pdf'
+2026-05-09 13:56:24 | INFO     | components.ocr.main | process_single_file | Processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.main | process_single_file | Sending document to Veryfi API: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_excep0\a.pdf'
+2026-05-09 13:56:24 | ERROR    | components.ocr.main | process_single_file | Unexpected error while processing document: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_single_file_excep0\a.pdf'
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\ocr\main.py", line 32, in process_single_file
+    ocr_text = ocr_service.extract_ocr_text(file_path)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:56:24 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:56:24 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:56:24 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:56:24 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['ocr_text', 'x']
+2026-05-09 13:56:24 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='user'.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:56:24 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/a.pdf'
+2026-05-09 13:56:24 | ERROR    | components.ocr.ocr | process_document | Error communicating with Veryfi API for '/tmp/a.pdf': boom
+2026-05-09 13:56:24 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:56:24 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 5 characters.
+2026-05-09 13:56:24 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: 'x.pdf'
+2026-05-09 13:56:24 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from 'x.pdf': 0 characters.
+2026-05-09 13:57:26 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 13:57:26 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: 'C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\.env'
+2026-05-09 13:57:26 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 13:57:26 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 13:57:26 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 13:57:26 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.

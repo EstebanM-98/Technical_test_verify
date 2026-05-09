@@ -63,3 +63,423 @@
 2026-05-09 02:00:47 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
 2026-05-09 02:00:47 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
 2026-05-09 02:00:47 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.
+2026-05-09 16:32:58 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 16:32:58 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 16:32:58 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 16:32:58 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 13:53:39 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 13:53:39 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:39 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:39 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 13:53:43 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:53:43 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.
+2026-05-09 13:53:43 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:53:43 | WARNING  | components.validator.main | validate_document | Validation failed for format='Switch Invoice': 1 error(s). Errors: ['e']
+2026-05-09 13:53:44 | WARNING  | components.validator.core.rule_engine | _load_configs | Validator configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-0\test_load_configs_creates_dir_1\components\validator\configs'. No validation rules are loaded.
+2026-05-09 13:53:44 | ERROR    | components.validator.core.rule_engine | _load_configs | Error loading validator config: 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 31, in _load_configs
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:53:44 | WARNING  | components.validator.core.rule_engine | _load_configs | Skipping 'missing_format.json': missing 'format_name' key.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'valid.json' with 0 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='None'.
+2026-05-09 13:53:44 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='None'. Available: ['Switch Invoice'].
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Unknown Invoice'.
+2026-05-09 13:53:44 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='Unknown Invoice'. Available: ['Switch Invoice'].
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 0 rule(s), 2 line item(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 2 line item(s).
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Error: Quantity (2.0) * Rate (50.0) != Amount (101.0)
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:53:44 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Sum Error: Calculated sum of amount (125.0) != Header total_amount (130.0)
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 1 line item(s).
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:53:44 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Header field 'total_amount' not found for sum check.
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:53:44 | ERROR    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 126, in _apply_row_math
+    q = float(str(row.get("quantity", 0)).replace(",", ""))
+ValueError: could not convert string to float: 'x'
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:53:44 | ERROR    | components.validator.core.rule_engine | _apply_document_sum | Sum Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 171, in _apply_document_sum
+    target_val = float(str(target_val_str).replace(",", ""))
+ValueError: could not convert string to float: 'abc'
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=2.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:53:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='made_up_rule'.
+2026-05-09 13:53:44 | WARNING  | components.validator.core.rule_engine | validate | Unknown rule type 'made_up_rule' — skipping.
+2026-05-09 13:53:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:23 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 13:54:23 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:23 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:23 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 13:54:25 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:54:25 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.
+2026-05-09 13:54:25 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:54:25 | WARNING  | components.validator.main | validate_document | Validation failed for format='Switch Invoice': 1 error(s). Errors: ['e']
+2026-05-09 13:54:26 | WARNING  | components.validator.core.rule_engine | _load_configs | Validator configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-1\test_load_configs_creates_dir_1\components\validator\configs'. No validation rules are loaded.
+2026-05-09 13:54:26 | ERROR    | components.validator.core.rule_engine | _load_configs | Error loading validator config: 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 31, in _load_configs
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:54:26 | WARNING  | components.validator.core.rule_engine | _load_configs | Skipping 'missing_format.json': missing 'format_name' key.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'valid.json' with 0 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='None'.
+2026-05-09 13:54:26 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='None'. Available: ['Switch Invoice'].
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Unknown Invoice'.
+2026-05-09 13:54:26 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='Unknown Invoice'. Available: ['Switch Invoice'].
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 0 rule(s), 2 line item(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 2 line item(s).
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Error: Quantity (2.0) * Rate (50.0) != Amount (101.0)
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:26 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Sum Error: Calculated sum of amount (125.0) != Header total_amount (130.0)
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 1 line item(s).
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:26 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Header field 'total_amount' not found for sum check.
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:26 | ERROR    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 126, in _apply_row_math
+    q = float(str(row.get("quantity", 0)).replace(",", ""))
+ValueError: could not convert string to float: 'x'
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:26 | ERROR    | components.validator.core.rule_engine | _apply_document_sum | Sum Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 171, in _apply_document_sum
+    target_val = float(str(target_val_str).replace(",", ""))
+ValueError: could not convert string to float: 'abc'
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=2.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:54:26 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='made_up_rule'.
+2026-05-09 13:54:26 | WARNING  | components.validator.core.rule_engine | validate | Unknown rule type 'made_up_rule' — skipping.
+2026-05-09 13:54:26 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:41 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 13:54:41 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:41 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:41 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 13:54:43 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:54:43 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.
+2026-05-09 13:54:43 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:54:43 | WARNING  | components.validator.main | validate_document | Validation failed for format='Switch Invoice': 1 error(s). Errors: ['e']
+2026-05-09 13:54:43 | WARNING  | components.validator.core.rule_engine | _load_configs | Validator configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-2\test_load_configs_creates_dir_1\components\validator\configs'. No validation rules are loaded.
+2026-05-09 13:54:43 | ERROR    | components.validator.core.rule_engine | _load_configs | Error loading validator config: 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 31, in _load_configs
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:54:43 | WARNING  | components.validator.core.rule_engine | _load_configs | Skipping 'missing_format.json': missing 'format_name' key.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'valid.json' with 0 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='None'.
+2026-05-09 13:54:43 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='None'. Available: ['Switch Invoice'].
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Unknown Invoice'.
+2026-05-09 13:54:43 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='Unknown Invoice'. Available: ['Switch Invoice'].
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 0 rule(s), 2 line item(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 2 line item(s).
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Error: Quantity (2.0) * Rate (50.0) != Amount (101.0)
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:43 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Sum Error: Calculated sum of amount (125.0) != Header total_amount (130.0)
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 1 line item(s).
+2026-05-09 13:54:43 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:43 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Header field 'total_amount' not found for sum check.
+2026-05-09 13:54:43 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:54:44 | ERROR    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 126, in _apply_row_math
+    q = float(str(row.get("quantity", 0)).replace(",", ""))
+ValueError: could not convert string to float: 'x'
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:54:44 | ERROR    | components.validator.core.rule_engine | _apply_document_sum | Sum Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 171, in _apply_document_sum
+    target_val = float(str(target_val_str).replace(",", ""))
+ValueError: could not convert string to float: 'abc'
+2026-05-09 13:54:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=2.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:54:44 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:54:44 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='made_up_rule'.
+2026-05-09 13:54:44 | WARNING  | components.validator.core.rule_engine | validate | Unknown rule type 'made_up_rule' — skipping.
+2026-05-09 13:54:44 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:56:20 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 13:56:20 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:20 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:20 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 13:56:24 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:56:24 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.
+2026-05-09 13:56:24 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 13:56:24 | WARNING  | components.validator.main | validate_document | Validation failed for format='Switch Invoice': 1 error(s). Errors: ['e']
+2026-05-09 13:56:25 | WARNING  | components.validator.core.rule_engine | _load_configs | Validator configs directory did not exist and was created: 'C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_load_configs_creates_dir_1\components\validator\configs'. No validation rules are loaded.
+2026-05-09 13:56:25 | ERROR    | components.validator.core.rule_engine | _load_configs | Error loading validator config: 'broken.json'.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 31, in _load_configs
+    data = json.load(f)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\json\decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-05-09 13:56:25 | WARNING  | components.validator.core.rule_engine | _load_configs | Skipping 'missing_format.json': missing 'format_name' key.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'valid.json' with 0 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='None'.
+2026-05-09 13:56:25 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='None'. Available: ['Switch Invoice'].
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Unknown Invoice'.
+2026-05-09 13:56:25 | WARNING  | components.validator.core.rule_engine | validate | No validation config found for format='Unknown Invoice'. Available: ['Switch Invoice'].
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 0 rule(s), 2 line item(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 2 line item(s).
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Error: Quantity (2.0) * Rate (50.0) != Amount (101.0)
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:56:25 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Sum Error: Calculated sum of amount (125.0) != Header total_amount (130.0)
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 1 line item(s).
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:56:25 | WARNING  | components.validator.core.rule_engine | _apply_document_sum | Header field 'total_amount' not found for sum check.
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=1.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 1 line item(s).
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 13:56:25 | ERROR    | components.validator.core.rule_engine | _apply_row_math | Row 1 Math Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 126, in _apply_row_math
+    q = float(str(row.get("quantity", 0)).replace(",", ""))
+ValueError: could not convert string to float: 'x'
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 13:56:25 | ERROR    | components.validator.core.rule_engine | _apply_document_sum | Sum Evaluation Error
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\components\validator\core\rule_engine.py", line 171, in _apply_document_sum
+    target_val = float(str(target_val_str).replace(",", ""))
+ValueError: could not convert string to float: 'abc'
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=False, errors=2.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 1 rule(s), 2 line item(s).
+2026-05-09 13:56:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='made_up_rule'.
+2026-05-09 13:56:25 | WARNING  | components.validator.core.rule_engine | validate | Unknown rule type 'made_up_rule' — skipping.
+2026-05-09 13:56:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 13:57:26 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 13:57:26 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 13:57:26 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 13:57:26 | INFO     | components.validator.main | <module> | ValidatorEngine ready.

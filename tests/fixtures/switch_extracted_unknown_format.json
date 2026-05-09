@@ -1,0 +1,19 @@
+{
+  "format": "Unknown Invoice",
+  "header": {
+    "total_amount": "10.00"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "line_items": [
+        {
+          "description": "Item",
+          "quantity": 1.0,
+          "rate": 10.0,
+          "amount": 10.0
+        }
+      ]
+    }
+  ]
+}

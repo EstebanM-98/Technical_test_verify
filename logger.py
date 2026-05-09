@@ -23,7 +23,8 @@ from logging.handlers import RotatingFileHandler
 
 # ─── Constants ────────────────────────────────────────────────────────────────
 
-_LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
+_DEFAULT_LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
+_LOG_DIR = os.environ.get("LOG_DIR", _DEFAULT_LOG_DIR)
 _MAX_BYTES = 5 * 1024 * 1024   # 5 MB per file
 _BACKUP_COUNT = 5               # Keep 5 rotated backups
 _LOG_FORMAT = "%(asctime)s | %(levelname)-8s | %(name)s | %(funcName)s | %(message)s"

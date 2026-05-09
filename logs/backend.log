@@ -490,3 +490,332 @@ fastapi.exceptions.HTTPException
 2026-05-09 02:01:14 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
 2026-05-09 02:01:14 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
 2026-05-09 02:01:14 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:32:59 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 16:32:59 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 16:32:59 | INFO     | backend.api | <module> | Database tables verified/created on startup.
+2026-05-09 16:33:11 | INFO     | backend.api | login | Login attempt for username='admin'
+2026-05-09 16:33:11 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 16:33:11 | INFO     | backend.api | login | Login successful: username='admin', id=1
+2026-05-09 16:33:11 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:12 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 16:33:12 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 16:33:12 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:19 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 16:33:20 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 16:33:20 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:20 | DEBUG    | backend.api | get_project | Fetching project_id=1
+2026-05-09 16:33:20 | DEBUG    | backend.api | get_project | Project fetched: project_id=1, has_data=True
+2026-05-09 16:33:20 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:20 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=1, path=/app/data/uploads/project_1.pdf
+2026-05-09 16:33:20 | DEBUG    | backend.api | get_project_pdf | Serving PDF for project_id=1
+2026-05-09 16:33:20 | DEBUG    | backend.api | get_project | Fetching project_id=1
+2026-05-09 16:33:20 | DEBUG    | backend.api | get_project | Project fetched: project_id=1, has_data=True
+2026-05-09 16:33:20 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:25 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 16:33:25 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-09 16:33:25 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:36 | INFO     | backend.api | register | Registration attempt for username='admin2'
+2026-05-09 16:33:36 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 16:33:36 | INFO     | backend.api | register | User registered successfully: username='admin2', id=2
+2026-05-09 16:33:36 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:42 | INFO     | backend.api | login | Login attempt for username='admin2'
+2026-05-09 16:33:42 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 16:33:42 | INFO     | backend.api | login | Login successful: username='admin2', id=2
+2026-05-09 16:33:42 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 16:33:43 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=2
+2026-05-09 16:33:43 | INFO     | backend.api | get_projects | Returning 0 project(s) for user_id=2
+2026-05-09 16:33:43 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:53:38 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 13:53:38 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 13:53:40 | INFO     | backend.api | <module> | Database tables verified/created on startup.
+2026-05-09 13:53:40 | INFO     | backend.api | register | Registration attempt for username='alice'
+2026-05-09 13:53:40 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:53:41 | INFO     | backend.api | register | Registration attempt for username='u1'
+2026-05-09 13:53:41 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:53:42 | INFO     | backend.api | register | Registration attempt for username='proc'
+2026-05-09 13:53:42 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:53:42 | INFO     | backend.api | register | Registration attempt for username='pdfu'
+2026-05-09 13:53:42 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:53:43 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:53:43 | ERROR    | backend.database | get_db | Unexpected error during database session; rolling back.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\backend\database.py", line 32, in get_db
+    yield db
+RuntimeError: boom
+2026-05-09 13:53:43 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:53:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: None | Extractor: None | Validator: None
+2026-05-09 13:53:43 | CRITICAL | backend.services | run_pipeline | Missing required environment variables. OCR_URL=None, EXTRACTOR_URL=None, VALIDATOR_URL=None
+2026-05-09 13:53:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (4 bytes)
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 8 characters.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:53:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:53:43 | ERROR    | backend.services | run_pipeline | OCR service failed in 0.00s — HTTP 500: ocr fail
+2026-05-09 13:53:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:53:43 | ERROR    | backend.services | run_pipeline | Extractor service failed in 0.00s — HTTP 500: extractor fail
+2026-05-09 13:53:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:53:43 | WARNING  | backend.services | run_pipeline | Validator returned HTTP 503 in 0.00s: down
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:53:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:53:43 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:53:43 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:53:44 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:53:44 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:53:44 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:54:23 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 13:54:23 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 13:54:23 | INFO     | backend.api | <module> | Database tables verified/created on startup.
+2026-05-09 13:54:23 | INFO     | backend.api | register | Registration attempt for username='alice'
+2026-05-09 13:54:23 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:24 | INFO     | backend.api | register | Registration attempt for username='u1'
+2026-05-09 13:54:24 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:24 | INFO     | backend.api | register | Registration attempt for username='proc'
+2026-05-09 13:54:24 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:25 | INFO     | backend.api | register | Registration attempt for username='pdfu'
+2026-05-09 13:54:25 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:25 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:54:25 | ERROR    | backend.database | get_db | Unexpected error during database session; rolling back.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\backend\database.py", line 32, in get_db
+    yield db
+RuntimeError: boom
+2026-05-09 13:54:25 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:54:25 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: None | Extractor: None | Validator: None
+2026-05-09 13:54:25 | CRITICAL | backend.services | run_pipeline | Missing required environment variables. OCR_URL=None, EXTRACTOR_URL=None, VALIDATOR_URL=None
+2026-05-09 13:54:25 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (4 bytes)
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 8 characters.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:54:25 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:25 | ERROR    | backend.services | run_pipeline | OCR service failed in 0.00s — HTTP 500: ocr fail
+2026-05-09 13:54:25 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:25 | ERROR    | backend.services | run_pipeline | Extractor service failed in 0.00s — HTTP 500: extractor fail
+2026-05-09 13:54:25 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:54:25 | WARNING  | backend.services | run_pipeline | Validator returned HTTP 503 in 0.00s: down
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:54:25 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:54:25 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:54:26 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:26 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:26 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:54:26 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:54:40 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 13:54:40 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 13:54:41 | INFO     | backend.api | <module> | Database tables verified/created on startup.
+2026-05-09 13:54:41 | INFO     | backend.api | register | Registration attempt for username='alice'
+2026-05-09 13:54:41 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:42 | INFO     | backend.api | register | Registration attempt for username='u1'
+2026-05-09 13:54:42 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:42 | INFO     | backend.api | register | Registration attempt for username='proc'
+2026-05-09 13:54:42 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:42 | INFO     | backend.api | register | Registration attempt for username='pdfu'
+2026-05-09 13:54:42 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:43 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:54:43 | ERROR    | backend.database | get_db | Unexpected error during database session; rolling back.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\backend\database.py", line 32, in get_db
+    yield db
+RuntimeError: boom
+2026-05-09 13:54:43 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:54:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: None | Extractor: None | Validator: None
+2026-05-09 13:54:43 | CRITICAL | backend.services | run_pipeline | Missing required environment variables. OCR_URL=None, EXTRACTOR_URL=None, VALIDATOR_URL=None
+2026-05-09 13:54:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (4 bytes)
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 8 characters.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:54:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:43 | ERROR    | backend.services | run_pipeline | OCR service failed in 0.00s — HTTP 500: ocr fail
+2026-05-09 13:54:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:43 | ERROR    | backend.services | run_pipeline | Extractor service failed in 0.00s — HTTP 500: extractor fail
+2026-05-09 13:54:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:54:43 | WARNING  | backend.services | run_pipeline | Validator returned HTTP 503 in 0.00s: down
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:54:43 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:54:43 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:54:43 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:43 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:54:43 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:54:43 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:56:20 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 13:56:20 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-09 13:56:21 | INFO     | backend.api | <module> | Database tables verified/created on startup.
+2026-05-09 13:56:21 | INFO     | backend.api | register | Registration attempt for username='alice'
+2026-05-09 13:56:21 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:56:21 | INFO     | backend.api | register | User registered successfully: username='alice', id=1
+2026-05-09 13:56:21 | INFO     | backend.api | register | Registration attempt for username='alice'
+2026-05-09 13:56:21 | WARNING  | backend.api | register | Registration failed: username='alice' already exists.
+2026-05-09 13:56:21 | INFO     | backend.api | login | Login attempt for username='alice'
+2026-05-09 13:56:22 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 13:56:22 | INFO     | backend.api | login | Login successful: username='alice', id=1
+2026-05-09 13:56:22 | INFO     | backend.api | login | Login attempt for username='alice'
+2026-05-09 13:56:22 | DEBUG    | backend.security | verify_password | Password verification result: False
+2026-05-09 13:56:22 | WARNING  | backend.api | login | Login failed: invalid credentials for username='alice'
+2026-05-09 13:56:22 | INFO     | backend.api | register | Registration attempt for username='u1'
+2026-05-09 13:56:22 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:56:22 | INFO     | backend.api | register | User registered successfully: username='u1', id=1
+2026-05-09 13:56:22 | INFO     | backend.api | login | Login attempt for username='u1'
+2026-05-09 13:56:22 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 13:56:22 | INFO     | backend.api | login | Login successful: username='u1', id=1
+2026-05-09 13:56:22 | INFO     | backend.api | register | Registration attempt for username='u2'
+2026-05-09 13:56:22 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:56:23 | INFO     | backend.api | register | User registered successfully: username='u2', id=2
+2026-05-09 13:56:23 | INFO     | backend.api | login | Login attempt for username='u2'
+2026-05-09 13:56:23 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 13:56:23 | INFO     | backend.api | login | Login successful: username='u2', id=2
+2026-05-09 13:56:23 | INFO     | backend.api | create_project | Creating project name='proj1' for user_id=1
+2026-05-09 13:56:23 | INFO     | backend.api | create_project | Project created: id=1, name='proj1', owner_id=1
+2026-05-09 13:56:23 | INFO     | backend.api | create_project | Creating project name='proj2' for user_id=2
+2026-05-09 13:56:23 | INFO     | backend.api | create_project | Project created: id=2, name='proj2', owner_id=2
+2026-05-09 13:56:23 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-09 13:56:23 | INFO     | backend.api | get_projects | Returning 1 project(s) for user_id=1
+2026-05-09 13:56:23 | DEBUG    | backend.api | get_project | Fetching project_id=1
+2026-05-09 13:56:23 | DEBUG    | backend.api | get_project | Project fetched: project_id=1, has_data=False
+2026-05-09 13:56:23 | DEBUG    | backend.api | get_project | Fetching project_id=99999
+2026-05-09 13:56:23 | WARNING  | backend.api | get_project | Project not found: project_id=99999
+2026-05-09 13:56:23 | INFO     | backend.api | update_project | Updating project_id=1 with new name='renamed'
+2026-05-09 13:56:23 | INFO     | backend.api | update_project | Project updated successfully: project_id=1
+2026-05-09 13:56:23 | INFO     | backend.api | update_project | Updating project_id=99999 with new name='x'
+2026-05-09 13:56:23 | WARNING  | backend.api | update_project | Update failed: project_id=99999 not found.
+2026-05-09 13:56:23 | INFO     | backend.api | delete_project | Delete requested for project_id=1
+2026-05-09 13:56:23 | DEBUG    | backend.api | delete_project | Deleted PDF file: C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_projects_crud_and_filters0\uploads\project_1.pdf
+2026-05-09 13:56:23 | INFO     | backend.api | delete_project | Project deleted: project_id=1
+2026-05-09 13:56:23 | INFO     | backend.api | delete_project | Delete requested for project_id=99999
+2026-05-09 13:56:23 | WARNING  | backend.api | delete_project | Delete failed: project_id=99999 not found.
+2026-05-09 13:56:23 | INFO     | backend.api | register | Registration attempt for username='proc'
+2026-05-09 13:56:23 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:56:23 | INFO     | backend.api | register | User registered successfully: username='proc', id=1
+2026-05-09 13:56:23 | INFO     | backend.api | login | Login attempt for username='proc'
+2026-05-09 13:56:23 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 13:56:23 | INFO     | backend.api | login | Login successful: username='proc', id=1
+2026-05-09 13:56:23 | INFO     | backend.api | create_project | Creating project name='to-process' for user_id=1
+2026-05-09 13:56:23 | INFO     | backend.api | create_project | Project created: id=1, name='to-process', owner_id=1
+2026-05-09 13:56:23 | INFO     | backend.api | process_project | Processing started: project_id=1, filename='file.pdf', content_type='application/pdf'
+2026-05-09 13:56:23 | DEBUG    | backend.api | process_project | File read into memory: 11 bytes
+2026-05-09 13:56:23 | DEBUG    | backend.api | process_project | PDF saved to disk: C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_project_success_a0\uploads\project_1.pdf
+2026-05-09 13:56:23 | INFO     | backend.api | process_project | Pipeline completed for project_id=1 in 0.00s
+2026-05-09 13:56:23 | DEBUG    | backend.api | get_project | Fetching project_id=1
+2026-05-09 13:56:23 | DEBUG    | backend.api | get_project | Project fetched: project_id=1, has_data=True
+2026-05-09 13:56:23 | INFO     | backend.api | process_project | Processing started: project_id=1, filename='file.pdf', content_type='application/pdf'
+2026-05-09 13:56:23 | DEBUG    | backend.api | process_project | File read into memory: 11 bytes
+2026-05-09 13:56:23 | DEBUG    | backend.api | process_project | PDF saved to disk: C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_process_project_success_a0\uploads\project_1.pdf
+2026-05-09 13:56:23 | ERROR    | backend.api | process_project | Pipeline failed for project_id=1 after 0.00s: pipeline failed
+2026-05-09 13:56:23 | INFO     | backend.api | process_project | Processing started: project_id=99999, filename='file.pdf', content_type='application/pdf'
+2026-05-09 13:56:23 | WARNING  | backend.api | process_project | Process failed: project_id=99999 not found.
+2026-05-09 13:56:23 | INFO     | backend.api | register | Registration attempt for username='pdfu'
+2026-05-09 13:56:23 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:56:24 | INFO     | backend.api | register | User registered successfully: username='pdfu', id=1
+2026-05-09 13:56:24 | INFO     | backend.api | login | Login attempt for username='pdfu'
+2026-05-09 13:56:24 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 13:56:24 | INFO     | backend.api | login | Login successful: username='pdfu', id=1
+2026-05-09 13:56:24 | INFO     | backend.api | create_project | Creating project name='pdf' for user_id=1
+2026-05-09 13:56:24 | INFO     | backend.api | create_project | Project created: id=1, name='pdf', owner_id=1
+2026-05-09 13:56:24 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=1, path=C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_get_project_pdf_endpoint0\uploads\project_1.pdf
+2026-05-09 13:56:24 | DEBUG    | backend.api | get_project_pdf | Serving PDF for project_id=1
+2026-05-09 13:56:24 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=99999, path=C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_get_project_pdf_endpoint0\uploads\project_99999.pdf
+2026-05-09 13:56:24 | WARNING  | backend.api | get_project_pdf | PDF not found for project_id=99999 at path=C:\Users\esteb\AppData\Local\Temp\pytest-of-esteb\pytest-3\test_get_project_pdf_endpoint0\uploads\project_99999.pdf
+2026-05-09 13:56:24 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:56:24 | ERROR    | backend.database | get_db | Unexpected error during database session; rolling back.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\backend\database.py", line 32, in get_db
+    yield db
+RuntimeError: boom
+2026-05-09 13:56:24 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-09 13:56:24 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: None | Extractor: None | Validator: None
+2026-05-09 13:56:24 | CRITICAL | backend.services | run_pipeline | Missing required environment variables. OCR_URL=None, EXTRACTOR_URL=None, VALIDATOR_URL=None
+2026-05-09 13:56:24 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (4 bytes)
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 8 characters.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:56:24 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:56:24 | ERROR    | backend.services | run_pipeline | OCR service failed in 0.00s — HTTP 500: ocr fail
+2026-05-09 13:56:24 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:56:24 | ERROR    | backend.services | run_pipeline | Extractor service failed in 0.00s — HTTP 500: extractor fail
+2026-05-09 13:56:24 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:56:24 | WARNING  | backend.services | run_pipeline | Validator returned HTTP 503 in 0.00s: down
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:56:24 | DEBUG    | backend.services | run_pipeline | Pipeline env URLs — OCR: http://ocr/process | Extractor: http://extractor/extract | Validator: http://validator/validate
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 1/3 — Calling OCR service for file='a.pdf' (1 bytes)
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | OCR completed in 0.00s — extracted 0 characters.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 2/3 — Calling Extractor service.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Extractor completed in 0.00s — format='Switch Invoice'.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Step 3/3 — Calling Validator service.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Validator completed in 0.00s — is_valid=True.
+2026-05-09 13:56:24 | INFO     | backend.services | run_pipeline | Pipeline finished successfully for file='a.pdf'.
+2026-05-09 13:56:24 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:56:24 | DEBUG    | backend.security | hash_password | Hashing password.
+2026-05-09 13:56:25 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-09 13:56:25 | DEBUG    | backend.security | verify_password | Password verification result: False
+2026-05-09 13:56:25 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:56:25 | WARNING  | backend.security | verify_password | bcrypt verification failed — falling back to plain-text comparison. This indicates a legacy password that should be re-hashed on next login.
+2026-05-09 13:57:26 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-09 13:57:26 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db

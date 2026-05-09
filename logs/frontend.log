@@ -486,3 +486,176 @@
 2026-05-09 02:01:26 | INFO     | views.dashboard | dashboard_view | User 'admin' logged out.
 2026-05-09 02:01:26 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
 2026-05-09 02:01:26 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:04 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:04 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:08 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:08 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:10 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:10 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:10 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:10 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:11 | INFO     | views.login | login_view | Login attempt for username='admin'.
+2026-05-09 16:33:11 | INFO     | views.login | login_view | Login successful for username='admin'.
+2026-05-09 16:33:11 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:11 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 16:33:12 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 16:33:12 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 16:33:19 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:19 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 16:33:19 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 16:33:20 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 16:33:20 | INFO     | views.dashboard | dashboard_view | User 'admin' opening project_id=1.
+2026-05-09 16:33:20 | DEBUG    | views.dashboard | _open_project | Loading project data for project_id=1.
+2026-05-09 16:33:20 | DEBUG    | views.dashboard | _open_project | Project data loaded for project_id=1: has_extracted_data=True.
+2026-05-09 16:33:20 | DEBUG    | views.dashboard | _open_project | Loading PDF bytes for project_id=1.
+2026-05-09 16:33:20 | DEBUG    | views.dashboard | _open_project | PDF loaded for project_id=1: 271239 bytes.
+2026-05-09 16:33:20 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:20 | DEBUG    | __main__ | <module> | User='admin' opened project_id=1 — rendering project view.
+2026-05-09 16:33:20 | DEBUG    | views.project | project_view | Rendering project view for project_id=1.
+2026-05-09 16:33:20 | DEBUG    | utils.pdf_renderer | display_pdf | Rendering PDF page 1 (271239 bytes).
+2026-05-09 16:33:20 | DEBUG    | utils.pdf_renderer | display_pdf | Page 1 rendered: 240583 bytes PNG.
+2026-05-09 16:33:24 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:24 | DEBUG    | __main__ | <module> | User='admin' opened project_id=1 — rendering project view.
+2026-05-09 16:33:25 | INFO     | views.project | project_view | User 'admin' returned to dashboard from project_id=1.
+2026-05-09 16:33:25 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:25 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 16:33:25 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin' (id=1).
+2026-05-09 16:33:25 | INFO     | views.dashboard | dashboard_view | Loaded 5 project(s) for user 'admin'.
+2026-05-09 16:33:26 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:26 | DEBUG    | __main__ | <module> | User='admin' logged in — rendering dashboard.
+2026-05-09 16:33:26 | INFO     | views.dashboard | dashboard_view | User 'admin' logged out.
+2026-05-09 16:33:26 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:26 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:33 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:33 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:35 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:35 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:35 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:35 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:36 | INFO     | views.login | login_view | Registration attempt for username='admin2'.
+2026-05-09 16:33:36 | INFO     | views.login | login_view | Registration successful for username='admin2'.
+2026-05-09 16:33:39 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:39 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:41 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:41 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:41 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:41 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 16:33:42 | INFO     | views.login | login_view | Login attempt for username='admin2'.
+2026-05-09 16:33:42 | INFO     | views.login | login_view | Login successful for username='admin2'.
+2026-05-09 16:33:42 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:42 | DEBUG    | __main__ | <module> | User='admin2' logged in — rendering dashboard.
+2026-05-09 16:33:43 | DEBUG    | views.dashboard | dashboard_view | Loading projects for user 'admin2' (id=2).
+2026-05-09 16:33:43 | INFO     | views.dashboard | dashboard_view | Loaded 0 project(s) for user 'admin2'.
+2026-05-09 16:33:49 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:49 | DEBUG    | __main__ | <module> | User='admin2' logged in — rendering dashboard.
+2026-05-09 16:33:49 | INFO     | views.dashboard | dashboard_view | User 'admin2' logged out.
+2026-05-09 16:33:49 | INFO     | __main__ | <module> | Frontend started. Backend URL: http://backend:8000
+2026-05-09 16:33:49 | DEBUG    | __main__ | <module> | No active session — rendering login view.
+2026-05-09 13:53:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:53:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Page 1 rendered: 3 bytes PNG.
+2026-05-09 13:53:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 4 (4 bytes).
+2026-05-09 13:53:43 | WARNING  | frontend.utils.pdf_renderer | display_pdf | Requested page 4 is out of bounds (document has 1 page(s)).
+2026-05-09 13:53:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:53:43 | ERROR    | frontend.utils.pdf_renderer | display_pdf | Error rendering PDF page 1.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\frontend\utils\pdf_renderer.py", line 14, in display_pdf
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:54:25 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:54:25 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Page 1 rendered: 3 bytes PNG.
+2026-05-09 13:54:25 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 4 (4 bytes).
+2026-05-09 13:54:25 | WARNING  | frontend.utils.pdf_renderer | display_pdf | Requested page 4 is out of bounds (document has 1 page(s)).
+2026-05-09 13:54:25 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:54:25 | ERROR    | frontend.utils.pdf_renderer | display_pdf | Error rendering PDF page 1.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\frontend\utils\pdf_renderer.py", line 14, in display_pdf
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:54:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:54:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Page 1 rendered: 3 bytes PNG.
+2026-05-09 13:54:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 4 (4 bytes).
+2026-05-09 13:54:43 | WARNING  | frontend.utils.pdf_renderer | display_pdf | Requested page 4 is out of bounds (document has 1 page(s)).
+2026-05-09 13:54:43 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:54:43 | ERROR    | frontend.utils.pdf_renderer | display_pdf | Error rendering PDF page 1.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\frontend\utils\pdf_renderer.py", line 14, in display_pdf
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Loading project data for project_id=10.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Project data loaded for project_id=10: has_extracted_data=True.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Loading PDF bytes for project_id=10.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | PDF loaded for project_id=10: 4 bytes.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Loading project data for project_id=10.
+2026-05-09 13:56:24 | ERROR    | frontend.views.dashboard | _open_project | Could not load project data for project_id=10.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\frontend\views\dashboard.py", line 138, in _open_project
+    p_res = httpx.get(f"{backend_url}/projects/{project_id}")
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1238, in _execute_mock_call
+    raise result
+RuntimeError: boom
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Loading PDF bytes for project_id=10.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | PDF loaded for project_id=10: 4 bytes.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Loading project data for project_id=10.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Project data loaded for project_id=10: has_extracted_data=True.
+2026-05-09 13:56:24 | DEBUG    | frontend.views.dashboard | _open_project | Loading PDF bytes for project_id=10.
+2026-05-09 13:56:24 | ERROR    | frontend.views.dashboard | _open_project | Could not load PDF for project_id=10.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\frontend\views\dashboard.py", line 153, in _open_project
+    pdf_res = httpx.get(f"{backend_url}/projects/{project_id}/pdf", timeout=30.0)
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1238, in _execute_mock_call
+    raise result
+RuntimeError: boom
+2026-05-09 13:56:24 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:56:24 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Page 1 rendered: 3 bytes PNG.
+2026-05-09 13:56:24 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 4 (4 bytes).
+2026-05-09 13:56:24 | WARNING  | frontend.utils.pdf_renderer | display_pdf | Requested page 4 is out of bounds (document has 1 page(s)).
+2026-05-09 13:56:24 | DEBUG    | frontend.utils.pdf_renderer | display_pdf | Rendering PDF page 1 (4 bytes).
+2026-05-09 13:56:24 | ERROR    | frontend.utils.pdf_renderer | display_pdf | Error rendering PDF page 1.
+Traceback (most recent call last):
+  File "C:\Users\esteb\Desktop\prueba_verify\Technical_test_verify\frontend\utils\pdf_renderer.py", line 14, in display_pdf
+    doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\esteb\AppData\Roaming\uv\python\cpython-3.14.2-windows-x86_64-none\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
