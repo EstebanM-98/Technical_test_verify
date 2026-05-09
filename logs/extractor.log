@@ -1,0 +1,91 @@
+2026-05-09 01:36:22 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 01:36:22 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 01:36:22 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 01:36:22 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 01:36:22 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 01:37:29 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 01:37:29 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 01:37:29 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 01:37:29 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 01:37:29 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 01:38:25 | INFO     | components.extractor.api | extract_data | Extraction request received: 1828 characters of OCR text.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 1 page(s).
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Switch Invoice' match result: True.
+2026-05-09 01:38:25 | INFO     | components.extractor.core.document_parser | parse | Format identified: 'Switch Invoice'.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Switch Invoice': 8/8 fields populated.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.core.document_parser | parse | Header extracted: ['vendor_name', 'vendor_address', 'invoice_date', 'due_date', 'invoice_number', 'bill_to_name', 'total_amount', 'currency']
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description				Quantity	Rate	Amount'.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '4419693704' from field 'description'.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '4419693704' from field 'description'.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 230 Gbps Wavelength Diverse be...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 230 Gbps Wavelength Diverse be...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Special Partnership Discount (03/2023)...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Item Discount: Special Partnership Discount (11/2023)...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Transport | 82 Gbps Fiber to YDDTJOrnuW (L0KSKNCB) (01/2024)...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 45 Gbps Wavelength Diverse bet...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 45 Gbps Wavelength Diverse bet...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Transport | 97 Gbps Fiber to 3XMOyFdB (5EE7PIWY) (02/2024)...').
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD	$58,164,641.64'.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Switch Invoice': 7 item(s) found, 1 with SKU resolved.
+2026-05-09 01:38:25 | DEBUG    | components.extractor.core.document_parser | parse | Page 1: 7 line item(s) extracted.
+2026-05-09 01:38:25 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Switch Invoice', pages=1, total_line_items=7.
+2026-05-09 01:38:25 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=7.
+2026-05-09 01:41:58 | INFO     | components.extractor.api | extract_data | Extraction request received: 3177 characters of OCR text.
+2026-05-09 01:41:58 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 2 page(s).
+2026-05-09 01:41:58 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Switch Invoice' match result: False.
+2026-05-09 01:41:58 | WARNING  | components.extractor.core.document_parser | parse | No matching format found for this document. Available formats: ['Switch Invoice']
+2026-05-09 01:41:58 | WARNING  | components.extractor.api | extract_data | Extraction returned an error: El formato de este documento aún no ha sido configurado. Por favor agregue el archivo JSON de configuración en la carpeta configs/.
+2026-05-09 01:48:09 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 01:48:09 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 01:48:09 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 01:48:09 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 01:48:09 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 01:54:09 | INFO     | components.extractor.api | <module> | Initializing DocumentParser...
+2026-05-09 01:54:09 | DEBUG    | components.extractor.formats.dynamic_format | __init__ | DynamicFormat 'Switch Invoice' created. SKU extraction: enabled.
+2026-05-09 01:54:09 | DEBUG    | components.extractor.core.document_parser | _load_configs | Loaded format config: 'switch.json'
+2026-05-09 01:54:09 | INFO     | components.extractor.core.document_parser | _load_configs | DocumentParser initialized: 1 format(s) loaded.
+2026-05-09 01:54:09 | INFO     | components.extractor.api | <module> | DocumentParser ready.
+2026-05-09 01:54:47 | INFO     | components.extractor.api | extract_data | Extraction request received: 1828 characters of OCR text.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 1 page(s).
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Switch Invoice' match result: True.
+2026-05-09 01:54:47 | INFO     | components.extractor.core.document_parser | parse | Format identified: 'Switch Invoice'.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Switch Invoice': 8/8 fields populated.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.core.document_parser | parse | Header extracted: ['vendor_name', 'vendor_address', 'invoice_date', 'due_date', 'invoice_number', 'bill_to_name', 'total_amount', 'currency']
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description				Quantity	Rate	Amount'.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '4419693704' from field 'description'.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '4419693704' from field 'description'.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 230 Gbps Wavelength Diverse be...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 230 Gbps Wavelength Diverse be...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Special Partnership Discount (03/2023)...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Item Discount: Special Partnership Discount (11/2023)...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Transport | 82 Gbps Fiber to YDDTJOrnuW (L0KSKNCB) (01/2024)...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 45 Gbps Wavelength Diverse bet...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 45 Gbps Wavelength Diverse bet...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Transport | 97 Gbps Fiber to 3XMOyFdB (5EE7PIWY) (02/2024)...').
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD	$58,164,641.64'.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Switch Invoice': 7 item(s) found, 1 with SKU resolved.
+2026-05-09 01:54:47 | DEBUG    | components.extractor.core.document_parser | parse | Page 1: 7 line item(s) extracted.
+2026-05-09 01:54:47 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Switch Invoice', pages=1, total_line_items=7.
+2026-05-09 01:54:47 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=7.
+2026-05-09 01:55:42 | INFO     | components.extractor.api | extract_data | Extraction request received: 1828 characters of OCR text.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.core.document_parser | parse | Document split into 1 page(s).
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | is_match | Format 'Switch Invoice' match result: True.
+2026-05-09 01:55:42 | INFO     | components.extractor.core.document_parser | parse | Format identified: 'Switch Invoice'.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | extract_header_fields | Header extraction complete for format 'Switch Invoice': 8/8 fields populated.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.core.document_parser | parse | Header extracted: ['vendor_name', 'vendor_address', 'invoice_date', 'due_date', 'invoice_number', 'bill_to_name', 'total_amount', 'currency']
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table start anchor matched: 'Description				Quantity	Rate	Amount'.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '4419693704' from field 'description'.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU resolved: '4419693704' from field 'description'.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 230 Gbps Wavelength Diverse be...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 230 Gbps Wavelength Diverse be...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Special Partnership Discount (03/2023)...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Item Discount: Special Partnership Discount (11/2023)...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Transport | 82 Gbps Fiber to YDDTJOrnuW (L0KSKNCB) (01/2024)...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 45 Gbps Wavelength Diverse bet...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Carrier Taxes for Transport | 45 Gbps Wavelength Diverse bet...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | _extract_sku | SKU not matched for item (source_field='description', value='Transport | 97 Gbps Fiber to 3XMOyFdB (5EE7PIWY) (02/2024)...').
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Table stop anchor matched: 'Total USD	$58,164,641.64'.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.formats.dynamic_format | extract_line_items | Line item extraction complete for format 'Switch Invoice': 7 item(s) found, 1 with SKU resolved.
+2026-05-09 01:55:42 | DEBUG    | components.extractor.core.document_parser | parse | Page 1: 7 line item(s) extracted.
+2026-05-09 01:55:42 | INFO     | components.extractor.core.document_parser | parse | Parsing complete: format='Switch Invoice', pages=1, total_line_items=7.
+2026-05-09 01:55:42 | INFO     | components.extractor.api | extract_data | Extraction successful: format='Switch Invoice', total_line_items=7.

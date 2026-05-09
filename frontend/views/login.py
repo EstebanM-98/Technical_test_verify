@@ -9,7 +9,7 @@ logger = get_logger(__name__, "frontend.log")
 
 def login_view(backend_url: str):
     display_logo()
-    st.title("Smart Bank Extractor")
+    st.title("Smart Invoice Extractor")
     st.write("Welcome to the system. Please login or register.")
 
     tab_login, tab_register = st.tabs(["Login", "Register"])

@@ -1,0 +1,59 @@
+2026-05-09 01:36:22 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 01:36:22 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: '/app/.env'
+2026-05-09 01:36:22 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 01:36:22 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 01:36:22 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 01:36:22 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 01:37:29 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 01:37:29 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: '/app/.env'
+2026-05-09 01:37:29 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 01:37:29 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 01:37:29 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 01:37:29 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 01:38:21 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='synth-switch_v5-4.pdf', content_type='application/pdf'
+2026-05-09 01:38:21 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 271239 bytes
+2026-05-09 01:38:21 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: /tmp/tmp1zh2wbl8.pdf
+2026-05-09 01:38:21 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: '/tmp/tmp1zh2wbl8.pdf'
+2026-05-09 01:38:21 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/tmp1zh2wbl8.pdf'
+2026-05-09 01:38:25 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['account_number', 'bill_to', 'cashback', 'category', 'country_code', 'created_date', 'currency_code', 'date', 'delivery_date', 'discount', 'document_reference_number', 'document_title', 'document_type', 'due_date', 'duplicate_of', 'external_id', 'id', 'img_file_name', 'img_thumbnail_url', 'img_url', 'insurance', 'invoice_number', 'is_duplicate', 'is_money_in', 'line_items', 'meta', 'notes', 'ocr_text', 'order_date', 'payment', 'pdf_url', 'purchase_order_number', 'reference_number', 'rounding', 'service_end_date', 'service_start_date', 'ship_date', 'ship_to', 'shipping', 'store_number', 'subtotal', 'tags', 'tax', 'tax_lines', 'tip', 'total', 'total_weight', 'tracking_number', 'updated_date', 'vendor']
+2026-05-09 01:38:25 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from '/tmp/tmp1zh2wbl8.pdf': 1828 characters.
+2026-05-09 01:38:25 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'synth-switch_v5-4.pdf': 1828 characters extracted.
+2026-05-09 01:38:25 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmp1zh2wbl8.pdf
+2026-05-09 01:41:47 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='extracto_202511.pdf', content_type='application/pdf'
+2026-05-09 01:41:47 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 495208 bytes
+2026-05-09 01:41:47 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: /tmp/tmpcg4aaibv.pdf
+2026-05-09 01:41:47 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: '/tmp/tmpcg4aaibv.pdf'
+2026-05-09 01:41:47 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/tmpcg4aaibv.pdf'
+2026-05-09 01:41:58 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['account_number', 'bill_to', 'cashback', 'category', 'country_code', 'created_date', 'currency_code', 'date', 'delivery_date', 'discount', 'document_reference_number', 'document_title', 'document_type', 'due_date', 'duplicate_of', 'external_id', 'id', 'img_file_name', 'img_thumbnail_url', 'img_url', 'insurance', 'invoice_number', 'is_duplicate', 'is_money_in', 'line_items', 'meta', 'notes', 'ocr_text', 'order_date', 'payment', 'pdf_url', 'purchase_order_number', 'reference_number', 'rounding', 'service_end_date', 'service_start_date', 'ship_date', 'ship_to', 'shipping', 'store_number', 'subtotal', 'tags', 'tax', 'tax_lines', 'tip', 'total', 'total_weight', 'tracking_number', 'updated_date', 'vendor']
+2026-05-09 01:41:58 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from '/tmp/tmpcg4aaibv.pdf': 3177 characters.
+2026-05-09 01:41:58 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'extracto_202511.pdf': 3177 characters extracted.
+2026-05-09 01:41:58 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmpcg4aaibv.pdf
+2026-05-09 01:48:09 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 01:48:09 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: '/app/.env'
+2026-05-09 01:48:09 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 01:48:09 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 01:48:09 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 01:48:09 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 01:54:09 | INFO     | components.ocr.api | <module> | Initializing OCR service...
+2026-05-09 01:54:09 | DEBUG    | components.ocr.config | load_configuration | Loaded .env from: '/app/.env'
+2026-05-09 01:54:09 | INFO     | components.ocr.config | load_configuration | Veryfi configuration loaded successfully. Keys present: client_id, client_secret, username, api_key
+2026-05-09 01:54:09 | INFO     | components.ocr.ocr | __init__ | Initializing Veryfi client for username='estebma'.
+2026-05-09 01:54:09 | DEBUG    | components.ocr.ocr | __init__ | Veryfi client initialized successfully.
+2026-05-09 01:54:09 | INFO     | components.ocr.api | <module> | OCR service initialized successfully.
+2026-05-09 01:54:43 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='synth-switch_v5-4.pdf', content_type='application/pdf'
+2026-05-09 01:54:43 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 271239 bytes
+2026-05-09 01:54:43 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'synth-switch_v5-4.pdf': 6c462a4a48fe...
+2026-05-09 01:54:43 | DEBUG    | components.ocr.file_utils | check_cache_by_hash | Cache MISS for hash '6c462a4a48fe...'.
+2026-05-09 01:54:43 | DEBUG    | components.ocr.api | process_pdf | PDF written to temp file: /tmp/tmpuoel4dao.pdf
+2026-05-09 01:54:43 | DEBUG    | components.ocr.ocr | extract_ocr_text | Extracting 'ocr_text' field from document: '/tmp/tmpuoel4dao.pdf'
+2026-05-09 01:54:43 | INFO     | components.ocr.ocr | process_document | Sending document to Veryfi API: '/tmp/tmpuoel4dao.pdf'
+2026-05-09 01:54:47 | DEBUG    | components.ocr.ocr | process_document | Veryfi API response received. Keys: ['account_number', 'bill_to', 'cashback', 'category', 'country_code', 'created_date', 'currency_code', 'date', 'delivery_date', 'discount', 'document_reference_number', 'document_title', 'document_type', 'due_date', 'duplicate_of', 'external_id', 'id', 'img_file_name', 'img_thumbnail_url', 'img_url', 'insurance', 'invoice_number', 'is_duplicate', 'is_money_in', 'line_items', 'meta', 'notes', 'ocr_text', 'order_date', 'payment', 'pdf_url', 'purchase_order_number', 'reference_number', 'rounding', 'service_end_date', 'service_start_date', 'ship_date', 'ship_to', 'shipping', 'store_number', 'subtotal', 'tags', 'tax', 'tax_lines', 'tip', 'total', 'total_weight', 'tracking_number', 'updated_date', 'vendor']
+2026-05-09 01:54:47 | INFO     | components.ocr.ocr | extract_ocr_text | ocr_text extracted from '/tmp/tmpuoel4dao.pdf': 1828 characters.
+2026-05-09 01:54:47 | INFO     | components.ocr.file_utils | save_cache_by_hash | Cache saved: hash='6c462a4a48fe...', file='synth-switch_v5-4.pdf', chars=1828.
+2026-05-09 01:54:47 | INFO     | components.ocr.api | process_pdf | OCR extraction successful for 'synth-switch_v5-4.pdf': 1828 characters extracted.
+2026-05-09 01:54:47 | DEBUG    | components.ocr.api | process_pdf | Temp file cleaned up: /tmp/tmpuoel4dao.pdf
+2026-05-09 01:55:42 | INFO     | components.ocr.api | process_pdf | Received OCR request: filename='synth-switch_v5-4.pdf', content_type='application/pdf'
+2026-05-09 01:55:42 | DEBUG    | components.ocr.api | process_pdf | File read into memory: 271239 bytes
+2026-05-09 01:55:42 | DEBUG    | components.ocr.api | process_pdf | SHA-256 hash computed for 'synth-switch_v5-4.pdf': 6c462a4a48fe...
+2026-05-09 01:55:42 | INFO     | components.ocr.file_utils | check_cache_by_hash | Cache HIT for hash '6c462a4a48fe...' (original file: 'synth-switch_v5-4.pdf', processed: 2026-05-09T01:54:47.485989+00:00).
+2026-05-09 01:55:42 | INFO     | components.ocr.api | process_pdf | Cache HIT — skipping Veryfi API call for 'synth-switch_v5-4.pdf'. Returning cached text (1828 chars).

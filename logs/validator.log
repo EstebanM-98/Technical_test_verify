@@ -1,0 +1,37 @@
+2026-05-09 01:36:22 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 01:36:22 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 01:36:22 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 01:36:22 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 01:37:29 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 01:37:29 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 01:37:29 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 01:37:29 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 01:38:25 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 01:38:25 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 01:38:25 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 7 line item(s).
+2026-05-09 01:38:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 01:38:25 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 01:38:25 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 01:38:25 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.
+2026-05-09 01:48:09 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 01:48:09 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 01:48:09 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 01:48:09 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 01:54:09 | INFO     | components.validator.main | <module> | Initializing ValidatorEngine...
+2026-05-09 01:54:09 | DEBUG    | components.validator.core.rule_engine | _load_configs | Loaded validator config: 'switch.json' with 2 rule(s).
+2026-05-09 01:54:09 | INFO     | components.validator.core.rule_engine | _load_configs | ValidatorEngine initialized: 1 format config(s) loaded.
+2026-05-09 01:54:09 | INFO     | components.validator.main | <module> | ValidatorEngine ready.
+2026-05-09 01:54:47 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 01:54:47 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 01:54:47 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 7 line item(s).
+2026-05-09 01:54:47 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 01:54:47 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 01:54:47 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 01:54:47 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.
+2026-05-09 01:55:42 | INFO     | components.validator.main | validate_document | Validation request received for format='Switch Invoice'.
+2026-05-09 01:55:42 | DEBUG    | components.validator.core.rule_engine | validate | Running validation for format='Switch Invoice'.
+2026-05-09 01:55:42 | DEBUG    | components.validator.core.rule_engine | validate | Validating format='Switch Invoice': 2 rule(s), 7 line item(s).
+2026-05-09 01:55:42 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='row_math'.
+2026-05-09 01:55:42 | DEBUG    | components.validator.core.rule_engine | validate | Applying rule type='document_sum'.
+2026-05-09 01:55:42 | INFO     | components.validator.core.rule_engine | validate | Validation complete for format='Switch Invoice': is_valid=True, errors=0.
+2026-05-09 01:55:42 | INFO     | components.validator.main | validate_document | Validation passed for format='Switch Invoice'.

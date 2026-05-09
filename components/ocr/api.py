@@ -6,6 +6,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 
 from components.ocr.config import load_configuration
+from components.ocr.file_utils import compute_content_hash, check_cache_by_hash, save_cache_by_hash
 from components.ocr.ocr import VeryfiOCR
 from logger import get_logger
 
@@ -38,6 +39,19 @@ async def process_pdf(file: UploadFile = File(...)):
     content = await file.read()
     logger.debug("File read into memory: %d bytes", len(content))
 
+    # ─── Cache lookup (avoids redundant Veryfi API calls) ───────────────────────────
+    file_hash = compute_content_hash(content)
+    logger.debug("SHA-256 hash computed for '%s': %s...", file.filename, file_hash[:12])
+
+    cached = check_cache_by_hash(file_hash)
+    if cached:
+        logger.info(
+            "Cache HIT — skipping Veryfi API call for '%s'. Returning cached text (%d chars).",
+            file.filename, cached["character_count"],
+        )
+        return JSONResponse(content={"ocr_text": cached["ocr_text"], "cached": True})
+
+    # ─── Cache miss — call Veryfi ────────────────────────────────────────
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_pdf:
         temp_pdf.write(content)
         temp_pdf_path = temp_pdf.name
@@ -50,11 +64,14 @@ async def process_pdf(file: UploadFile = File(...)):
             logger.warning("No text extracted from file='%s'.", file.filename)
             raise HTTPException(status_code=400, detail="No text extracted.")
 
+        # Persist to cache before returning
+        save_cache_by_hash(ocr_text, file_hash, file.filename)
+
         logger.info(
             "OCR extraction successful for '%s': %d characters extracted.",
             file.filename, len(ocr_text),
         )
-        return JSONResponse(content={"ocr_text": ocr_text})
+        return JSONResponse(content={"ocr_text": ocr_text, "cached": False})
 
     except HTTPException:
         raise

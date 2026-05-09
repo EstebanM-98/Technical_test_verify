@@ -45,7 +45,7 @@ def project_view(backend_url: str):
 # ─── Upload View ─────────────────────────────────────────────────────────────
 
 def _upload_view(project: dict, backend_url: str):
-    st.write("Upload your bank statement PDF to process it.")
+    st.write("Upload your invoice PDF to process it.")
     uploaded_file = st.file_uploader("Drag and drop PDF here", type="pdf")
     if uploaded_file:
         st.session_state.pdf_bytes = uploaded_file.getvalue()

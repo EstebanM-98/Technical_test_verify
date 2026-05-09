@@ -4,10 +4,12 @@ from pathlib import Path
 
 # Add frontend/ dir to sys.path so views/ and utils/ are importable
 sys.path.insert(0, str(Path(__file__).parent))
+# Add project root to sys.path so shared modules (e.g. logger.py) are importable
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import streamlit as st
 
-st.set_page_config(page_title="Smart Bank Extractor", layout="wide")
+st.set_page_config(page_title="Smart Invoice Extractor", layout="wide")
 
 from utils.styles import inject_css
 from views.login import login_view

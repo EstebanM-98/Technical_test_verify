@@ -11,6 +11,7 @@ services:
       - .env
     volumes:
       - ./logs:/app/logs
+      - ocr_cache:/app/ocr_cache
 
   extractor:
     build:
@@ -63,3 +64,4 @@ services:
 
 volumes:
   backend_data:
+  ocr_cache:
