@@ -13,6 +13,8 @@ The current configured extraction format is `Switch Invoice`, defined in `compon
 
 Note: Some labels in the frontend refer to “bank statements”, but the current parser configuration targets Switch invoices. To process another document type, add a new extractor configuration and a matching validator configuration.
 
+![defect](https://github.com/EstebanM-98/Technical_test_verify/blob/master/documents/image.jpg)
+
 ## Table of Contents
 
 - [Main Features](#main-features)
