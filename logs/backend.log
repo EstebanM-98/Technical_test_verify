@@ -843,3 +843,24 @@ RuntimeError: boom
 2026-05-09 18:12:07 | DEBUG    | backend.api | get_project | Fetching project_id=1
 2026-05-09 18:12:07 | DEBUG    | backend.api | get_project | Project fetched: project_id=1, has_data=True
 2026-05-09 18:12:07 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-10 21:18:57 | DEBUG    | backend.database | <module> | Database directory ensured: /app/data
+2026-05-10 21:18:57 | INFO     | backend.database | <module> | Database engine created: sqlite:////app/data/backend_app.db
+2026-05-10 21:18:57 | INFO     | backend.api | <module> | Database tables verified/created on startup.
+2026-05-10 21:19:13 | INFO     | backend.api | login | Login attempt for username='admin'
+2026-05-10 21:19:13 | DEBUG    | backend.security | verify_password | Password verification result: True
+2026-05-10 21:19:13 | INFO     | backend.api | login | Login successful: username='admin', id=1
+2026-05-10 21:19:13 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-10 21:19:13 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-10 21:19:13 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-10 21:19:13 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-10 21:19:19 | DEBUG    | backend.api | get_projects | Fetching all projects for user_id=1
+2026-05-10 21:19:19 | INFO     | backend.api | get_projects | Returning 5 project(s) for user_id=1
+2026-05-10 21:19:19 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-10 21:19:19 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-10 21:19:19 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=True
+2026-05-10 21:19:19 | DEBUG    | backend.database | get_db | Database session closed.
+2026-05-10 21:19:19 | DEBUG    | backend.api | get_project_pdf | PDF requested for project_id=3, path=/app/data/uploads/project_3.pdf
+2026-05-10 21:19:19 | DEBUG    | backend.api | get_project_pdf | Serving PDF for project_id=3
+2026-05-10 21:19:20 | DEBUG    | backend.api | get_project | Fetching project_id=3
+2026-05-10 21:19:20 | DEBUG    | backend.api | get_project | Project fetched: project_id=3, has_data=True
+2026-05-10 21:19:20 | DEBUG    | backend.database | get_db | Database session closed.
