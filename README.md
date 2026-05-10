@@ -11,8 +11,6 @@ Smart Invoice Extractor is a Python-based document-processing application built 
 
 The current configured extraction format is `Switch Invoice`, defined in `components/extractor/configs/switch.json` and validated by `components/validator/configs/switch.json`.
 
-Note: Some labels in the frontend refer to “bank statements”, but the current parser configuration targets Switch invoices. To process another document type, add a new extractor configuration and a matching validator configuration.
-
 ![defect](https://github.com/EstebanM-98/Technical_test_verify/blob/master/documents/image.jpg)
 
 ## Table of Contents
@@ -98,6 +96,7 @@ Technical_test_verify-master/
 │   ├── extractor/
 │   │   ├── Dockerfile
 │   │   ├── api.py
+│   │   ├── main.py
 │   │   ├── configs/
 │   │   │   └── switch.json
 │   │   ├── core/
@@ -107,7 +106,6 @@ Technical_test_verify-master/
 │   │   │   ├── __init__.py
 │   │   │   ├── base_format.py
 │   │   │   └── dynamic_format.py
-│   │   ├── main.py
 │   │   ├── output/
 │   │   ├── requirements.txt
 │   │   └── utils/
@@ -131,6 +129,9 @@ Technical_test_verify-master/
 │       ├── main.py
 │       └── requirements.txt
 ├── documents/
+│   ├── documentation_technical_proof.pdf
+│   ├── image.jpg
+│   ├── smart_invoice_extractor_overview.svg
 │   └── .gitkeep
 ├── frontend/
 │   ├── Dockerfile
@@ -154,7 +155,44 @@ Technical_test_verify-master/
 ├── TESTING.md
 ├── requirements.txt
 └── tests/
+  ├── api/
+  │   ├── test_backend_api.py
+  │   ├── test_extractor_api.py
+  │   ├── test_ocr_api.py
+  │   └── test_validator_api.py
+  ├── fixtures/
+  │   ├── switch_extracted_invalid_document_sum.json
+  │   ├── switch_extracted_invalid_row_math.json
+  │   ├── switch_extracted_missing_total.json
+  │   ├── switch_extracted_unknown_format.json
+  │   ├── switch_extracted_valid.json
+  │   ├── switch_ocr_text_multipage.txt
+  │   └── switch_ocr_text_valid.txt
+  ├── reports/
+  │   ├── coverage-unit.xml
+  │   ├── htmlcov-unit/
+  │   └── junit.xml
+  ├── unit/
+  │   ├── test_backend_database.py
+  │   ├── test_backend_services.py
+  │   ├── test_document_parser.py
+  │   ├── test_dynamic_format.py
+  │   ├── test_extractor_file_handler.py
+  │   ├── test_extractor_main.py
+  │   ├── test_frontend_dashboard.py
+  │   ├── test_frontend_utils.py
+  │   ├── test_logger.py
+  │   ├── test_ocr_config.py
+  │   ├── test_ocr_file_utils.py
+  │   ├── test_ocr_main.py
+  │   ├── test_ocr_service.py
+  │   ├── test_security.py
+  │   └── test_validator_engine.py
+  ├── conftest.py
+  ├── Dockerfile
+  └── requirements.txt
 ```
+
 
 ### Root Directory
 
@@ -1191,19 +1229,7 @@ components/extractor/output/<document_name>/<document_name>.json
 
 The repository already includes sample extracted JSON files under `components/extractor/output/`.
 
-## Known Implementation Notes
 
-- Docker Compose is the most reliable execution path for the current codebase.
-- The backend database and upload folders are hard-coded under `/app/data`.
-- The current extractor supports only document formats configured in `components/extractor/configs/`.
-- The current included format is `Switch Invoice`.
-- The frontend upload widget accepts only PDF files.
-- The OCR API writes uploaded content to a temporary file with `.pdf` suffix before sending it to Veryfi.
-- Authentication is basic: the backend returns user information after login, but it does not issue JWT tokens or protect project endpoints with authenticated sessions.
-- Project endpoints use `user_id` query parameters for project creation and listing.
-- Manual edits made in the frontend line-item table are not currently written back to the backend database.
-- The `row_math` validator rule currently computes `quantity * rate = amount` directly, even though the JSON config also contains `expression` and `equals` fields.
-- The parser appends multiline row overflow text to the first configured line-item column.
 
 ## Troubleshooting
 
@@ -1274,14 +1300,4 @@ Validator: 8003
 
 Stop the conflicting process or change the ports in `docker-compose.yml` and the related environment variables.
 
-## Suggested Development Workflow
-
-1. Run the full application with Docker Compose.
-2. Test the target document in the UI.
-3. If extraction fails, call the OCR service directly and inspect `ocr_text`.
-4. Adjust or add extractor configs under `components/extractor/configs/`.
-5. Test the extractor service directly with the OCR text.
-6. Add matching validation configs under `components/validator/configs/`.
-7. Restart affected services.
-8. Re-run the document through the frontend.
 
